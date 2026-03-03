@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="[http://www.sitemaps.org/schemas/sitemap/0.9](http://www.sitemaps.org/schemas/sitemap/0.9)">
+   <sitemap>
+      <loc>[https://capacita.cl/sitemap-estatico.xml](https://capacita.cl/sitemap-estatico.xml)</loc>
+   </sitemap>
+   <sitemap>
+      <loc>[https://capacita.cl/wp-sitemap.xml](https://capacita.cl/wp-sitemap.xml)</loc> 
+   </sitemap>
+</sitemapindex>
