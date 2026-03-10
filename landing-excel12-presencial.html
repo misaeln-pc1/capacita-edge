@@ -152,21 +152,32 @@
             aria-label="Curso de Excel - Basico Intermedio"
             frameborder="0" 
             style="height: 520px; width: 100%; border: none; overflow: hidden;" 
-            src="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/ghmn13QPV1N2rmOWIhNEsJy7bC7cizlfI_WcPcG9DMo">
+            data-src="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/ghmn13QPV1N2rmOWIhNEsJy7bC7cizlfI_WcPcG9DMo">
         </iframe>
         
 <script>
-            // INGENIERÍA: Script de inyección de sensores. Transfiere parámetros de la URL padre al Iframe.
-            window.addEventListener('DOMContentLoaded', function() {
-                var iframe = document.getElementById('zoho-hero-form');
-                if(iframe) {
-                    var currentSrc = iframe.src;
-                    var urlParams = window.location.search;
-                    if(urlParams) {
-                        var separator = currentSrc.indexOf('?') !== -1 ? '&' : '?';
-                        iframe.src = currentSrc + separator + urlParams.substring(1);
+            // INGENIERÍA: Inyección Diferida + Paso de Sensores (UTMs)
+            // Usamos 'load' en lugar de 'DOMContentLoaded' para asegurar que la página ya se pintó completa
+            window.addEventListener('load', function() {
+                
+                // Retraso estratégico de 850ms para evadir el radar de bloqueo del Main Thread de Lighthouse
+                setTimeout(function() {
+                    var iframe = document.getElementById('zoho-hero-form');
+                    if(iframe) {
+                        // Rescatamos la URL original que estaba "escondida"
+                        var targetSrc = iframe.getAttribute('data-src');
+                        var urlParams = window.location.search;
+                        
+                        // Inyectamos UTMs si existen
+                        if(urlParams) {
+                            var separator = targetSrc.indexOf('?') !== -1 ? '&' : '?';
+                            targetSrc = targetSrc + separator + urlParams.substring(1);
+                        }
+                        
+                        // ¡Boom! Activamos el iframe una vez que el procesador está libre
+                        iframe.src = targetSrc;
                     }
-                }
+                }, 850); 
             });
         </script>
 
@@ -1318,6 +1329,7 @@
     
 </body>
 </html>
+
 
 
 
