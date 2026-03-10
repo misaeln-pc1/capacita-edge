@@ -146,8 +146,7 @@
             <p>Cupos limitados. Solicita el programa aquí:</p>
         </div>
 
-        <!-- REEMPLAZO EXACTO: Iframe de Zoho Forms con paso dinámico de parámetros (UTMs) -->
-       <!-- REEMPLAZO EXACTO: Iframe vacío con Patrón "Skeleton Loader" (Mejora de Rendimiento Percibido) -->
+       !-- REEMPLAZO EXACTO: Iframe vacío con Patrón "Skeleton Loader" (Mejora de Rendimiento Percibido) -->
         <iframe 
             id="zoho-hero-form"
             aria-label="Curso de Excel - Basico Intermedio"
@@ -175,6 +174,18 @@
                         var separator = targetSrc.indexOf('?') !== -1 ? '&' : '?';
                         targetSrc = targetSrc + separator + urlParams.substring(1);
                     }
+                    
+                    // INGENIERÍA: Eliminación determinista del Spinner (Event-Driven)
+                    // Escuchamos el milisegundo exacto en que Zoho termina de cargar su HTML
+                    iframe.onload = function() {
+                        iframe.style.background = 'none'; // Matamos la animación vectorial
+                    };
+
+                    // Fallback (Plan B): Si la red es muy mala o Zoho se cae, 
+                    // matamos el spinner a los 3000ms para evitar un loop infinito visual.
+                    setTimeout(function() {
+                        iframe.style.background = 'none';
+                    }, 3000);
                     
                     iframe.src = targetSrc;
                 }
@@ -1345,6 +1356,7 @@
     
 </body>
 </html>
+
 
 
 
