@@ -91,8 +91,8 @@
 <body style="margin: 0; padding: 0;">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52J4PSR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- NOTA PARA EL INGENIERO: Aquí debes pegar físicamente el contenido de tus txt (Bloques 2, y del 4 al 13) uno debajo del otro -->
-    <!-- BLOQUE 2: HERO + 24 SENSORES DEL FORMULARIO --- MODIFICAR FECHAS -->
 
+    <!-- BLOQUE 2: HERO + FORMULARIO IFRAME OPTIMIZADO + CAMBIO FECHAS -->
 <section class="cp-hero-v18-optimized" id="inicio">
     <style>
         /* --- ESTILOS ORIGINALES PRESERVADOS --- */
@@ -146,62 +146,36 @@
             <p>Cupos limitados. Solicita el programa aquí:</p>
         </div>
 
-        <form action="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/xm09tXPXTc89rqTo7ar6b8SMJU-bPHUb_4O9c-oXkAc/htmlRecords/submit" name="form" id="form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="zoho-v18-form">
+        <!-- REEMPLAZO EXACTO: Iframe de Zoho Forms con paso dinámico de parámetros (UTMs) -->
+        <iframe 
+            id="zoho-hero-form"
+            frameborder="0" 
+            style="height: 500px; width: 100%; border: none; overflow: hidden;" 
+            src="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/xm09tXPXTc89rqTo7ar6b8SMJU-bPHUb_4O9c-oXkAc">
+        </iframe>
+        
+        <script>
+            // INGENIERÍA: Script de inyección de sensores. Transfiere parámetros de la URL padre al Iframe.
+            window.addEventListener('DOMContentLoaded', function() {
+                var iframe = document.getElementById('zoho-hero-form');
+                if(iframe) {
+                    var currentSrc = iframe.src;
+                    var urlParams = window.location.search;
+                    if(urlParams) {
+                        var separator = currentSrc.indexOf('?') !== -1 ? '&' : '?';
+                        iframe.src = currentSrc + separator + urlParams.substring(1);
+                    }
+                }
+            });
+        </script>
 
-            <input type="hidden" name="zf_referrer_name" value="">
-            <input type="hidden" name="zf_redirect_url" value="">
-            <input type="hidden" name="zc_gad" value="">
-
-            <input type="hidden" name="utm_source" value="">
-            <input type="hidden" name="utm_medium" value="">
-            <input type="hidden" name="utm_campaign" value="">
-            <input type="hidden" name="utm_term" value="">
-            <input type="hidden" name="utm_content" value="">
-            <input type="hidden" name="utm_id" value="">
-
-            <input type="hidden" name="gclid" value="">
-            <input type="hidden" name="gbraid" value="">
-            <input type="hidden" name="wbraid" value="">
-            <input type="hidden" name="fbclid" value="">
-            <input type="hidden" name="msclkid" value="">
-            <input type="hidden" name="li_fat_id" value="">
-            <input type="hidden" name="ttclid" value="">
-
-            <input type="hidden" name="client_id" value="">
-            <input type="hidden" name="session_id" value="">
-            <input type="hidden" name="lead_event_id" value="">
-
-            <input type="hidden" name="landing_code" value="">
-            <input type="hidden" name="course" value="">
-            <input type="hidden" name="landing_url" value="">
-            <input type="hidden" name="referente" value="">
-            <input type="hidden" name="dispositivo" value="">
-            <input type="hidden" name="user_agent" value="">
-            <input type="hidden" name="page_title" value="">
-            <input type="hidden" name="user_language" value="">
-            <input type="hidden" name="capture_time" value="">
-
-            <label>¿Cómo te llamas?<em>*</em></label>
-            <input type="text" name="SingleLine" value="" fieldType="1" maxlength="255" placeholder="Tu nombre" required>
-
-            <label>Tu mejor Email:<em>*</em></label>
-            <input type="text" maxlength="255" name="Email" value="" fieldType="9" placeholder="tu@correo.cl" required>
-
-            <label>WhatsApp:<em>*</em></label>
-            <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="20" value="" id="international_PhoneNumber_countrycode" placeholder="9 1234 5678" required>
-
-            <label>¿Dudas?</label>
-            <textarea name="MultiLine" placeholder="Horarios, pagos, etc..." maxlength="1000"></textarea>
-
-            <button type="submit" class="btn-submit-v18">Regístrate</button>
-
-            <div class="infographic-notice-v18">
-                <div style="font-size: 16px;">🎁</div>
-                <span>Recibe GRATIS: Guía de Atajos Excel</span>
-            </div>
-        </form>
+        <div class="infographic-notice-v18">
+            <div style="font-size: 16px;">🎁</div>
+            <span>Recibe GRATIS: Guía de Atajos Excel</span>
+        </div>
     </div>
 </section>
+  
 
     <!-- BLOQUE 4: HORARIOS Y FECHAS DE CURSOS + MODIFICAR FECHAS  -->
 
@@ -1343,6 +1317,7 @@
     
 </body>
 </html>
+
 
 
 
