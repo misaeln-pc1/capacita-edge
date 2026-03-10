@@ -8,7 +8,7 @@
     <meta name="description" content="Capacitación 100% práctica en Santiago Centro. Incluye certificación OTEC bajo norma NCh 2728.">
     
     <!-- BLOQUE 1: Tracking Engine (GTM + DataLayer) -->
-    <script>
+<script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'page_init',
@@ -20,13 +20,14 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '[https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f](https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f));
-    })(window,document,'script','dataLayer','GTM-52J4PSR');</script>
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-52J4PSR');
+    </script>
     
-    <!-- BLOQUE 3: SCHEMA CORREGIDO -->
+<!-- BLOQUE 3: SCHEMA CORREGIDO (AMBAS JORNADAS INCLUIDAS) + CAMBIO FECHAS-->
     <script type="application/ld+json">
     {
-      "@context": "[https://schema.org](https://schema.org)",
+      "@context": "https://schema.org",
       "@type": "Course",
       "name": "Curso de Excel Básico Intermedio Presencial",
       "description": "Capacitación 100% práctica en Santiago Centro. Incluye certificación OTEC bajo norma NCh 2728.",
@@ -35,13 +36,13 @@
       "provider": {
         "@type": "Organization",
         "name": "Capacita.cl",
-        "url": "[https://capacita.cl](https://capacita.cl)",
-        "logo": "[https://capacita.cl/wp-content/uploads/2019/02/Logo_Capacita_850x300-e1602863310152.jpg](https://capacita.cl/wp-content/uploads/2019/02/Logo_Capacita_850x300-e1602863310152.jpg)"
+        "url": "https://capacita.cl",
+        "logo": "https://capacita.cl/wp-content/uploads/2019/02/Logo_Capacita_850x300-e1602863310152.jpg"
       },
       "hasCourseInstance": [
         {
           "@type": "CourseInstance",
-          "name": "Jornada Mañana",
+          "name": "Jornada Tarde",
           "courseMode": "Presencial",
           "startDate": "2026-03-23",
           "location": {
@@ -58,7 +59,29 @@
             "@type": "Offer",
             "price": "112000",
             "priceCurrency": "CLP",
-            "url": "[https://capacita.cl/curso-de-excel-presencial-en-santiago/](https://capacita.cl/curso-de-excel-presencial-en-santiago/)"
+            "url": "https://capacita.cl/curso-de-excel-presencial-en-santiago/"
+          }
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "Jornada Mañana",
+          "courseMode": "Presencial",
+          "startDate": "2026-03-26",
+          "location": {
+            "@type": "Place",
+            "name": "Sede Capacita.cl",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Bombero Salas 1369, Of. 404",
+              "addressLocality": "Santiago",
+              "addressCountry": "CL"
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "112000",
+            "priceCurrency": "CLP",
+            "url": "https://capacita.cl/curso-de-excel-presencial-en-santiago/"
           }
         }
       ]
@@ -66,8 +89,7 @@
     </script>
 </head>
 <body style="margin: 0; padding: 0;">
-    <noscript><iframe src="[https://www.googletagmanager.com/ns.html?id=GTM-52J4PSR](https://www.googletagmanager.com/ns.html?id=GTM-52J4PSR)" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52J4PSR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- NOTA PARA EL INGENIERO: Aquí debes pegar físicamente el contenido de tus txt (Bloques 2, y del 4 al 13) uno debajo del otro -->
     <!-- BLOQUE 2: HERO + 24 SENSORES DEL FORMULARIO --- MODIFICAR FECHAS -->
 
@@ -270,7 +292,7 @@
             <div class="price-box">
                 <span style="font-size: 20px; font-weight: 700;">$</span><span class="amount">112.000</span>
             </div>
-            <div class="start-date">&#x1f4c5; Inicia: Martes 10 de Marzo</div>
+            <div class="start-date">&#x1f4c5; Inicia: Jueves 26 de Marzo</div>
             <a href="#registro" class="btn-reserve-anchor btn-blue-v2">Reservar mi Cupo</a>
         </div>
     </div>
@@ -1321,6 +1343,7 @@
     
 </body>
 </html>
+
 
 
 
