@@ -147,15 +147,16 @@
         </div>
 
         <!-- REEMPLAZO EXACTO: Iframe de Zoho Forms con paso dinámico de parámetros (UTMs) -->
+       <!-- REEMPLAZO EXACTO: Iframe vacío con Patrón "Skeleton Loader" (Mejora de Rendimiento Percibido) -->
         <iframe 
             id="zoho-hero-form"
             aria-label="Curso de Excel - Basico Intermedio"
             frameborder="0" 
-            style="height: 520px; width: 100%; border: none; overflow: hidden;" 
+            style="height: 520px; width: 100%; border: none; overflow: hidden; background: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'50\' height=\'50\'><circle cx=\'50\' cy=\'50\' fill=\'none\' stroke=\'%23004A99\' stroke-width=\'6\' r=\'35\' stroke-dasharray=\'164 56\'><animateTransform attributeName=\'transform\' type=\'rotate\' repeatCount=\'indefinite\' dur=\'1s\' values=\'0 50 50;360 50 50\'/></circle></svg>') center 150px no-repeat;" 
             data-src="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/ghmn13QPV1N2rmOWIhNEsJy7bC7cizlfI_WcPcG9DMo">
         </iframe>
         
-<script>
+        <script>
             // INGENIERÍA: Event-Driven Iframe Injection (Optimización Extrema Mobile/Desktop)
             let iframeLoaded = false;
 
@@ -181,13 +182,14 @@
                 // Garbage Collection: Limpiamos los "escuchadores" para liberar memoria RAM
                 window.removeEventListener('scroll', loadZohoIframe);
                 window.removeEventListener('touchstart', loadZohoIframe);
-                window.removeEventListener('mouseover', loadZohoIframe);
+                window.removeEventListener('mousemove', loadZohoIframe);
             }
 
             // Disparadores de Interacción (El Iframe carga si el usuario hace alguna de estas 3 cosas)
             window.addEventListener('scroll', loadZohoIframe, {passive: true});
             window.addEventListener('touchstart', loadZohoIframe, {passive: true});
-            window.addEventListener('mouseover', loadZohoIframe, {passive: true});
+            // Usamos mousemove en lugar de mouseover para captar la más mínima intención en escritorio
+            window.addEventListener('mousemove', loadZohoIframe, {passive: true});
 
             // Fallback de Seguridad (Graceful Degradation): 
             // Si por algún motivo el usuario no hace nada en 3.5 segundos, lo cargamos forzosamente.
@@ -1343,6 +1345,7 @@
     
 </body>
 </html>
+
 
 
 
