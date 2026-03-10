@@ -1,0 +1,151 @@
+<!-- BLOQUE 2: HERO + FORMULARIO ENTERPRISE (LATENCIA CERO + 24 SENSORES) -->
+<section class="cp-hero-v18-optimized" id="inicio">
+    <style>
+        /* --- ESTILOS ORIGINALES PRESERVADOS --- */
+        .cp-hero-v18-optimized { display: flex; align-items: center; justify-content: space-between; min-height: 80vh; background: linear-gradient(135deg, #004A99 0%, #002347 100%); padding: 60px 10%; font-family: 'Segoe UI', Roboto, sans-serif !important; color: white; gap: 40px; scroll-behavior: smooth; }
+        .hero-info-v18 { flex: 1.2; }
+        .hero-info-v18 h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.1; margin-bottom: 12px; color: #ffffff !important; }
+        .hero-info-v18 .subtitle-v18 { font-size: 20px; color: #ffca28; font-weight: 800; margin-bottom: 20px; display: block; border-left: 4px solid #ff9800; padding-left: 15px; }
+        .hero-info-v18 p { font-size: 17px; opacity: 0.95; margin-bottom: 25px; line-height: 1.5; max-width: 480px; }
+        .glass-card-v18 { flex: 0 0 380px; background: rgba(255, 255, 255, 0.98); border-radius: 25px; box-shadow: 0 30px 80px rgba(0, 20, 50, 0.5); padding: 22px; color: #1e293b; backdrop-filter: blur(15px); box-sizing: border-box; }
+        .form-header-v18 { text-align: center; margin-bottom: 12px; }
+        .form-header-v18 h3 { font-size: 17px; font-weight: 800; color: #004A99; margin: 0; }
+        .form-header-v18 p { font-size: 12px; color: #64748b; margin-top: 2px; font-weight: 600; }
+        .zoho-v18-form label { display: block; font-size: 11px; font-weight: 800; color: #475569; margin-bottom: 4px; margin-top: 8px; text-transform: uppercase; }
+        .zoho-v18-form input[type="text"], .zoho-v18-form textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: #ffffff; box-sizing: border-box; font-family: inherit; transition: border-color 0.3s; }
+        .zoho-v18-form input[type="text"]:focus, .zoho-v18-form textarea:focus { outline: none; border-color: #004A99; }
+        .zoho-v18-form textarea { min-height: 45px; resize: vertical; }
+        .btn-submit-v18 { width: 100%; background: #ff9800; color: #fff; padding: 14px; border: none; border-radius: 50px; font-size: 16px; font-weight: 900; cursor: pointer; margin-top: 15px; text-transform: uppercase; transition: 0.3s; box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3); }
+        .btn-submit-v18:hover { background: #f57c00; transform: translateY(-2px); }
+        .infographic-notice-v18 { display: flex; align-items: center; gap: 8px; margin-top: 15px; background: #fff3e0; padding: 8px 12px; border-radius: 10px; border: 1px dashed #ff9800; }
+        .infographic-notice-v18 span { font-size: 11px; color: #e65100; font-weight: 800; }
+        .trust-v18 { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .badge-v18 { font-size: 12px; font-weight: 800; color: #ffca28; display: flex; align-items: center; gap: 5px; }
+
+        .hero-logo-v18 { display: block; width: 180px; height: auto; margin-bottom: 25px; border-radius: 8px; }
+        .cp-badges-row-v18 { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+        .cp-base-badge-bar-v18 { padding: 5px 14px; border-radius: 50px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+        .badge-location-v18 { background: rgba(255, 255, 255, 0.1); }
+        .cp-badge-experience-v18 { background: linear-gradient(45deg, #B8860B 0%, #FFD700 100%); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3); }
+
+        @media (max-width: 1100px) { .cp-hero-v18-optimized { flex-direction: column; text-align: center; padding: 40px 5%; } .hero-logo-v18 { width: 140px; margin: 0 auto 20px auto; } .glass-card-v18 { width: 100%; max-width: 400px; } .trust-v18 { justify-content: center; } .cp-badges-row-v18 { justify-content: center; } }
+    </style>
+
+    <div class="hero-info-v18">
+        <img src="https://capacita.cl/wp-content/uploads/2019/02/Logo_Capacita_850x300-e1602863310152.jpg" alt="Capacita.cl" class="hero-logo-v18">
+        <div class="cp-badges-row-v18">
+            <div class="cp-base-badge-bar-v18 badge-location-v18">📍 Santiago Centro · 100% Presencial</div>
+            <div class="cp-base-badge-bar-v18 cp-badge-experience-v18"><span>🏅</span> 10+ Años Capacitando</div>
+        </div>
+        <h1>Curso de Excel Presencial</h1>
+        <span class="subtitle-v18">Nivel Básico e Intermedio</span>
+        <p>Mejora tu CV y domina las planillas con clases diseñadas para aprender paso a paso y de forma personalizada.</p>
+        <div class="trust-v18">
+            <div class="badge-v18">📜 Diploma Certificado</div>
+            <div class="badge-v18">🚀 100% Práctico</div>
+            <div class="badge-v18" style="color:white;">💳 Pagable en 2 Cuotas</div>
+        </div>
+    </div>
+
+    <div class="glass-card-v18" id="registro">
+        <div class="form-header-v18">
+            <h3>Inicio en Marzo</h3>
+            <p>Cupos limitados. Solicita el programa aquí:</p>
+        </div>
+
+        <!-- FORMULARIO HTML NATIVO: 0ms Latencia -->
+        <form action="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/xm09tXPXTc89rqTo7ar6b8SMJU-bPHUb_4O9c-oXkAc/htmlRecords/submit" name="form" id="zoho-native-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="zoho-v18-form">
+            
+            <!-- Motor de 24 Sensores Ocultos -->
+            <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
+            <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
+            <input type="hidden" name="zc_gad" id="zc_gad" value="">
+
+            <input type="hidden" name="utm_source" id="utm_source" value="">
+            <input type="hidden" name="utm_medium" id="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+            <input type="hidden" name="utm_term" id="utm_term" value="">
+            <input type="hidden" name="utm_content" id="utm_content" value="">
+            <input type="hidden" name="utm_id" id="utm_id" value="">
+
+            <input type="hidden" name="gclid" id="gclid" value="">
+            <input type="hidden" name="gbraid" id="gbraid" value="">
+            <input type="hidden" name="wbraid" id="wbraid" value="">
+            <input type="hidden" name="fbclid" id="fbclid" value="">
+            <input type="hidden" name="msclkid" id="msclkid" value="">
+            <input type="hidden" name="li_fat_id" id="li_fat_id" value="">
+            <input type="hidden" name="ttclid" id="ttclid" value="">
+
+            <input type="hidden" name="client_id" id="client_id" value="">
+            <input type="hidden" name="session_id" id="session_id" value="">
+            <input type="hidden" name="lead_event_id" id="lead_event_id" value="">
+
+            <input type="hidden" name="landing_code" id="landing_code" value="EXCEL_PRESENCIAL_EDGE">
+            <input type="hidden" name="course" id="course" value="Excel Basico Intermedio">
+            <input type="hidden" name="landing_url" id="landing_url" value="">
+            <input type="hidden" name="referente" id="referente" value="">
+            <input type="hidden" name="dispositivo" id="dispositivo" value="">
+            <input type="hidden" name="user_agent" id="user_agent" value="">
+            <input type="hidden" name="page_title" id="page_title" value="">
+            <input type="hidden" name="user_language" id="user_language" value="">
+            <input type="hidden" name="capture_time" id="capture_time" value="">
+
+            <!-- Campos Visibles del Usuario -->
+            <label>¿Cómo te llamas?<em>*</em></label>
+            <input type="text" name="SingleLine" value="" maxlength="255" placeholder="Tu nombre" required>
+
+            <label>Tu mejor Email:<em>*</em></label>
+            <input type="text" maxlength="255" name="Email" value="" placeholder="tu@correo.cl" required>
+
+            <label>WhatsApp:<em>*</em></label>
+            <input type="text" name="PhoneNumber_countrycode" maxlength="20" value="" placeholder="9 1234 5678" required>
+
+            <label>¿Dudas?</label>
+            <textarea name="MultiLine" placeholder="Horarios, pagos, etc..." maxlength="1000"></textarea>
+
+            <button type="submit" class="btn-submit-v18">Regístrate</button>
+        </form>
+
+        <div class="infographic-notice-v18">
+            <div style="font-size: 16px;">🎁</div>
+            <span>Recibe GRATIS: Guía de Atajos Excel</span>
+        </div>
+    </div>
+
+    <!-- SCRIPT ENGINE: Client-Side Hydration -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Instanciamos el lector de URL
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 2. Función auxiliar para inyectar si el parámetro existe
+            function hydrateField(paramName, fieldId) {
+                if(urlParams.has(paramName)) {
+                    const input = document.getElementById(fieldId);
+                    if(input) input.value = urlParams.get(paramName);
+                }
+            }
+
+            // 3. Hidratación de Atribución (UTMs y Click IDs)
+            const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'li_fat_id', 'ttclid'];
+            trackingParams.forEach(param => hydrateField(param, param));
+
+            // 4. Hidratación de Contexto de Navegador (System Fingerprinting)
+            if(document.getElementById('landing_url')) document.getElementById('landing_url').value = window.location.href.split('?')[0];
+            if(document.getElementById('referente')) document.getElementById('referente').value = document.referrer || 'Tráfico Directo';
+            if(document.getElementById('user_agent')) document.getElementById('user_agent').value = navigator.userAgent;
+            if(document.getElementById('page_title')) document.getElementById('page_title').value = document.title;
+            if(document.getElementById('user_language')) document.getElementById('user_language').value = navigator.language;
+            
+            // Detección básica de dispositivo
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if(document.getElementById('dispositivo')) document.getElementById('dispositivo').value = isMobile ? 'Mobile' : 'Desktop';
+
+            // Tiempo exacto de captura
+            if(document.getElementById('capture_time')) {
+                const now = new Date();
+                document.getElementById('capture_time').value = now.toISOString();
+            }
+        });
+    </script>
+</section>
