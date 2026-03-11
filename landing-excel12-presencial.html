@@ -211,7 +211,8 @@
             <button type="submit" class="btn-submit-v18">Regístrate</button>
         </form>
 
-        <!-- SCRIPT ENGINE: Client-Side Hydration (Mapeado y Optimizado) -->
+        
+<!-- SCRIPT ENGINE: Client-Side Hydration (Mapeado y Optimizado) (Parche de Validación de URL) -->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -227,7 +228,15 @@
                 trackingParams.forEach(param => hydrateField(param, param));
 
                 if(document.getElementById('landing_url')) document.getElementById('landing_url').value = window.location.href.split('?')[0];
-                if(document.getElementById('referente')) document.getElementById('referente').value = document.referrer || 'Tráfico Directo';
+                
+                // INGENIERÍA: Parche de Validación Estricta para Zoho (Tipo Website)
+                let refValue = document.referrer;
+                if (!refValue || refValue.trim() === "") {
+                    // Si no hay referente, enviamos un formato URL válido para que Zoho no bloquee el envío
+                    refValue = "https://trafico-directo.capacita.cl"; 
+                }
+                if(document.getElementById('referente')) document.getElementById('referente').value = refValue;
+
                 if(document.getElementById('user_agent')) document.getElementById('user_agent').value = navigator.userAgent.substring(0, 255);
                 if(document.getElementById('page_title')) document.getElementById('page_title').value = document.title;
                 if(document.getElementById('user_language')) document.getElementById('user_language').value = navigator.language;
@@ -1421,6 +1430,7 @@
     
 </body>
 </html>
+
 
 
 
