@@ -98,7 +98,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52J4PSR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- NOTA PARA EL INGENIERO: Aquí debes pegar físicamente el contenido de tus txt (Bloques 2, y del 4 al 13) uno debajo del otro -->
 
-    <!-- BLOQUE 2: HERO + FORMULARIO IFRAME OPTIMIZADO + CAMBIO FECHAS -->
+    <!-- BLOQUE 2: HERO + FORMULARIO HTML NATIVO (0ms LATENCIA) -->
 <section class="cp-hero-v18-optimized" id="inicio">
     <style>
         /* --- ESTILOS ORIGINALES PRESERVADOS --- */
@@ -112,7 +112,9 @@
         .form-header-v18 h3 { font-size: 17px; font-weight: 800; color: #004A99; margin: 0; }
         .form-header-v18 p { font-size: 12px; color: #64748b; margin-top: 2px; font-weight: 600; }
         .zoho-v18-form label { display: block; font-size: 11px; font-weight: 800; color: #475569; margin-bottom: 4px; margin-top: 8px; text-transform: uppercase; }
-        .zoho-v18-form input[type="text"], .zoho-v18-form textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: #ffffff; box-sizing: border-box; font-family: inherit; }
+        /* Se agregó transition y focus styles para mejor UI */
+        .zoho-v18-form input[type="text"], .zoho-v18-form textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: #ffffff; box-sizing: border-box; font-family: inherit; transition: border-color 0.3s; }
+        .zoho-v18-form input[type="text"]:focus, .zoho-v18-form textarea:focus { outline: none; border-color: #004A99; }
         .zoho-v18-form textarea { min-height: 45px; resize: vertical; }
         .btn-submit-v18 { width: 100%; background: #ff9800; color: #fff; padding: 14px; border: none; border-radius: 50px; font-size: 16px; font-weight: 900; cursor: pointer; margin-top: 15px; text-transform: uppercase; transition: 0.3s; box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3); }
         .btn-submit-v18:hover { background: #f57c00; transform: translateY(-2px); }
@@ -151,66 +153,124 @@
             <h3>Inicio en Marzo</h3>
             <p>Cupos limitados. Solicita el programa aquí:</p>
         </div>
-     <!-- REEMPLAZO EXACTO: Iframe vacío con Patrón "Skeleton Loader" (Mejora de Rendimiento Percibido) -->
-        <iframe 
-            id="zoho-hero-form"
-            aria-label="Curso de Excel - Basico Intermedio"
-            frameborder="0" 
-            style="height: 520px; width: 100%; border: none; overflow: hidden; background: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' width=\'50\' height=\'50\'><circle cx=\'50\' cy=\'50\' fill=\'none\' stroke=\'%23004A99\' stroke-width=\'6\' r=\'35\' stroke-dasharray=\'164 56\'><animateTransform attributeName=\'transform\' type=\'rotate\' repeatCount=\'indefinite\' dur=\'1s\' values=\'0 50 50;360 50 50\'/></circle></svg>') center 150px no-repeat;" 
-            data-src="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/ghmn13QPV1N2rmOWIhNEsJy7bC7cizlfI_WcPcG9DMo">
-        </iframe>
         
+        <!-- FORMULARIO HTML NATIVO: 0ms Latencia (CON NOMBRES DE SISTEMA ZOHO) -->
+        <form action="https://forms.zohopublic.com/capacita736/form/CursodeExcelBasicoIntermedio/formperma/xm09tXPXTc89rqTo7ar6b8SMJU-bPHUb_4O9c-oXkAc/htmlRecords/submit" name="form" id="zoho-native-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="zoho-v18-form">
+            
+            <!-- Motor de 24 Sensores Ocultos (Mapeados Correctamente) -->
+            <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
+            <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
+            <input type="hidden" name="zc_gad" id="zc_gad" value="">
+
+            <input type="hidden" name="SingleLine14" id="utm_source" value="">
+            <input type="hidden" name="SingleLine18" id="utm_medium" value="">
+            <input type="hidden" name="SingleLine13" id="utm_campaign" value="">
+            <input type="hidden" name="SingleLine17" id="utm_term" value="">
+            <input type="hidden" name="SingleLine16" id="utm_content" value="">
+            <input type="hidden" name="SingleLine11" id="utm_id" value="">
+
+            <input type="hidden" name="SingleLine5" id="gclid" value="">
+            <input type="hidden" name="SingleLine6" id="gbraid" value="">
+            <input type="hidden" name="SingleLine12" id="wbraid" value="">
+            <input type="hidden" name="SingleLine8" id="fbclid" value="">
+            <input type="hidden" name="SingleLine7" id="msclkid" value="">
+            <input type="hidden" name="SingleLine9" id="li_fat_id" value="">
+            <input type="hidden" name="SingleLine10" id="ttclid" value="">
+
+            <input type="hidden" name="SingleLine24" id="client_id" value="">
+            <input type="hidden" name="SingleLine25" id="session_id" value="">
+            <input type="hidden" name="SingleLine23" id="lead_event_id" value="">
+
+            <input type="hidden" name="SingleLine15" id="landing_code" value="EXCEL_PRESENCIAL_EDGE">
+            <input type="hidden" name="Website" id="landing_url" value="">
+            <input type="hidden" name="Website1" id="referente" value="">
+            <input type="hidden" name="SingleLine19" id="dispositivo" value="">
+            <input type="hidden" name="SingleLine20" id="user_agent" value="">
+            <input type="hidden" name="SingleLine21" id="page_title" value="">
+            <input type="hidden" name="SingleLine22" id="user_language" value="">
+
+            <!-- Campos Especiales de Fecha de Zoho -->
+            <input type="hidden" name="DateTime_date" id="capture_date" value="">
+            <input type="hidden" name="DateTime_hours" id="capture_hours" value="">
+            <input type="hidden" name="DateTime_minutes" id="capture_minutes" value="">
+            <input type="hidden" name="DateTime_meridiem" id="capture_meridiem" value="">
+
+            <!-- Campos Visibles del Usuario -->
+            <label>¿Cómo te llamas?<em>*</em></label>
+            <input type="text" name="SingleLine" value="" maxlength="255" placeholder="Tu nombre" required>
+
+            <label>Tu mejor Email:<em>*</em></label>
+            <input type="text" maxlength="255" name="Email" value="" placeholder="tu@correo.cl" required>
+
+            <label>WhatsApp:<em>*</em></label>
+            <input type="text" name="PhoneNumber_countrycode" maxlength="20" value="" placeholder="9 1234 5678" required>
+
+            <label>¿Dudas?</label>
+            <textarea name="MultiLine" placeholder="Horarios, pagos, etc..." maxlength="1000"></textarea>
+
+            <button type="submit" class="btn-submit-v18">Regístrate</button>
+        </form>
+
+        <!-- SCRIPT ENGINE: Client-Side Hydration (Mapeado y Optimizado) -->
         <script>
-            // INGENIERÍA: Event-Driven Iframe Injection (Optimización Extrema Mobile/Desktop)
-            let iframeLoaded = false;
-
-            function loadZohoIframe() {
-                // Previene que el Iframe se cargue múltiples veces
-                if (iframeLoaded) return;
-                iframeLoaded = true;
+            document.addEventListener("DOMContentLoaded", function() {
+                const urlParams = new URLSearchParams(window.location.search);
                 
-                var iframe = document.getElementById('zoho-hero-form');
-                if(iframe) {
-                    var targetSrc = iframe.getAttribute('data-src');
-                    var urlParams = window.location.search;
-                    
-                    // Inyección de Sensores UTM
-                    if(urlParams) {
-                        var separator = targetSrc.indexOf('?') !== -1 ? '&' : '?';
-                        targetSrc = targetSrc + separator + urlParams.substring(1);
+                function hydrateField(paramName, fieldId) {
+                    if(urlParams.has(paramName)) {
+                        const input = document.getElementById(fieldId);
+                        if(input) input.value = urlParams.get(paramName);
                     }
-                    
-                    // INGENIERÍA: Eliminación determinista del Spinner (Event-Driven)
-                    // Escuchamos el milisegundo exacto en que Zoho termina de cargar su HTML
-                    iframe.onload = function() {
-                        iframe.style.background = 'none'; // Matamos la animación vectorial
-                    };
+                }
 
-                    // Fallback (Plan B): Si la red es muy mala o Zoho se cae, 
-                    // matamos el spinner a los 3000ms para evitar un loop infinito visual.
-                    setTimeout(function() {
-                        iframe.style.background = 'none';
-                    }, 3000);
-                    
-                    iframe.src = targetSrc;
+                const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'li_fat_id', 'ttclid'];
+                trackingParams.forEach(param => hydrateField(param, param));
+
+                if(document.getElementById('landing_url')) document.getElementById('landing_url').value = window.location.href.split('?')[0];
+                if(document.getElementById('referente')) document.getElementById('referente').value = document.referrer || 'Tráfico Directo';
+                if(document.getElementById('user_agent')) document.getElementById('user_agent').value = navigator.userAgent.substring(0, 255);
+                if(document.getElementById('page_title')) document.getElementById('page_title').value = document.title;
+                if(document.getElementById('user_language')) document.getElementById('user_language').value = navigator.language;
+                
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if(document.getElementById('dispositivo')) document.getElementById('dispositivo').value = isMobile ? 'Mobile' : 'Desktop';
+
+                // Tiempo exacto de captura (Zoho DateTime Format)
+                const now = new Date();
+                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = months[now.getMonth()];
+                const year = now.getFullYear();
+                let hours = now.getHours();
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const meridiem = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                const strHours = String(hours).padStart(2, '0');
+
+                if(document.getElementById('capture_date')) document.getElementById('capture_date').value = `${day}-${month}-${year}`;
+                if(document.getElementById('capture_hours')) document.getElementById('capture_hours').value = strHours;
+                if(document.getElementById('capture_minutes')) document.getElementById('capture_minutes').value = minutes;
+                if(document.getElementById('capture_meridiem')) document.getElementById('capture_meridiem').value = meridiem;
+
+                function getCookie(name) {
+                    const value = `; ${document.cookie}`;
+                    const parts = value.split(`; ${name}=`);
+                    if (parts.length === 2) return parts.pop().split(';').shift();
+                }
+                const gaCookie = getCookie('_ga');
+                if (gaCookie && document.getElementById('client_id')) {
+                     const gaParts = gaCookie.split('.');
+                     if(gaParts.length >= 4){
+                         document.getElementById('client_id').value = gaParts[2] + '.' + gaParts[3];
+                     }
                 }
                 
-                // Garbage Collection: Limpiamos los "escuchadores" para liberar memoria RAM
-                window.removeEventListener('scroll', loadZohoIframe);
-                window.removeEventListener('touchstart', loadZohoIframe);
-                window.removeEventListener('mousemove', loadZohoIframe);
-            }
-
-            // Disparadores de Interacción (El Iframe carga si el usuario hace alguna de estas 3 cosas)
-            window.addEventListener('scroll', loadZohoIframe, {passive: true});
-            window.addEventListener('touchstart', loadZohoIframe, {passive: true});
-            // Usamos mousemove en lugar de mouseover para captar la más mínima intención en escritorio
-            window.addEventListener('mousemove', loadZohoIframe, {passive: true});
-
-            // Fallback de Seguridad (Graceful Degradation): 
-            // Si por algún motivo el usuario no hace nada en 3.5 segundos, lo cargamos forzosamente.
-            // Para ese momento (3500ms), Lighthouse ya habrá terminado su evaluación de CPU.
-            setTimeout(loadZohoIframe, 3500);
+                const sessionMatch = document.cookie.match(/_ga_[A-Z0-9]+=GS\d\.\d\.([^.]+)/);
+                if(sessionMatch && sessionMatch[1] && document.getElementById('session_id')){
+                    document.getElementById('session_id').value = sessionMatch[1];
+                }
+            });
         </script>
 
         <div class="infographic-notice-v18">
@@ -219,7 +279,7 @@
         </div>
     </div>
 </section>
-  
+<!-- ... existing code ... -->
 
     <!-- BLOQUE 4: HORARIOS Y FECHAS DE CURSOS + MODIFICAR FECHAS  -->
 
@@ -1361,6 +1421,7 @@
     
 </body>
 </html>
+
 
 
 
