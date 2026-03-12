@@ -190,6 +190,10 @@
             <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
             <input type="hidden" name="SingleLine27" id="pais_user" value="">
 
+            <!-- NUEVOS SENSORES: Inteligencia de Negocios (BI) y Lead Scoring -->
+            <input type="hidden" name="SingleLine28" id="timezone" value="">
+            <input type="hidden" name="SingleLine29" id="tiempo_pagina" value="">
+            
             <input type="hidden" name="DateTime_date" id="capture_date" value="">
             <input type="hidden" name="DateTime_hours" id="capture_hours" value="">
             <input type="hidden" name="DateTime_minutes" id="capture_minutes" value="">
@@ -215,6 +219,9 @@
         <!-- ====================================================================== -->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
+                // Registro del milisegundo exacto de carga para el Lead Scoring
+                const startTime = Date.now();
+                
                 const urlParams = new URLSearchParams(window.location.search);
                 
                 function hydrateField(paramName, fieldId) {
@@ -238,6 +245,11 @@
                 if(document.getElementById('user_agent')) document.getElementById('user_agent').value = navigator.userAgent.substring(0, 255);
                 if(document.getElementById('page_title')) document.getElementById('page_title').value = document.title;
                 if(document.getElementById('user_language')) document.getElementById('user_language').value = navigator.language;
+                
+                // INGENIERÍA: Captura Nativa de Zona Horaria para el CRM
+                if(document.getElementById('timezone')) {
+                    document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Desconocida';
+                }
                 
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 if(document.getElementById('dispositivo')) document.getElementById('dispositivo').value = isMobile ? 'Mobile' : 'Desktop';
@@ -284,6 +296,15 @@
                 const sessionMatch = document.cookie.match(/_ga_[A-Z0-9]+=GS\d\.\d\.([^.]+)/);
                 if(sessionMatch && sessionMatch[1] && document.getElementById('session_id')){
                     document.getElementById('session_id').value = sessionMatch[1];
+                }
+               
+                // INGENIERÍA: Lead Scoring Dinámico - Cronómetro al momento de enviar
+                const formElement = document.getElementById('zoho-native-form');
+                if(formElement && document.getElementById('tiempo_pagina')) {
+                    formElement.addEventListener('submit', function() {
+                        const timeSpentSeconds = Math.floor((Date.now() - startTime) / 1000);
+                        document.getElementById('tiempo_pagina').value = timeSpentSeconds;
+                    });
                 }
             });
         </script>
@@ -880,3 +901,4 @@
     
 </body>
 </html>
+
