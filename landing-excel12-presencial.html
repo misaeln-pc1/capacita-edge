@@ -185,6 +185,11 @@
             <input type="hidden" name="SingleLine20" id="user_agent" value="">
             <input type="hidden" name="SingleLine21" id="page_title" value="">
             <input type="hidden" name="SingleLine22" id="user_language" value="">
+            
+            <!-- NUEVOS SENSORES: Geolocalización IP -->
+            <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
+            <input type="hidden" name="SingleLine27" id="pais_user" value="">
+
             <input type="hidden" name="DateTime_date" id="capture_date" value="">
             <input type="hidden" name="DateTime_hours" id="capture_hours" value="">
             <input type="hidden" name="DateTime_minutes" id="capture_minutes" value="">
@@ -236,6 +241,15 @@
                 
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 if(document.getElementById('dispositivo')) document.getElementById('dispositivo').value = isMobile ? 'Mobile' : 'Desktop';
+
+                // INGENIERÍA: Geolocalización por IP (Asíncrona y sin bloqueo de carga)
+                fetch('https://ipapi.co/json/')
+                  .then(function(response) { return response.json(); })
+                  .then(function(data) {
+                      if(document.getElementById('ciudad_user')) document.getElementById('ciudad_user').value = data.city || 'Desconocida';
+                      if(document.getElementById('pais_user')) document.getElementById('pais_user').value = data.country_name || 'Desconocido';
+                  })
+                  .catch(function(error) { console.log("Geolocalización silenciosa falló o fue bloqueada por adblocker."); });
 
                 const now = new Date();
                 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
