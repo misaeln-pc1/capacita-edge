@@ -306,6 +306,24 @@
                         document.getElementById('tiempo_pagina').value = timeSpentSeconds;
                     });
                 }
+                // INGENIERÍA: Hidratación y Lead Scoring para Formulario de Descarga (form_dl)
+                const formDownload = document.getElementById('form_dl');
+                if(formDownload) {
+                    // Copiar UTMs de la URL al formulario secundario
+                    ['utm_source', 'utm_medium', 'utm_campaign', 'gclid'].forEach(param => {
+                        if(urlParams.has(param) && document.getElementById('dl_' + param)) {
+                            document.getElementById('dl_' + param).value = urlParams.get(param);
+                        }
+                    });
+
+                    // Cronómetro anti-bot específico para la descarga
+                    formDownload.addEventListener('submit', function() {
+                        const timeSpentDl = Math.floor((Date.now() - startTime) / 1000);
+                        if(document.getElementById('dl_tiempo_pagina')) {
+                            document.getElementById('dl_tiempo_pagina').value = timeSpentDl;
+                        }
+                    });
+                }
             });
         </script>
 
@@ -524,6 +542,10 @@
         .dl-input:focus { border-color: #F2994A; box-shadow: 0 0 0 3px rgba(242, 153, 74, 0.1); }
         .dl-btn { width: 100%; background-color: #F2994A; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 700; border: none; padding: 12px 0; border-radius: 8px; cursor: pointer; text-transform: uppercase; font-size: 13px; transition: all 0.3s; box-shadow: 0 4px 10px rgba(242, 153, 74, 0.2); }
         .dl-btn:hover { background-color: #e08e43; transform: translateY(-1px); box-shadow: 0 6px 15px rgba(242, 153, 74, 0.3); }
+        
+        /* 🛡️ INGENIERÍA: Estilo para la trampa Honeypot (Oculto a humanos) */
+        .hp-trap-field { position: absolute !important; left: -9999px !important; top: -9999px !important; opacity: 0 !important; z-index: -1 !important; height: 0 !important; width: 0 !important; }
+
         .syllabus-item-v9 { background: #ffffff; border-radius: 25px; margin-bottom: 15px; box-shadow: 0 10px 30px rgba(0, 74, 153, 0.08); border: 2px solid transparent; overflow: hidden; transition: all 0.4s ease; }
         .syllabus-q-v9 { padding: 25px 35px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .syllabus-q-v9 h3 { margin: 0; font-size: 19px; color: #004A99; font-weight: 700; }
@@ -552,7 +574,21 @@
         </div>
         <div class="dl-form-wrapper">
             <form action='https://forms.zohopublic.com/capacita736/form/DescargarTemario/formperma/QCbY7vO5Oj6T_CTYsp7yn4Fm6I9I-fD7KPPO2G9yV-I/htmlRecords/submit' name='form' id='form_dl' method='POST' accept-charset='UTF-8' enctype='multipart/form-data' class="zoho-inline-form">
-                <input type="hidden" name="zf_referrer_name" value=""><input type="hidden" name="zf_redirect_url" value=""><input type="hidden" name="zc_gad" value="">
+                
+                <input type="hidden" name="zf_referrer_name" value="">
+                <input type="hidden" name="zf_redirect_url" value="">
+                <input type="hidden" name="zc_gad" value="">
+
+                <input type="text" name="REEMPLAZAR_POR_ID_ZOHO_HONEYPOT" value="" tabindex="-1" autocomplete="off" class="hp-trap-field" placeholder="No llenes esto si eres humano">
+
+                <input type="hidden" name="REEMPLAZAR_ID_UTM_SOURCE" id="dl_utm_source" value="">
+                <input type="hidden" name="REEMPLAZAR_ID_UTM_MEDIUM" id="dl_utm_medium" value="">
+                <input type="hidden" name="REEMPLAZAR_ID_UTM_CAMPAIGN" id="dl_utm_campaign" value="">
+                <input type="hidden" name="REEMPLAZAR_ID_GCLID" id="dl_gclid" value="">
+                
+                <input type="hidden" name="REEMPLAZAR_ID_LANDING_CODE" id="dl_landing_code" value="DESCARGA_TEMARIO_EXCEL">
+                <input type="hidden" name="REEMPLAZAR_ID_TIEMPO_PAGINA" id="dl_tiempo_pagina" value="">
+
                 <input type="text" maxlength="255" name="Email" value="" fieldType=9 placeholder="Tu correo..." class="dl-input" required>
                 <button type="submit" class="dl-btn">Descargar PDF</button>
             </form>
