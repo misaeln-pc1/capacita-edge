@@ -557,6 +557,10 @@
         .syllabus-item-v9.active .syllabus-plus-v9 { color: #ffffff; transform: rotate(45deg); }
         .syllabus-item-v9.active .syllabus-a-v9 { max-height: 800px; opacity: 1; padding-top: 20px; }
         @media (max-width: 768px) { .syllabus-download-bar { flex-direction: column; text-align: center; padding: 25px; } .dl-form-wrapper { max-width: 100%; width: 100%; } .syllabus-grid-v9 { grid-template-columns: 1fr; } }
+  
+        /* 🛡️ INGENIERÍA: Estilo para la trampa Honeypot (Oculto a humanos, visible al scraper) */
+        .hp-trap-field { position: absolute !important; left: -9999px !important; top: -9999px !important; opacity: 0 !important; z-index: -1 !important; height: 0 !important; width: 0 !important; pointer-events: none !important; }
+   
     </style>
 
     <div class="syllabus-header-v9">
@@ -575,7 +579,9 @@
                 <input type="hidden" name="zf_referrer_name" value="">
                 <input type="hidden" name="zf_redirect_url" value="">
                 <input type="hidden" name="zc_gad" value="">
-            
+               
+                <input type="text" name="SingleLine5" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-trap-field" placeholder="No llenes esto si eres humano">
+                
                 <input type="hidden" name="SingleLine7" id="dl_utm_source" value="">
                 <input type="hidden" name="SingleLine9" id="dl_utm_medium" value="">
                 <input type="hidden" name="SingleLine8" id="dl_utm_campaign" value="">
