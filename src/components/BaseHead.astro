@@ -1,0 +1,14 @@
+---
+const {
+  title = 'Capacita.cl',
+  description = 'Capacitación práctica en Santiago.',
+  canonical = '',
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+
+{canonical && <link rel="canonical" href={canonical} />}

@@ -1,0 +1,132 @@
+---
+const { data } = Astro.props;
+const cards = data.cards ?? [];
+---
+
+<section class="cp-benefits-icons-v5">
+  <style>
+    .cp-benefits-icons-v5 {
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+    }
+    .grid-icons-v5 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .card-icons-v5 {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 35px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 74, 153, 0.03);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-icons-v5:hover {
+      border-color: #D4AF37;
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+    .header-icons-v5 {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .icon-box-svg {
+      flex: 0 0 50px;
+      height: 50px;
+      background: #004A99;
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 74, 153, 0.2);
+      font-size: 22px;
+      font-weight: 900;
+    }
+    .icon-box-svg svg { width: 24px; height: 24px; stroke-width: 2; }
+    .card-icons-v5 h3 {
+      color: #004A99;
+      font-size: 19px;
+      font-weight: 800;
+      margin: 0;
+    }
+    .badge-v5 {
+      display: inline-block;
+      background: #FFF4E5;
+      color: #D48806;
+      padding: 2px 10px;
+      border-radius: 5px;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .list-v5 {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+    .list-v5 li {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 18px;
+    }
+    .list-v5 li::before {
+      content: "•";
+      color: #D4AF37;
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    @media (max-width: 992px) {
+      .grid-icons-v5 { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div style="text-align: center; margin-bottom: 50px;">
+    {data.subtitle && (
+      <span style="color: #D4AF37; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+        {data.subtitle}
+      </span>
+    )}
+    <h2 style="color: #004A99; font-size: 38px; font-weight: 900; margin-top: 10px;">
+      {data.title}
+    </h2>
+  </div>
+
+  <div class="grid-icons-v5">
+    {cards.map((card, index) => (
+      <div class="card-icons-v5">
+        <div class="header-icons-v5">
+          <div class="icon-box-svg">
+            {card.iconSvg ? <Fragment set:html={card.iconSvg} /> : <span>{index + 1}</span>}
+          </div>
+          <h3>{card.title}</h3>
+        </div>
+
+        <ul class="list-v5">
+          {card.items.map((item, itemIndex) => (
+            <li>
+              {itemIndex === 0 && card.badge ? <span class="badge-v5">{card.badge}</span> : null}
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

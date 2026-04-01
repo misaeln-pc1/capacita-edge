@@ -1,0 +1,222 @@
+---
+import MainZohoLeadForm from '../forms/MainZohoLeadForm.astro';
+
+const { hero, form } = Astro.props;
+const noticeText = form.noticeText ?? 'Recibe GRATIS: Guía de Atajos Excel';
+---
+
+<section
+  class="cp-hero-v18-optimized"
+  id="inicio"
+  style={`--hero-bg:${hero.theme.background};--hero-accent:${hero.theme.accent};--hero-highlight:${hero.theme.highlight};`}
+>
+  <style>
+    .cp-hero-v18-optimized {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80vh;
+      background: var(--hero-bg);
+      padding: 60px 10%;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+      color: white;
+      gap: 40px;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
+    .hero-info-v18 {
+      flex: 1.2;
+    }
+
+    .hero-info-v18 h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #ffffff !important;
+    }
+
+    .hero-info-v18 .subtitle-v18 {
+      font-size: 20px;
+      color: var(--hero-highlight);
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: block;
+      border-left: 4px solid var(--hero-accent);
+      padding-left: 15px;
+    }
+
+    .hero-info-v18 p {
+      font-size: 17px;
+      opacity: 0.95;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      max-width: 480px;
+    }
+
+    .glass-card-v18 {
+      flex: 0 0 380px;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 25px;
+      box-shadow: 0 30px 80px rgba(0, 20, 50, 0.5);
+      padding: 22px;
+      color: #1e293b;
+      backdrop-filter: blur(15px);
+      box-sizing: border-box;
+    }
+
+    .form-header-v18 {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .form-header-v18 h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #004A99;
+      margin: 0;
+    }
+
+    .form-header-v18 p {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+    .infographic-notice-v18 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      background: #fff3e0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px dashed var(--hero-accent);
+    }
+
+    .infographic-notice-v18 span {
+      font-size: 11px;
+      color: #e65100;
+      font-weight: 800;
+    }
+
+    .trust-v18 {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .badge-v18 {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--hero-highlight);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hero-logo-v18 {
+      display: block;
+      width: 180px;
+      height: auto;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    .cp-badges-row-v18 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cp-base-badge-bar-v18 {
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .badge-location-v18 {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cp-badge-experience-v18 {
+      background: linear-gradient(45deg, #b8860b 0%, #ffd700 100%);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3);
+    }
+
+    @media (max-width: 1100px) {
+      .cp-hero-v18-optimized {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+      }
+
+      .hero-logo-v18 {
+        width: 140px;
+        margin: 0 auto 20px auto;
+      }
+
+      .glass-card-v18 {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .trust-v18,
+      .cp-badges-row-v18 {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <div class="hero-info-v18">
+    {hero.logo && (
+      <img src={hero.logo} alt="Capacita.cl" class="hero-logo-v18" />
+    )}
+
+    <div class="cp-badges-row-v18">
+      {hero.badges?.map((badge) => (
+        <div class={`cp-base-badge-bar-v18 ${badge.variant === 'highlight' ? 'cp-badge-experience-v18' : 'badge-location-v18'}`}>
+          {badge.text}
+        </div>
+      ))}
+    </div>
+
+    <h1>{hero.title}</h1>
+    <span class="subtitle-v18">{hero.subtitle}</span>
+    <p>{hero.description}</p>
+
+    <div class="trust-v18">
+      {hero.trustItems?.map((item) => (
+        <div class="badge-v18">{item}</div>
+      ))}
+    </div>
+  </div>
+
+  <div class="glass-card-v18" id="registro">
+    <div class="form-header-v18">
+      <h3>{form.startLabel}</h3>
+      <p>{form.startText}</p>
+    </div>
+
+    <MainZohoLeadForm form={form} />
+
+    <div class="infographic-notice-v18">
+      <span>🎁</span>
+      <span>{noticeText}</span>
+    </div>
+  </div>
+</section>

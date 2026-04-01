@@ -1,0 +1,101 @@
+---
+const { data } = Astro.props;
+const items = data.items ?? [];
+---
+
+<section class="cp-autoseleccion" id="formas-de-pago">
+  <style>
+    .cp-autoseleccion {
+      max-width: 1100px !important;
+      margin: 60px auto !important;
+      padding: 0 20px !important;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    .cp-autoseleccion-titulo { text-align: center !important; margin-bottom: 40px !important; }
+    .cp-autoseleccion-titulo h2 {
+      color: #004A99 !important;
+      font-size: 32px !important;
+      font-weight: 800 !important;
+      margin-bottom: 10px !important;
+    }
+    .cp-grid-opciones {
+      display: grid !important;
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: 30px !important;
+    }
+    @media (min-width: 900px) {
+      .cp-grid-opciones { grid-template-columns: repeat(3, 1fr) !important; }
+    }
+    .cp-card-opcion {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 30px !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      min-height: 250px !important;
+    }
+    .cp-card-opcion:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 10px 25px rgba(0, 74, 153, 0.1) !important;
+      border-color: #004A99 !important;
+    }
+    .cp-card-header {
+      margin-bottom: 20px !important;
+      border-bottom: 2px solid #f1f5f9 !important;
+      padding-bottom: 15px !important;
+      text-align: center !important;
+    }
+    .cp-card-header h3 { color: #1e293b !important; font-size: 20px !important; margin: 0 !important; font-weight: 700 !important; }
+    .cp-card-body {
+      color: #475569 !important;
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 25px !important;
+      flex-grow: 1 !important;
+    }
+    .cp-btn-opcion {
+      display: block !important;
+      text-align: center !important;
+      padding: 12px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: 0.2s !important;
+      font-size: 15px !important;
+    }
+    .cp-btn-primario { background-color: #004A99 !important; color: white !important; }
+    .cp-btn-primario:hover { background-color: #003366 !important; color: white !important; }
+    .cp-btn-secundario { background-color: #f1f5f9 !important; color: #004A99 !important; border: 1px solid #cbd5e1 !important; }
+    .cp-btn-secundario:hover { background-color: #e2e8f0 !important; }
+  </style>
+
+  <div class="cp-autoseleccion-titulo">
+    <h2>{data.title}</h2>
+    {data.subtitle && <p style="color: #64748b; font-size: 18px;">{data.subtitle}</p>}
+  </div>
+
+  <div class="cp-grid-opciones">
+    {items.map((item) => (
+      <div class="cp-card-opcion">
+        <div>
+          <div class="cp-card-header">
+            <h3>{item.title}</h3>
+          </div>
+          <div class="cp-card-body">{item.description}</div>
+        </div>
+        <a
+          href={item.buttonHref}
+          class={`cp-btn-opcion ${item.buttonVariant === 'secondary' ? 'cp-btn-secundario' : 'cp-btn-primario'}`}
+        >
+          {item.buttonText}
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

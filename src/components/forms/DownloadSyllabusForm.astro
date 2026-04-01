@@ -1,0 +1,129 @@
+---
+const { downloadForm = {} } = Astro.props;
+---
+
+<style>
+  .zoho-inline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hp-wrap {
+    position: absolute !important;
+    left: -9999px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .dl-input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #334155;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    font-family: inherit;
+  }
+
+  .dl-input::placeholder {
+    color: #94a3b8;
+  }
+
+  .dl-input:focus {
+    border-color: #f2994a;
+    box-shadow: 0 0 0 3px rgba(242, 153, 74, 0.12);
+  }
+
+  .dl-btn {
+    width: 100%;
+    background: #f2994a;
+    color: #ffffff;
+    border: none;
+    padding: 13px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 8px 18px rgba(242, 153, 74, 0.22);
+    font-family: inherit;
+  }
+
+  .dl-btn:hover {
+    background: #ea8d3c;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(242, 153, 74, 0.28);
+  }
+
+  .dl-btn:active {
+    transform: translateY(0);
+  }
+</style>
+
+<form
+  action={downloadForm.action ?? ''}
+  name="form"
+  id="form_dl"
+  method="POST"
+  accept-charset="UTF-8"
+  enctype="multipart/form-data"
+  class="zoho-inline-form"
+>
+  <input type="hidden" name="zf_referrer_name" value="" />
+  <input type="hidden" name="zf_redirect_url" value="" />
+  <input type="hidden" name="zc_gad" value="" />
+
+  <div class="hp-wrap" aria-hidden="true">
+    <label for="dl_hp">No llenes esto si eres humano</label>
+    <input
+      id="dl_hp"
+      type="text"
+      name="SingleLine5"
+      value=""
+      tabindex="-1"
+      autocomplete="off"
+      placeholder="No llenes esto si eres humano"
+    />
+  </div>
+
+  <input type="hidden" name="SingleLine7" id="dl_utm_source" value="" />
+  <input type="hidden" name="SingleLine9" id="dl_utm_medium" value="" />
+  <input type="hidden" name="SingleLine8" id="dl_utm_campaign" value="" />
+  <input type="hidden" name="SingleLine10" id="dl_gclid" value="" />
+  <input type="hidden" name="SingleLine6" id="dl_tiempo_pagina" value="" />
+  <input
+    type="hidden"
+    name="SingleLine11"
+    id="dl_landing_code"
+    value={downloadForm.landingCode ?? ''}
+  />
+
+  <input
+    id="dl_email"
+    type="text"
+    maxlength="255"
+    name="Email"
+    value=""
+    placeholder="Tu correo..."
+    class="dl-input"
+    autocomplete="email"
+    required
+  />
+
+  <button type="submit" class="dl-btn">
+    {downloadForm.buttonText ?? 'Descargar PDF'}
+  </button>
+</form>

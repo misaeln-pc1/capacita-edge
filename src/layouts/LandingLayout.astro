@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import GtmHead from '../components/GtmHead.astro';
+import GtmBody from '../components/GtmBody.astro';
+import CourseSchema from '../components/CourseSchema.astro';
+
+const {
+  title = 'Capacita.cl',
+  description = 'Capacitación práctica en Santiago.',
+  canonical = '',
+  gtmId = 'GTM-52J4PSR',
+  productId = '',
+  schema = null,
+  platform = 'astro',
+  deploymentMode = 'local_dev'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      canonical={canonical}
+    />
+
+    <GtmHead
+      gtmId={gtmId}
+      productId={productId}
+      platform={platform}
+      deploymentMode={deploymentMode}
+    />
+
+    {schema && <CourseSchema schema={schema} />}
+  </head>
+
+  <body>
+    <GtmBody gtmId={gtmId} />
+    <slot />
+  </body>
+</html>

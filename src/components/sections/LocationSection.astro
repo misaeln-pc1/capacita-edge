@@ -1,0 +1,178 @@
+---
+const { data } = Astro.props;
+const photos = data.photos ?? [];
+
+const getImageSrc = (img) => {
+  if (!img) return '';
+  if (typeof img === 'string') return img;
+  return img.src ?? '';
+};
+---
+
+<section class="cp-location-final-v3" id="ubicacion">
+  <style>
+    .cp-location-final-v3 {
+      width: 100%;
+      max-width: 1280px;
+      margin: 52px auto 68px;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+      background: #ffffff;
+      scroll-margin-top: 100px;
+      box-sizing: border-box;
+    }
+
+    .location-header-v3 {
+      margin-bottom: 16px;
+    }
+
+    .location-header-v3 h2 {
+      color: #004A99;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.08;
+      font-weight: 900;
+      margin: 0 0 8px 0;
+    }
+
+    .location-header-v3 p {
+      color: #64748b;
+      font-size: 16px;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .location-header-v3 b {
+      color: #4b6285;
+      font-weight: 800;
+    }
+
+    .location-grid-v3 {
+      display: grid;
+      grid-template-columns: minmax(0, 2.15fr) minmax(320px, 1fr);
+      gap: 16px;
+      align-items: stretch;
+      height: 400px;
+    }
+
+    .map-col-v3 {
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      background: #f1f5f9;
+    }
+
+    .map-col-v3 iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .photos-col-v3 {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .photo-card-v3 {
+      height: 100%;
+      min-height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      background: #ffffff;
+    }
+
+    .location-img-v3 {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.28s ease;
+    }
+
+    .photo-card-v3:hover .location-img-v3 {
+      transform: scale(1.02);
+    }
+
+    .img-focus-office {
+      object-position: center center;
+    }
+
+    .img-focus-building {
+      object-position: center center;
+    }
+
+    @media (max-width: 900px) {
+      .location-grid-v3 {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .map-col-v3 {
+        height: 320px;
+      }
+
+      .photos-col-v3 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        height: auto;
+      }
+
+      .photo-card-v3 {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cp-location-final-v3 {
+        padding: 0 16px;
+      }
+
+      .photos-col-v3 {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card-v3 {
+        height: 210px;
+      }
+    }
+  </style>
+
+  <div class="location-header-v3">
+    <h2>{data.title}</h2>
+    <p>
+      📍 <b>{data.addressLabel ?? 'Bombero Salas 1369, Oficina 404'}</b>{data.addressSuffix ? `, ${data.addressSuffix}` : ''}
+    </p>
+  </div>
+
+  <div class="location-grid-v3">
+    <div class="map-col-v3">
+      <iframe
+        src={data.mapEmbedUrl}
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa de ubicación Capacita"
+      ></iframe>
+    </div>
+
+    <div class="photos-col-v3">
+      {photos.map((photo, index) => (
+        <div class="photo-card-v3">
+          <img
+            src={getImageSrc(photo.src)}
+            class={`location-img-v3 ${index === 0 ? 'img-focus-office' : 'img-focus-building'}`}
+            alt={photo.alt}
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

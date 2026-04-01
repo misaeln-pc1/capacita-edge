@@ -1,0 +1,139 @@
+---
+const { data } = Astro.props;
+const items = data.items ?? [];
+
+const getImageSrc = (img) => {
+  if (!img) return '';
+  if (typeof img === 'string') return img;
+  return img.src ?? '';
+};
+---
+
+<section class="cp-clients-wall" id="clientes">
+  <style>
+    .cp-clients-wall {
+      background: #f8fafc;
+      padding: 72px 20px 84px;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .cp-clients-wrap {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .cp-clients-head {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .cp-clients-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: #d4af37;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+    }
+
+    .cp-clients-head h2 {
+      margin: 0;
+      color: #004a99;
+      font-size: clamp(32px, 4.5vw, 52px);
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .cp-clients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      justify-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .cp-clients-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .cp-clients-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+    }
+
+    .cp-client-card {
+      width: 100%;
+      max-width: 190px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 20px 14px 16px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-sizing: border-box;
+    }
+
+    .cp-client-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbd5e1;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+    }
+
+    .cp-client-logo-wrap {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .cp-client-logo {
+      max-width: 100%;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .cp-client-name {
+      margin: 0;
+      color: #004a99;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+  </style>
+
+  <div class="cp-clients-wrap">
+    <div class="cp-clients-head">
+      {data.subtitle && <div class="cp-clients-kicker">{data.subtitle}</div>}
+      <h2>{data.title}</h2>
+    </div>
+
+    <div class="cp-clients-grid">
+      {items.map((item) => (
+        <article class="cp-client-card">
+          <div class="cp-client-logo-wrap">
+            <img
+              src={getImageSrc(item.image)}
+              alt={item.name}
+              class="cp-client-logo"
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="cp-client-name">{item.name}</h3>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

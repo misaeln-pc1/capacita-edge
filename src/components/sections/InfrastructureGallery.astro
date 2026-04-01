@@ -1,0 +1,123 @@
+---
+const { data } = Astro.props;
+const images = data.images ?? [];
+const stats = data.stats ?? [];
+---
+
+<section class="cp-sala-premium" id="infraestructura">
+  <style>
+    .cp-sala-premium {
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+      scroll-margin-top: 100px;
+    }
+    .sala-header { text-align: center; margin-bottom: 50px; }
+    .sala-header h2 { color: #004A99; font-size: 36px; font-weight: 900; }
+    .sala-header p { color: #64748b; font-size: 18px; max-width: 800px; margin: 10px auto; }
+    .bento-gallery {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: repeat(2, 250px);
+      gap: 20px;
+    }
+    .bento-item {
+      position: relative;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .item-main { grid-row: span 2; }
+    .bento-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bento-item:hover img { transform: scale(1.08); }
+    .spec-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 8px 15px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #004A99;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .sala-specs-bar {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      padding: 25px;
+      background: #f8fafc;
+      border-radius: 20px;
+      border: 1px dashed #cbd5e1;
+    }
+    .spec-item { text-align: center; }
+    .spec-item span {
+      display: block;
+      color: #004A99;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .spec-item label {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .bento-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .item-main { grid-row: span 1; height: 300px; }
+      .bento-item { height: 250px; }
+      .sala-specs-bar { flex-direction: column; gap: 20px; }
+    }
+  </style>
+
+  <div class="sala-header">
+    <h2 style="margin:0;">{data.title}</h2>
+    <p>{data.description}</p>
+  </div>
+
+  <div class="bento-gallery">
+    {images[0] && (
+      <div class="bento-item item-main">
+        <img src={images[0].src} alt={images[0].alt} />
+        {images[0].badge && <div class="spec-badge">{images[0].badge}</div>}
+      </div>
+    )}
+
+    {images[1] && (
+      <div class="bento-item">
+        <img src={images[1].src} alt={images[1].alt} />
+        {images[1].badge && <div class="spec-badge">{images[1].badge}</div>}
+      </div>
+    )}
+
+    {images[2] && (
+      <div class="bento-item">
+        <img src={images[2].src} alt={images[2].alt} />
+        {images[2].badge && <div class="spec-badge">{images[2].badge}</div>}
+      </div>
+    )}
+  </div>
+
+  <div class="sala-specs-bar">
+    {stats.map((stat) => (
+      <div class="spec-item">
+        <span>{stat.value}</span>
+        <label>{stat.label}</label>
+      </div>
+    ))}
+  </div>
+</section>

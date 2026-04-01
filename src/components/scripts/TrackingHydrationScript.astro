@@ -1,0 +1,128 @@
+---
+const {
+  mainFormId = 'zoho-native-form',
+  downloadFormId = 'form_dl'
+} = Astro.props;
+---
+
+<script is:inline>
+  const MAIN_FORM_ID = "zoho-native-form";
+  const DOWNLOAD_FORM_ID = "form_dl";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const startTime = Date.now();
+    const urlParams = new URLSearchParams(window.location.search);
+
+    function byId(id) {
+      return document.getElementById(id);
+    }
+
+    function setValue(id, value) {
+      const el = byId(id);
+      if (el) el.value = value ?? "";
+    }
+
+    function hydrateField(paramName, fieldId) {
+      if (urlParams.has(paramName)) {
+        setValue(fieldId, urlParams.get(paramName));
+      }
+    }
+
+    const trackingParams = [
+      "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+      "utm_id", "gclid", "gbraid", "wbraid", "fbclid", "msclkid", "li_fat_id", "ttclid"
+    ];
+
+    trackingParams.forEach((param) => hydrateField(param, param));
+
+    setValue("landing_url", window.location.href.split("?")[0]);
+
+    let refValue = document.referrer;
+    if (!refValue || refValue.trim() === "") {
+      refValue = "https://trafico-directo.capacita.cl";
+    }
+    setValue("referente", refValue);
+    setValue("zf_referrer_name", refValue);
+
+    setValue("user_agent", navigator.userAgent.substring(0, 255));
+    setValue("page_title", document.title);
+    setValue("user_language", navigator.language);
+    setValue("timezone", Intl.DateTimeFormat().resolvedOptions().timeZone || "Desconocida");
+
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    setValue("dispositivo", isMobile ? "Mobile" : "Desktop");
+
+    fetch("https://ipapi.co/json/")
+      .then((response) => response.json())
+      .then((data) => {
+        setValue("ciudad_user", data.city || "Desconocida");
+        setValue("pais_user", data.country_name || "Desconocido");
+      })
+      .catch(() => {
+        console.log("Geolocalización silenciosa falló o fue bloqueada.");
+      });
+
+    const now = new Date();
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const day = String(now.getDate()).padStart(2, "0");
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const meridiem = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const strHours = String(hours).padStart(2, "0");
+
+    setValue("capture_date", `${day}-${month}-${year}`);
+    setValue("capture_hours", strHours);
+    setValue("capture_minutes", minutes);
+    setValue("capture_meridiem", meridiem);
+
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    const gaCookie = getCookie("_ga");
+    if (gaCookie) {
+      const gaParts = gaCookie.split(".");
+      if (gaParts.length >= 4) {
+        setValue("client_id", gaParts[2] + "." + gaParts[3]);
+      }
+    }
+
+    const sessionMatch = document.cookie.match(/_ga_[A-Z0-9]+=GS\d\.\d\.([^.]+)/);
+    if (sessionMatch && sessionMatch[1]) {
+      setValue("session_id", sessionMatch[1]);
+    }
+
+    if (byId("lead_event_id")) {
+      setValue("lead_event_id", `lead_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`);
+    }
+
+    const mainForm = document.getElementById(MAIN_FORM_ID);
+    if (mainForm && byId("tiempo_pagina")) {
+      mainForm.addEventListener("submit", function () {
+        const timeSpentSeconds = Math.floor((Date.now() - startTime) / 1000);
+        setValue("tiempo_pagina", String(timeSpentSeconds));
+      });
+    }
+
+    const formDownload = document.getElementById(DOWNLOAD_FORM_ID);
+    if (formDownload) {
+      ["utm_source", "utm_medium", "utm_campaign", "gclid"].forEach((param) => {
+        if (urlParams.has(param) && byId("dl_" + param)) {
+          setValue("dl_" + param, urlParams.get(param));
+        }
+      });
+
+      formDownload.addEventListener("submit", function () {
+        const timeSpentDl = Math.floor((Date.now() - startTime) / 1000);
+        setValue("dl_tiempo_pagina", String(timeSpentDl));
+      });
+    }
+  });
+</script>

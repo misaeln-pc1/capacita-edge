@@ -1,0 +1,46 @@
+---
+import HeroLeadForm from '../components/sections/HeroLeadForm.astro';
+import ScheduleSelector from '../components/sections/ScheduleSelector.astro';
+import InfrastructureGallery from '../components/sections/InfrastructureGallery.astro';
+import BenefitsGrid from '../components/sections/BenefitsGrid.astro';
+import SyllabusSection from '../components/sections/SyllabusSection.astro';
+import PaymentOptions from '../components/sections/PaymentOptions.astro';
+import TestimonialsSection from '../components/sections/TestimonialsSection.astro';
+import ClientsWall from '../components/sections/ClientsWall.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import LocationSection from '../components/sections/LocationSection.astro';
+import QualitySeals from '../components/sections/QualitySeals.astro';
+import TrackingHydrationScript from '../components/scripts/TrackingHydrationScript.astro';
+import CourseQuickFacts from '../components/sections/CourseQuickFacts.astro';
+import CourseOutcomes from '../components/sections/CourseOutcomes.astro';
+import CourseFitSection from '../components/sections/CourseFitSection.astro';
+
+const { page, config } = Astro.props;
+---
+
+<HeroLeadForm hero={page.hero} form={page.mainForm} />
+<CourseQuickFacts data={page.quickFacts} />
+<CourseOutcomes data={page.outcomes} />
+<CourseFitSection data={page.courseFit} />
+
+<ScheduleSelector
+  items={config.offerings}
+  landingKey={config.landing_key}
+  courseTitle={page.mainForm.cursoInteresado}
+  modality={page.mainForm.tipoModalidad}
+/>
+
+<InfrastructureGallery data={page.infrastructure} />
+<BenefitsGrid data={page.benefits} />
+<SyllabusSection data={page.syllabus} downloadForm={page.downloadForm} />
+<PaymentOptions data={page.paymentOptions} />
+<TestimonialsSection data={page.testimonials} />
+<ClientsWall data={page.clients} />
+<FaqSection data={page.faqs} />
+<LocationSection data={page.location} />
+<QualitySeals data={page.seals} />
+
+<TrackingHydrationScript
+  mainFormId="zoho-native-form"
+  downloadFormId="form_dl"
+/>

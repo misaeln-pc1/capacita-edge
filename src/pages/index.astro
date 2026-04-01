@@ -1,17 +1,20 @@
 ---
-
+import LandingLayout from '../layouts/LandingLayout.astro';
+import CourseLandingTemplate from '../templates/CourseLandingTemplate.astro';
+import { excelPresencialPage, excelPresencialSchema } from '../data/excel-presencial';
+import { excelPresencialConfig } from '../data/excel-presencial-config';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<LandingLayout
+  title={excelPresencialPage.seo.title}
+  description={excelPresencialPage.seo.description}
+  canonical={excelPresencialPage.seo.canonical}
+  gtmId={excelPresencialPage.gtmId}
+  productId={excelPresencialPage.productId}
+  schema={excelPresencialSchema}
+>
+  <CourseLandingTemplate
+    page={excelPresencialPage}
+    config={excelPresencialConfig}
+  />
+</LandingLayout>

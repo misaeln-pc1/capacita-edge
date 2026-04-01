@@ -1,0 +1,31 @@
+---
+const {
+  gtmId = 'GTM-52J4PSR',
+  productId = '',
+  platform = 'astro',
+  deploymentMode = 'local_dev'
+} = Astro.props;
+---
+
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'page_init',
+    product_id: {JSON.stringify(productId)},
+    platform: {JSON.stringify(platform)},
+    deployment_mode: {JSON.stringify(deploymentMode)}
+  });
+</script>
+
+<script is:inline>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),
+        dl=l!='dataLayer' ? '&l='+l : '';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',{JSON.stringify(gtmId)});
+</script>

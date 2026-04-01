@@ -1,0 +1,256 @@
+---
+const {
+  items = [],
+  landingKey = '',
+  courseTitle = '',
+  modality = ''
+} = Astro.props;
+---
+
+<section class="cp-selector-horarios-v2" id="horarios">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .cp-selector-horarios-v2 {
+      width: 100%;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .schedule-grid-v2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card-convocatoria {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 25px;
+      padding: 45px 35px;
+      text-align: center;
+      transition: all 0.35s ease;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 74, 153, 0.03);
+    }
+
+    .card-convocatoria.is-selected {
+      border: 2px solid #004A99;
+      background: #f8fbff;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 74, 153, 0.10);
+    }
+
+    .card-tag {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffca28;
+      color: #000;
+      padding: 5px 20px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .card-convocatoria.is-selected .card-tag {
+      background: #004A99;
+      color: #fff;
+    }
+
+    .card-convocatoria h4 {
+      color: #004A99;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .card-convocatoria .time-info {
+      color: #475569;
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .price-box {
+      margin: 25px 0;
+    }
+
+    .price-box .amount {
+      font-size: 36px;
+      font-weight: 900;
+      color: #1e293b;
+    }
+
+    .installments-box {
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .start-date {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 8px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .seats-box {
+      color: #475569;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .btn-reserve-anchor {
+      display: block;
+      width: 100%;
+      padding: 15px 0;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      transition: 0.3s;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+    }
+
+    .btn-orange-v2 {
+      background: #ff9800;
+      box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    }
+
+    .btn-blue-v2 {
+      background: #004A99;
+    }
+
+    .btn-reserve-anchor:hover {
+      opacity: 0.92;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .schedule-grid-v2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div style="text-align: center; margin-bottom: 50px;">
+    <h2 style="color: #004A99; font-size: 36px; font-weight: 900;">Próximas Fechas de Cursos Presenciales</h2>
+    <p style="color: #64748b; font-size: 18px;">Cursos 100% prácticos con <strong>Diploma Certificado</strong></p>
+  </div>
+
+  <div class="schedule-grid-v2">
+    {items.map((item, index) => {
+      const landingCode = `${landingKey}__${item.slot_key}__${item.start}`;
+      const tagText = index === 0 ? 'Próximo Inicio' : 'Cupos Disponibles';
+
+      return (
+        <div
+          class={`card-convocatoria ${index === 0 ? 'is-selected' : ''}`}
+          data-landing-code={landingCode}
+          data-landing-key={landingKey}
+          data-course-title={courseTitle}
+          data-modality={modality}
+          data-slot-key={item.slot_key}
+          data-start={item.start}
+        >
+          <div class="card-tag">{tagText}</div>
+          <h4>{item.slot_label}</h4>
+
+          <div class="time-info">
+            {item.days}<br />{item.time}
+          </div>
+
+          <div class="price-box">
+            <span class="amount">{item.price_label}</span>
+            {item.installments_label && (
+              <div class="installments-box">{item.installments_label}</div>
+            )}
+          </div>
+
+          <div class="start-date">📅 Inicia: {item.start_label}</div>
+          <div class="seats-box">{item.seats} cupos disponibles</div>
+
+          <a
+            href="#registro"
+            class={`btn-reserve-anchor ${index === 0 ? 'btn-orange-v2' : 'btn-blue-v2'}`}
+          >
+            Seleccionar horario
+          </a>
+        </div>
+      );
+    })}
+  </div>
+
+  <script is:inline>
+    (() => {
+      const section = document.querySelector('#horarios');
+      if (!section) return;
+
+      const cards = Array.from(section.querySelectorAll('.card-convocatoria'));
+
+      const applyOfferToForms = (card) => {
+        const landingCode = card.dataset.landingCode || '';
+        const landingKey = card.dataset.landingKey || '';
+        const courseTitle = card.dataset.courseTitle || '';
+        const modality = card.dataset.modality || '';
+
+        const mainLandingFuente = document.getElementById('landing_fuente');
+        const mainCursoInteresado = document.getElementById('curso_interesado');
+        const mainTipoModalidad = document.getElementById('tipo_modalidad');
+        const mainLandingCode = document.getElementById('landing_code');
+
+        if (mainLandingFuente) mainLandingFuente.value = landingKey;
+        if (mainCursoInteresado) mainCursoInteresado.value = courseTitle;
+        if (mainTipoModalidad) mainTipoModalidad.value = modality;
+        if (mainLandingCode) mainLandingCode.value = landingCode;
+
+        const dlLandingCode = document.getElementById('dl_landing_code');
+        if (dlLandingCode) dlLandingCode.value = landingCode;
+      };
+
+      const selectCard = (card) => {
+        cards.forEach((item) => item.classList.remove('is-selected'));
+        card.classList.add('is-selected');
+        applyOfferToForms(card);
+      };
+
+      cards.forEach((card) => {
+        const btn = card.querySelector('.btn-reserve-anchor');
+
+        card.addEventListener('click', (event) => {
+          const isAnchor = event.target.closest('.btn-reserve-anchor');
+          selectCard(card);
+
+          if (!isAnchor) {
+            window.location.hash = 'registro';
+          }
+        });
+
+        if (btn) {
+          btn.addEventListener('click', () => {
+            selectCard(card);
+          });
+        }
+      });
+
+      if (cards.length > 0) {
+        selectCard(cards[0]);
+      }
+    })();
+  </script>
+</section>
