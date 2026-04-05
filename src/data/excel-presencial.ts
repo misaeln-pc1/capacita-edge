@@ -289,14 +289,14 @@ syllabus: {
     }
   ]
 },
-
-  downloadForm: {
-    action: 'https://forms.zohopublic.com/capacita736/form/DescargarTemario/formperma/QCbY7vO5Oj6T_CTYsp7yn4Fm6I9I-fD7KPPO2G9yV-I/htmlRecords/submit',
-    landingCode: 'DESCARGA_TEMARIO_EXCEL',
-    title: '¿Necesitas los temas detallados?',
-    description: 'Descarga el temario completo en PDF para revisarlo con calma.',
-    buttonText: 'Descargar PDF'
-  },
+downloadForm: {
+  action: '/api/forms/download',
+  turnstileSiteKey: '0x4AAAAAACyxbmmxJx_EtyEr',
+  landingCode: 'DESCARGA_TEMARIO_EXCEL',
+  title: '¿Necesitas los temas detallados?',
+  description: 'Descarga el temario completo en PDF para revisarlo con calma.',
+  buttonText: 'Descargar PDF'
+},
 
  paymentOptions: {
   title: 'Alternativas de pago',

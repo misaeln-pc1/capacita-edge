@@ -1,5 +1,5 @@
 ---
-const { downloadForm = {} } = Astro.props;
+const { form } = Astro.props;
 ---
 
 <style>
@@ -74,56 +74,52 @@ const { downloadForm = {} } = Astro.props;
 </style>
 
 <form
-  action={downloadForm.action ?? ''}
-  name="form"
+  action={form.action}
+  name="form_dl"
   id="form_dl"
   method="POST"
   accept-charset="UTF-8"
   enctype="multipart/form-data"
   class="zoho-inline-form"
 >
-  <input type="hidden" name="zf_referrer_name" value="" />
-  <input type="hidden" name="zf_redirect_url" value="" />
-  <input type="hidden" name="zc_gad" value="" />
-
-  <div class="hp-wrap" aria-hidden="true">
-    <label for="dl_hp">No llenes esto si eres humano</label>
-    <input
-      id="dl_hp"
-      type="text"
-      name="SingleLine5"
-      value=""
-      tabindex="-1"
-      autocomplete="off"
-      placeholder="No llenes esto si eres humano"
-    />
-  </div>
-
-  <input type="hidden" name="SingleLine7" id="dl_utm_source" value="" />
-  <input type="hidden" name="SingleLine9" id="dl_utm_medium" value="" />
-  <input type="hidden" name="SingleLine8" id="dl_utm_campaign" value="" />
-  <input type="hidden" name="SingleLine10" id="dl_gclid" value="" />
-  <input type="hidden" name="SingleLine6" id="dl_tiempo_pagina" value="" />
-  <input
-    type="hidden"
-    name="SingleLine11"
-    id="dl_landing_code"
-    value={downloadForm.landingCode ?? ''}
-  />
+  <input type="hidden" name="zf_referrer_name" id="dl_zf_referrer_name" value="" />
+  <input type="hidden" name="zf_redirect_url" id="dl_zf_redirect_url" value="" />
+  <input type="hidden" name="zc_gad" id="dl_zc_gad" value="" />
 
   <input
-    id="dl_email"
-    type="text"
+    class="dl-input"
+    type="email"
     maxlength="255"
     name="Email"
     value=""
-    placeholder="Tu correo..."
-    class="dl-input"
-    autocomplete="email"
+    placeholder="tu@correo.cl"
     required
   />
 
-  <button type="submit" class="dl-btn">
-    {downloadForm.buttonText ?? 'Descargar PDF'}
-  </button>
+  <div class="hp-wrap" aria-hidden="true">
+    <input
+      type="text"
+      name="hp_field"
+      tabindex="-1"
+      autocomplete="off"
+    />
+  </div>
+
+  <div
+    class="cf-turnstile"
+    data-sitekey={form.turnstileSiteKey}
+    data-theme="light"
+    data-appearance="interaction-only"
+    style="margin-top:16px;margin-bottom:12px;"
+  ></div>
+
+  <button class="dl-btn" type="submit">{form.buttonText}</button>
 </form>
+
+<script>
+  const dlRef = document.getElementById('dl_zf_referrer_name');
+  const dlRedirect = document.getElementById('dl_zf_redirect_url');
+
+  if (dlRef) dlRef.value = window.location.href;
+  if (dlRedirect) dlRedirect.value = window.location.href;
+</script>
