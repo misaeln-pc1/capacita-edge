@@ -88,7 +88,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const returnUrl = normalizeUrl(formData.get('zf_referrer_name'), FALLBACK_URL);
   const redirectUrl = new URL(returnUrl);
   redirectUrl.searchParams.set('download', 'ok');
-  redirectUrl.hash = 'programa';
+  redirectUrl.hash = 'temario';
 
   return Response.redirect(redirectUrl.toString(), 303);
 };
