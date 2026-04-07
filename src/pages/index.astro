@@ -3,6 +3,21 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 import CourseLandingTemplate from '../templates/CourseLandingTemplate.astro';
 import { excelPresencialPage, excelPresencialSchema } from '../data/excel-presencial';
 import { excelPresencialConfig } from '../data/excel-presencial-config';
+
+let runtimeConfig = excelPresencialConfig;
+
+try {
+  const configUrl = new URL('/api/landing-config/excel-presencial', Astro.url);
+  const response = await fetch(configUrl);
+
+  if (response.ok) {
+    runtimeConfig = await response.json();
+  } else {
+    console.warn('No se pudo cargar config remota. Se usa fallback local.', response.status);
+  }
+} catch (error) {
+  console.warn('Error cargando config remota. Se usa fallback local.', error);
+}
 ---
 
 <LandingLayout
@@ -15,6 +30,6 @@ import { excelPresencialConfig } from '../data/excel-presencial-config';
 >
   <CourseLandingTemplate
     page={excelPresencialPage}
-    config={excelPresencialConfig}
+    config={runtimeConfig}
   />
 </LandingLayout>

@@ -12,7 +12,7 @@ export const excelPresencialConfig = {
     {
       slot_key: 'pm-lun-mie',
       slot_label: 'Jornada Tarde',
-      days: 'Lunes y Miércoles',
+      days: 'Lunes y Miercoles',
       time: '19:30 a 22:10 hrs',
       start: '2026-04-06',
       start_label: 'Lunes 6 de abril',
