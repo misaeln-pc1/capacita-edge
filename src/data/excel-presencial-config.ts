@@ -1,5 +1,5 @@
 export const excelPresencialConfig = {
-  version: 1,
+  schema_version: 1,
   landing_key: 'excel-presencial',
   published_at: '2026-03-31T20:18:48',
   identity: {
