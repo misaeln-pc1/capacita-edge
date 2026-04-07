@@ -30,6 +30,13 @@ try {
   productId={excelPresencialPage.productId}
   schema={excelPresencialSchema}
 >
+<div style="padding:8px 12px;background:#fff3cd;color:#333;font-size:14px;border:1px solid #ffe69c;margin:12px 0;">
+  debug configSource: {configSource}
+  | offerings: {runtimeConfig.offerings?.length ?? 0}
+  | published_at: {runtimeConfig.published_at}
+  | error: {configError}
+</div>
+
   <CourseLandingTemplate
     page={excelPresencialPage}
     config={runtimeConfig}
