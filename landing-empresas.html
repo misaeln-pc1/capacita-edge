@@ -1,25 +1,32 @@
-      <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
 <head>
+    <!-- ========================================= -->
+    <!-- BLOQUE 1: HEAD / META / CONFIG / ESTILOS -->
+    <!-- ========================================= -->
     <link rel="canonical" href="https://capacita.cl/cursos-para-empresas" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos para Empresas | Programas de Capacitación Empresarial</title>
-    <!-- Tailwind CSS (CDN para prototipado rápido y exportación limpia a Astro) -->
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         primary: '#1c4587',
                         secondary: '#eef4fb',
-                        accent: '#0ea5e9',
-                        dark: '#111317',
-                        darkCard: '#1c1f26',
+                        accent: '#1c4587',
+                        dark: '#0f254a',
+                        darkCard: '#16325c',
                     },
                     animation: {
                         marquee: 'marquee 35s linear infinite',
@@ -34,22 +41,27 @@
             }
         }
     </script>
+
     <style>
         .gradient-text {
-            background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #1c4587 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .big-test-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .big-test-card:hover {
             transform: translateY(-8px) scale(1.02);
         }
+
         .hero-image-mask-left {
             mask-image: linear-gradient(to right, transparent, black 20%);
             -webkit-mask-image: linear-gradient(to right, transparent, black 20%);
         }
+
         .hp-field {
             position: absolute !important;
             left: -9999px !important;
@@ -61,892 +73,874 @@
         }
     </style>
 </head>
-<body class="font-sans text-slate-600 antialiased bg-white selection:bg-accent selection:text-white">
 
-    <!-- HERO SECTION -->
-    <section class="relative bg-dark pt-16 pb-20 lg:pt-24 lg:pb-24 overflow-hidden min-h-[90vh] flex items-center">
-        <!-- Imagen de fondo/derecha -->
-        <div class="absolute inset-0 lg:left-auto lg:right-0 lg:w-1/2 z-0 pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1600" alt="Profesional corporativa" class="w-full h-full object-cover object-center opacity-20 lg:opacity-100 hero-image-mask-left">
-            <div class="absolute inset-0 bg-dark/80 lg:hidden"></div>
-        </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+<!-- ========================================= -->
+<!-- BLOQUE 2: HERO SECTION -->
+<!-- ========================================= -->
+<section class="relative bg-dark pt-16 pb-20 lg:pt-24 lg:pb-24 overflow-hidden min-h-[90vh] flex items-center">
+    <!-- Imagen de fondo/derecha -->
+    <div class="absolute inset-0 lg:left-auto lg:right-0 lg:w-1/2 z-0 pointer-events-none">
+        <img src="https://capacita.cl/wp-content/uploads/2026/04/ejecutiva.webp" alt="Ejecutiva corporativa" class="w-full h-full object-cover object-center opacity-20 lg:opacity-100 hero-image-mask-left">
+        <div class="absolute inset-0 bg-dark/70 lg:hidden"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Columna Izquierda -->
+            <div class="col-span-1 lg:col-span-6 lg:pr-12">
+                <h1 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight mb-6 leading-[1.1]">
+                    Equipos mejor preparados para <span class="gradient-text block mt-2">hacer crecer tu empresa.</span>
+                </h1>
                 
-                <!-- Columna Izquierda: Copywriting (MODIFICADO SEGÚN INSTRUCCIONES) -->
-                <div class="col-span-1 lg:col-span-6 lg:pr-12">
-                    <h1 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white tracking-tight mb-6 leading-[1.1]">
-                        Equipos mejor preparados para <span class="gradient-text block mt-2">hacer crecer tu empresa.</span>
-                    </h1>
-                    
-                    <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
-                        Capacita a tus colaboradores en habilidades clave con programas prácticos, claros y aplicables a la realidad de tu negocio.
+                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
+                    Capacita a tus colaboradores en habilidades clave con programas prácticos, claros y aplicables a la realidad de tu negocio.
+                </p>
+
+                <!-- Formulario Lead Gen B2B -->
+                <div id="registro" class="bg-darkCard/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md shadow-2xl">
+                    <p class="text-white font-medium mb-5 text-sm md:text-base">
+                        Diseñemos el plan formativo que impulsará a tu organización
                     </p>
 
-                    <!-- Formulario Lead Gen B2B -->
-                    <div id="registro" class="bg-darkCard/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md shadow-2xl">
-                        <p class="text-white font-medium mb-5 text-sm md:text-base">
-                            Diseñemos el plan formativo que impulsará a tu organización
-                        </p>
+                    <div id="lead-success" class="hidden mb-4 rounded-lg border border-blue-400/30 bg-blue-500/10 px-4 py-3 text-sm text-blue-100">
+                        Gracias. Recibimos tu solicitud y te contactaremos pronto.
+                    </div>
 
-                        <div id="lead-success" class="hidden mb-4 rounded-lg border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
-                            Gracias. Recibimos tu solicitud y te contactaremos pronto.
+                    <form
+                        action="/api/forms/lead"
+                        method="POST"
+                        accept-charset="UTF-8"
+                        enctype="multipart/form-data"
+                        id="zoho-native-form"
+                        name="form"
+                        class="space-y-3"
+                    >
+                        <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
+                        <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
+                        <input type="hidden" name="zc_gad" id="zc_gad" value="">
+
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="hp_field">No completar</label>
+                            <input type="text" name="hp_field" id="hp_field" tabindex="-1" autocomplete="off">
                         </div>
 
-                        <form
-                            action="/api/forms/lead"
-                            method="POST"
-                            accept-charset="UTF-8"
-                            enctype="multipart/form-data"
-                            id="zoho-native-form"
-                            name="form"
-                            class="space-y-3"
+                        <input type="hidden" name="SingleLine4" value="Web Research">
+                        <input type="hidden" name="SingleLine3" value="Landing Empresas B2B">
+                        <input type="hidden" name="SingleLine2" value="Capacitación Empresarial">
+                        <input type="hidden" name="SingleLine1" value="Corporativo">
+                        <input type="hidden" name="SingleLine15" value="CAPACITA_B2B_EMPRESAS_EDGE">
+
+                        <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
+                        <input type="hidden" name="SingleLine27" id="pais_user" value="">
+                        <input type="hidden" name="SingleLine5" id="gclid" value="">
+                        <input type="hidden" name="SingleLine6" id="gbraid" value="">
+                        <input type="hidden" name="SingleLine12" id="wbraid" value="">
+                        <input type="hidden" name="SingleLine7" id="msclkid" value="">
+                        <input type="hidden" name="SingleLine9" id="li_fat_id" value="">
+                        <input type="hidden" name="SingleLine8" id="fbclid" value="">
+                        <input type="hidden" name="SingleLine10" id="ttclid" value="">
+                        <input type="hidden" name="SingleLine11" id="utm_id" value="">
+                        <input type="hidden" name="SingleLine13" id="utm_campaign" value="">
+                        <input type="hidden" name="SingleLine14" id="utm_source" value="">
+                        <input type="hidden" name="SingleLine18" id="utm_medium" value="">
+                        <input type="hidden" name="SingleLine17" id="utm_term" value="">
+                        <input type="hidden" name="SingleLine16" id="utm_content" value="">
+                        <input type="hidden" name="Website" id="landing_url" value="">
+                        <input type="hidden" name="Website1" id="referente" value="">
+                        <input type="hidden" name="SingleLine19" id="dispositivo" value="">
+                        <input type="hidden" name="SingleLine20" id="user_agent" value="">
+                        <input type="hidden" name="SingleLine21" id="page_title" value="">
+                        <input type="hidden" name="SingleLine22" id="user_language" value="">
+                        <input type="hidden" name="SingleLine28" id="timezone" value="">
+                        <input type="hidden" name="SingleLine29" id="tiempo_pagina" value="">
+
+                        <input
+                            id="lead_email"
+                            type="email"
+                            name="Email"
+                            placeholder="Correo empresarial"
+                            class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-primary outline-none"
+                            required
                         >
-                            <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
-                            <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
-                            <input type="hidden" name="zc_gad" id="zc_gad" value="">
 
-                            <div class="hp-field" aria-hidden="true">
-                                <label for="hp_field">No completar</label>
-                                <input type="text" name="hp_field" id="hp_field" tabindex="-1" autocomplete="off">
+                        <input
+                            id="lead_name"
+                            type="text"
+                            name="SingleLine"
+                            placeholder="Tu nombre"
+                            class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-primary outline-none"
+                            required
+                        >
+
+
+                        <div class="flex gap-2">
+                            <div class="relative w-1/3">
+                                <select id="phone_prefix" class="w-full px-3 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-primary outline-none appearance-none">
+                                    <option value="+56" selected>🇨🇱 +56</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                </select>
                             </div>
-
-                            <input type="hidden" name="SingleLine4" value="Web Research">
-                            <input type="hidden" name="SingleLine3" value="Landing Empresas B2B">
-                            <input type="hidden" name="SingleLine2" value="Capacitación Empresarial">
-                            <input type="hidden" name="SingleLine1" value="Corporativo">
-                            <input type="hidden" name="SingleLine15" value="CAPACITA_B2B_EMPRESAS_EDGE">
-
-                            <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
-                            <input type="hidden" name="SingleLine27" id="pais_user" value="">
-                            <input type="hidden" name="SingleLine5" id="gclid" value="">
-                            <input type="hidden" name="SingleLine6" id="gbraid" value="">
-                            <input type="hidden" name="SingleLine12" id="wbraid" value="">
-                            <input type="hidden" name="SingleLine7" id="msclkid" value="">
-                            <input type="hidden" name="SingleLine9" id="li_fat_id" value="">
-                            <input type="hidden" name="SingleLine8" id="fbclid" value="">
-                            <input type="hidden" name="SingleLine10" id="ttclid" value="">
-                            <input type="hidden" name="SingleLine11" id="utm_id" value="">
-                            <input type="hidden" name="SingleLine13" id="utm_campaign" value="">
-                            <input type="hidden" name="SingleLine14" id="utm_source" value="">
-                            <input type="hidden" name="SingleLine18" id="utm_medium" value="">
-                            <input type="hidden" name="SingleLine17" id="utm_term" value="">
-                            <input type="hidden" name="SingleLine16" id="utm_content" value="">
-                            <input type="hidden" name="Website" id="landing_url" value="">
-                            <input type="hidden" name="Website1" id="referente" value="">
-                            <input type="hidden" name="SingleLine19" id="dispositivo" value="">
-                            <input type="hidden" name="SingleLine20" id="user_agent" value="">
-                            <input type="hidden" name="SingleLine21" id="page_title" value="">
-                            <input type="hidden" name="SingleLine22" id="user_language" value="">
-                            <input type="hidden" name="SingleLine28" id="timezone" value="">
-                            <input type="hidden" name="SingleLine29" id="tiempo_pagina" value="">
-
                             <input
-                                id="lead_email"
-                                type="email"
-                                name="Email"
-                                placeholder="Correo empresarial"
-                                class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none"
+                                id="lead_phone_local"
+                                type="tel"
+                                placeholder="Tu número de teléfono"
+                                class="w-2/3 px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-primary outline-none"
                                 required
                             >
+                        </div>
 
-                            <input
-                                id="lead_name"
-                                type="text"
-                                name="SingleLine"
-                                placeholder="Tu nombre"
-                                class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none"
-                                required
-                            >
+                        <input type="hidden" name="PhoneNumber_countrycode" id="lead_phone" value="">
+                        <textarea
+                           name="MultiLine"
+                           id="lead_notes"
+                           rows="4"
+                           placeholder="Observaciones, dudas o comentarios"
+    class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-primary outline-none resize-y"
+></textarea>
 
-                            <input
-                                id="company_name"
-                                type="text"
-                                placeholder="Nombre de tu empresa"
-                                class="w-full px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none"
-                                required
-                            >
+                        <div
+                            class="cf-turnstile"
+                            data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
+                            data-theme="light"
+                            data-appearance="interaction-only"
+                        ></div>
 
-                            <select
-                                id="company_size"
-                                class="w-full px-4 py-3 rounded-lg bg-white text-slate-500 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none appearance-none"
-                                required
-                            >
-                                <option value="" disabled selected>Total empleados en tu empresa</option>
-                                <option>1 - 10 empleados</option>
-                                <option>11 - 50 empleados</option>
-                                <option>51 - 200 empleados</option>
-                                <option>Más de 200 empleados</option>
-                            </select>
+                        <button type="submit" class="w-full mt-2 bg-primary text-white font-bold py-3.5 rounded-lg text-sm transition-colors hover:bg-blue-700">
+                            Solicita tu propuesta
+                        </button>
 
-                            <div class="flex gap-2">
-                                <div class="relative w-1/3">
-                                    <select id="phone_prefix" class="w-full px-3 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none appearance-none">
-                                        <option value="+56" selected>🇨🇱 +56</option>
-                                        <option value="+52">🇲🇽 +52</option>
-                                        <option value="+51">🇵🇪 +51</option>
-                                        <option value="+57">🇨🇴 +57</option>
-                                    </select>
-                                </div>
-                                <input
-                                    id="lead_phone_local"
-                                    type="tel"
-                                    placeholder="Tu número de teléfono"
-                                    class="w-2/3 px-4 py-3 rounded-lg bg-white text-slate-800 text-sm border-none focus:ring-2 focus:ring-green-500 outline-none"
-                                    required
-                                >
-                            </div>
-
-                            <input type="hidden" name="PhoneNumber_countrycode" id="lead_phone" value="">
-                            <textarea name="MultiLine" id="lead_notes" class="hidden"></textarea>
-
-                            <div
-                                class="cf-turnstile"
-                                data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
-                                data-theme="light"
-                                data-appearance="interaction-only"
-                            ></div>
-
-                            <button type="submit" class="w-full mt-2 bg-emerald-500 text-white font-bold py-3.5 rounded-lg text-sm transition-colors hover:bg-emerald-400">
-                                Solicita tu propuesta
-                            </button>
-
-                            <p class="text-xs text-slate-400 leading-relaxed">
-                                Al enviar, tus datos se usan solo para contactarte sobre capacitación empresarial.
-                            </p>
-                        </form>
-                    </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Al enviar, tus datos se usan solo para contactarte sobre capacitación empresarial.
+                        </p>
+                    </form>
                 </div>
-                
-                <div class="hidden lg:block lg:col-span-6 h-full min-h-[600px]"></div>
+            </div>
+            
+            <div class="hidden lg:block lg:col-span-6 h-full min-h-[600px]"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- BLOQUE 4: SOCIAL PROOF / BARRA DE CLIENTES -->
+<!-- ========================================= -->
+<section class="py-12 border-b border-slate-200 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h3 class="text-center text-sm font-bold text-slate-400 uppercase tracking-widest">
+            Empresas e instituciones que confían en Capacita
+        </h3>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+        <div class="flex animate-marquee whitespace-nowrap">
+            <div class="flex items-center gap-16 mx-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Codelco-logo.webp" alt="Codelco" class="h-12 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Telefonica.webp" alt="Telefónica" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-siemens-logo.webp" alt="Siemens" class="h-8 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-unicef-Logo.webp" alt="Unicef" class="h-12 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Utalca-logo.webp" alt="Universidad de Talca" class="h-14 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-vialcorp-logo.webp" alt="Vialcorp" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-NovoFarma.webp" alt="NovoFarma" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Lo-barnechea.webp" alt="Lo Barnechea" class="h-12 object-contain">
+            </div>
+
+            <div class="flex items-center gap-16 mx-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500" aria-hidden="true">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Codelco-logo.webp" alt="Codelco" class="h-12 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Telefonica.webp" alt="Telefónica" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-siemens-logo.webp" alt="Siemens" class="h-8 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-unicef-Logo.webp" alt="Unicef" class="h-12 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Utalca-logo.webp" alt="Universidad de Talca" class="h-14 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-vialcorp-logo.webp" alt="Vialcorp" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-NovoFarma.webp" alt="NovoFarma" class="h-10 object-contain">
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Lo-barnechea.webp" alt="Lo Barnechea" class="h-12 object-contain">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SOCIAL PROOF (Carrusel Infinito) -->
-    <section class="py-12 border-b border-slate-200 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-            <h3 class="text-center text-sm font-bold text-slate-400 uppercase tracking-widest">
-                Empresas e instituciones que confían en Capacita
-            </h3>
+
+<!-- ========================================= -->
+<!-- BLOQUE 4: MODALIDADES DE CAPACITACIÓN -->
+<!-- ========================================= -->
+<section id="modalidades" class="relative overflow-hidden bg-dark py-16 lg:py-20">
+  <div class="absolute top-0 left-0 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-12 max-w-4xl text-center">
+      <span class="mb-3 block text-sm font-bold uppercase tracking-[0.18em] text-blue-300">
+        Modalidades para empresas
+      </span>
+      <h2 class="mb-5 text-3xl font-bold leading-tight text-white md:text-4xl">
+        Capacitación presencial y online según la realidad de tu equipo
+      </h2>
+      <p class="mx-auto max-w-3xl text-lg leading-relaxed text-slate-300">
+        Ofrecemos capacitación presencial en Santiago y en regiones, además de formatos online en vivo, e-learning asincrónico e híbrido, según la operación y cobertura que necesite tu empresa.
+      </p>
+    </div>
+
+    <div class="mb-8 flex flex-wrap items-center justify-center gap-3">
+      <span class="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200">Presencial Santiago</span>
+      <span class="inline-flex items-center rounded-full border border-slate-600 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">Presencial regiones</span>
+      <span class="inline-flex items-center rounded-full border border-slate-600 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">Online en vivo</span>
+      <span class="inline-flex items-center rounded-full border border-slate-600 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">E-learning asincrónico</span>
+      <span class="inline-flex items-center rounded-full border border-slate-600 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">Modalidad híbrida</span>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <!-- Card destacada -->
+      <div class="lg:col-span-5 rounded-[28px] border border-blue-400/30 bg-[#10294f] p-8 shadow-2xl shadow-black/20">
+        <div class="mb-6 flex items-start justify-between gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-200">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 7h18M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="inline-flex items-center rounded-full border border-blue-300/20 bg-blue-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-200">
+            Más solicitado
+          </span>
         </div>
-        <div class="relative w-full overflow-hidden">
-            <div class="flex animate-marquee whitespace-nowrap">
-                <div class="flex items-center gap-16 mx-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Codelco-logo.webp" alt="Codelco" class="h-12 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Telefonica.webp" alt="Telefónica" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-siemens-logo.webp" alt="Siemens" class="h-8 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-unicef-Logo.webp" alt="Unicef" class="h-12 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Utalca-logo.webp" alt="Universidad de Talca" class="h-14 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-vialcorp-logo.webp" alt="Vialcorp" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-NovoFarma.webp" alt="NovoFarma" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Lo-barnechea.webp" alt="Lo Barnechea" class="h-12 object-contain">
-                </div>
-                <div class="flex items-center gap-16 mx-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500" aria-hidden="true">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Codelco-logo.webp" alt="Codelco" class="h-12 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Telefonica.webp" alt="Telefónica" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-siemens-logo.webp" alt="Siemens" class="h-8 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-unicef-Logo.webp" alt="Unicef" class="h-12 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Utalca-logo.webp" alt="Universidad de Talca" class="h-14 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-vialcorp-logo.webp" alt="Vialcorp" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-NovoFarma.webp" alt="NovoFarma" class="h-10 object-contain">
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/Cliente-Logo-Lo-barnechea.webp" alt="Lo Barnechea" class="h-12 object-contain">
-                </div>
-            </div>
+
+        <h3 class="mb-3 text-2xl font-bold text-white">Presencial en Santiago</h3>
+        <p class="mb-6 text-base leading-7 text-slate-200">
+          Formación práctica en sala para empresas que buscan participación activa, acompañamiento directo y aplicación inmediata al trabajo real.
+        </p>
+
+        <ul class="mb-8 space-y-3 text-sm leading-6 text-slate-200">
+          <li>• Ideal para equipos administrativos, operativos y jefaturas</li>
+          <li>• Mayor interacción con el relator y ejercicios guiados</li>
+          <li>• Fuerte foco en práctica, seguimiento y resolución de dudas</li>
+        </ul>
+
+        <a href="#registro" class="inline-flex items-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
+          Solicita información
+        </a>
+      </div>
+
+      <!-- Cards secundarias -->
+      <div class="lg:col-span-7 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="rounded-[28px] border border-slate-700 bg-[#16325c]/75 p-7 shadow-xl">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10m-7 4h4M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-white">Presencial en regiones</h3>
+          <p class="mb-5 text-sm leading-6 text-slate-300">
+            Coordinamos ejecución presencial fuera de Santiago según ciudad, sede, disponibilidad y tamaño del equipo, apoyados por nuestra red de relatores.
+          </p>
+          <a href="#registro" class="inline-flex items-center text-sm font-semibold text-blue-300 hover:text-white transition-colors">Solicita información <span class="ml-2">→</span></a>
         </div>
-    </section>
 
-    <!-- LEAD MAGNET: TEST DE DIAGNÓSTICOS (ZIG-ZAG con 5 elementos) -->
-    <section id="diagnosticos" class="py-24 bg-dark relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-accent font-bold tracking-wider uppercase text-sm mb-3 block">Auditoría de Skills B2B</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Descubre las brechas de tu equipo antes de invertir</h2>
-                <p class="text-xl text-slate-300">Ofrecemos evaluaciones diagnósticas sin costo para medir el nivel real de tus colaboradores en las herramientas clave del mercado.</p>
-            </div>
-
-            <div class="space-y-20">
-                <!-- 1. ZIG: Excel -->
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-bold text-white mb-4">¿Quieres potenciar las bases operativas de tu equipo?</h3>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                            Una mala gestión de planillas retrasa procesos enteros. Identifica quiénes necesitan nivelación básica y quiénes están listos para automatizar con macros y modelado de datos avanzados.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 w-full">
-                        <a href="#demo" class="block big-test-card bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 hover:border-[#107c41] rounded-3xl p-8 shadow-2xl relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#107c41]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-20 h-20 bg-[#107c41] rounded-2xl flex items-center justify-center shadow-lg shadow-[#107c41]/30">
-                                        <span class="text-white font-black text-4xl">X</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-2xl font-bold text-white mb-1">Diagnóstico Excel</h4>
-                                        <p class="text-slate-400">Evalúa tus habilidades</p>
-                                    </div>
-                                </div>
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#107c41] transition-colors">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 2. ZAG: Power BI -->
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-bold text-white mb-4">Acelera la toma de decisiones con datos reales</h3>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                            Mide la capacidad real de tus analistas y jefaturas para conectar orígenes de datos, estructurar modelos DAX y crear dashboards interactivos que impacten el negocio.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 w-full">
-                        <a href="#demo" class="block big-test-card bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 hover:border-[#f2c811] rounded-3xl p-8 shadow-2xl relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#f2c811]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-20 h-20 bg-[#f2c811] rounded-2xl flex items-center justify-center shadow-lg shadow-[#f2c811]/30">
-                                        <span class="text-[#111317] font-black text-3xl">BI</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-2xl font-bold text-white mb-1">Test Power BI</h4>
-                                        <p class="text-slate-400">¿Cuánto sabes de Data?</p>
-                                    </div>
-                                </div>
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#f2c811] transition-colors">
-                                    <svg class="w-6 h-6 text-white group-hover:text-[#111317]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 3. ZIG: Access -->
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-bold text-white mb-4">Gestión eficiente de grandes volúmenes de datos</h3>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                            Asegura que tu equipo domina el control de la información corporativa. Descubre su nivel para construir consultas relacionales, estructurar tablas y reportes complejos.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 w-full">
-                        <a href="#demo" class="block big-test-card bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 hover:border-[#a4373a] rounded-3xl p-8 shadow-2xl relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#a4373a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-20 h-20 bg-[#a4373a] rounded-2xl flex items-center justify-center shadow-lg shadow-[#a4373a]/30">
-                                        <span class="text-white font-black text-3xl">A</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-2xl font-bold text-white mb-1">Diagnóstico Access</h4>
-                                        <p class="text-slate-400">Mide tu manejo de Bases de Datos</p>
-                                    </div>
-                                </div>
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#a4373a] transition-colors">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 4. ZAG: Project -->
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-bold text-white mb-4">Planificación y control total de proyectos</h3>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                            Mide las habilidades de tus gestores y PMO para asignar recursos, seguir el progreso de tareas críticas y administrar presupuestos eficientemente en cada iniciativa del negocio.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 w-full">
-                        <a href="#demo" class="block big-test-card bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 hover:border-[#31752f] rounded-3xl p-8 shadow-2xl relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#31752f]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-20 h-20 bg-[#31752f] rounded-2xl flex items-center justify-center shadow-lg shadow-[#31752f]/30">
-                                        <span class="text-white font-black text-3xl">Pj</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-2xl font-bold text-white mb-1">Test Project</h4>
-                                        <p class="text-slate-400">Evalúa la gestión de carteras</p>
-                                    </div>
-                                </div>
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#31752f] transition-colors">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 5. ZIG: Python / Automatización -->
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h3 class="text-3xl font-bold text-white mb-4">Automatiza lo aburrido y enfoca al talento</h3>
-                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                            El código ya no es solo para desarrolladores. Evalúa el conocimiento de tus equipos en Python para automatización de tareas, extracción web o manipulación masiva de datos.
-                        </p>
-                    </div>
-                    <div class="lg:w-1/2 w-full">
-                        <a href="#demo" class="block big-test-card bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 hover:border-[#3776ab] rounded-3xl p-8 shadow-2xl relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-[#3776ab]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-20 h-20 bg-[#3776ab] rounded-2xl flex items-center justify-center shadow-lg shadow-[#3776ab]/30">
-                                        <span class="text-white font-black text-3xl">Py</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-2xl font-bold text-white mb-1">Diagnóstico Python</h4>
-                                        <p class="text-slate-400">Mide tus skills en código</p>
-                                    </div>
-                                </div>
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#3776ab] transition-colors">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+        <div class="rounded-[28px] border border-slate-700 bg-[#16325c]/75 p-7 shadow-xl">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-400/10 text-emerald-300">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14m-9 4h8a2 2 0 002-2V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-white">Online en vivo</h3>
+          <p class="mb-5 text-sm leading-6 text-slate-300">
+            Clases sincrónicas para equipos distribuidos o empresas que necesitan capacitar varias sedes sin traslado físico.
+          </p>
+          <a href="#registro" class="inline-flex items-center text-sm font-semibold text-blue-300 hover:text-white transition-colors">Solicita información <span class="ml-2">→</span></a>
         </div>
-    </section>
 
-    <!-- PROPUESTA DE VALOR (Cards SaaS) -->
-    <section id="soluciones" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Mucho más que cursos: <span class="text-accent">Soluciones Estratégicas</span></h2>
-                <p class="text-lg text-slate-500">Vamos más allá de la capacitación tradicional, entregando herramientas para medir y asegurar el crecimiento sostenible de tu inversión formativa.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                        <span class="text-primary text-3xl">🤖</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Asistencia potenciada por AI</h3>
-                    <p class="text-slate-500 leading-relaxed text-base">Nuestra metodología integra IA para personalizar rutas de aprendizaje y ofrecer feedback en tiempo real a los colaboradores.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-6">
-                        <span class="text-green-600 text-3xl">📈</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Equipos de Alto Rendimiento</h3>
-                    <p class="text-slate-500 leading-relaxed text-base">Formamos perfiles desde la operación hasta C-Level, enfocándonos en habilidades técnicas y de liderazgo organizacional.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center mb-6">
-                        <span class="text-purple-600 text-3xl">🎯</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Resultados Sostenibles</h3>
-                    <p class="text-slate-500 leading-relaxed text-base">Ejecutamos un proceso completo: evaluación inicial, capacitación y medición de retención y aplicación de conocimientos.</p>
-                </div>
-            </div>
+        <div class="rounded-[28px] border border-slate-700 bg-[#16325c]/75 p-7 shadow-xl">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-400/10 text-violet-300">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v11.494m0-11.494C10.832 5.477 9.246 5 7.5 5 4.462 5 2 6.79 2 9v6c0-2.21 2.462-4 5.5-4 1.746 0 3.332.477 4.5 1.253m0-5.747C13.168 5.477 14.754 5 16.5 5 19.538 5 22 6.79 22 9v6c0-2.21-2.462-4-5.5-4-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-white">E-learning asincrónico</h3>
+          <p class="mb-5 text-sm leading-6 text-slate-300">
+            Capacitación flexible para participantes con turnos, horarios variables o necesidad de avanzar a su propio ritmo.
+          </p>
+          <a href="#registro" class="inline-flex items-center text-sm font-semibold text-blue-300 hover:text-white transition-colors">Solicita información <span class="ml-2">→</span></a>
         </div>
-    </section>
 
-    <!-- INDICADORES Y DASHBOARD (Corregida superposición) -->
-    <section class="py-24 bg-dark relative overflow-hidden border-t border-white/5">
-        <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#10b981]/10 rounded-full blur-[100px] -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-10 w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
+        <div class="rounded-[28px] border border-slate-700 bg-[#16325c]/75 p-7 shadow-xl">
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-300">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-white">Modalidad híbrida</h3>
+          <p class="mb-5 text-sm leading-6 text-slate-300">
+            Combinamos sesiones presenciales y online para equilibrar cobertura, acompañamiento y continuidad formativa.
+          </p>
+          <a href="#registro" class="inline-flex items-center text-sm font-semibold text-blue-300 hover:text-white transition-colors">Solicita información <span class="ml-2">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                <div class="lg:pr-8">
-                    <h2 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-[#10b981]">Todo el impacto del aprendizaje,</span><br>
-                        medido en un solo lugar
-                    </h2>
-                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                        Nuestro modelo formativo no termina en el aula. Visualiza qué habilidades está desarrollando tu equipo, cómo avanzan en su formación y el retorno real de tu inversión (ROI) mediante indicadores claros y precisos.
+<script>
+  (function () {
+    const tabs = document.querySelectorAll('.diag-tab');
+    const panels = document.querySelectorAll('.diag-panel');
+
+    function activateTab(target) {
+      tabs.forEach((tab) => {
+        const isActive = tab.dataset.tab === target;
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        tab.classList.toggle('active', isActive);
+        tab.classList.toggle('bg-white/10', isActive);
+        tab.classList.toggle('border-blue-400/40', isActive);
+        tab.classList.toggle('text-white', isActive);
+        tab.classList.toggle('bg-transparent', !isActive);
+        tab.classList.toggle('border-slate-600', !isActive);
+        tab.classList.toggle('text-slate-300', !isActive);
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === `panel-${target}`;
+        panel.classList.toggle('hidden', !isActive);
+        panel.classList.toggle('grid', isActive);
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+    });
+  })();
+</script>
+
+
+
+<!-- ========================================= -->
+<!-- BLOQUE 5: EVALUACIÓN DE BRECHAS LABORALES -->
+<!-- ========================================= -->
+<!-- Tabs + cards / B2B -->
+
+<section id="diagnosticos" class="relative overflow-hidden bg-[#0f254a] py-20">
+  <div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-cyan-300/10 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-12 max-w-4xl text-center">
+      <span class="mb-3 block text-sm font-bold uppercase tracking-[0.18em] text-blue-300">
+        Auditoría de Skills B2B
+      </span>
+
+      <h2 class="mb-5 text-3xl font-bold leading-tight text-white md:text-5xl">
+        ¿Qué tan lejos está tu equipo del nivel que tu empresa necesita?
+      </h2>
+
+      <p class="mx-auto max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">
+        Evalúa brechas reales antes de invertir en capacitación. Identifica prioridades en
+        habilidades tecnológicas, blandas y normativas con diagnósticos breves y orientados a empresa.
+      </p>
+    </div>
+
+    <div class="mb-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+      <a
+        href="#registro"
+        class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+      >
+        Solicitar orientación
+      </a>
+      <p class="text-sm text-slate-400">
+        ¿No sabes qué diagnóstico aplicar primero? Te ayudamos a priorizar según área, cargo y brecha.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mx-auto mb-10 flex max-w-5xl flex-wrap justify-center gap-3" role="tablist" aria-label="Categorías de diagnósticos">
+      <button type="button" class="diag-tab active rounded-full border border-blue-400/40 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15" data-tab="destacados" role="tab" aria-selected="true" aria-controls="panel-destacados" id="tab-destacados">
+        Más solicitados
+      </button>
+      <button type="button" class="diag-tab rounded-full border border-slate-600 bg-transparent px-5 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5" data-tab="tecnologicas" role="tab" aria-selected="false" aria-controls="panel-tecnologicas" id="tab-tecnologicas">
+        Tecnológicas
+      </button>
+      <button type="button" class="diag-tab rounded-full border border-slate-600 bg-transparent px-5 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5" data-tab="blandas" role="tab" aria-selected="false" aria-controls="panel-blandas" id="tab-blandas">
+        Habilidades blandas
+      </button>
+      <button type="button" class="diag-tab rounded-full border border-slate-600 bg-transparent px-5 py-3 text-sm font-semibold text-slate-300 transition hover:bg-white/5" data-tab="cumplimiento" role="tab" aria-selected="false" aria-controls="panel-cumplimiento" id="tab-cumplimiento">
+        Cumplimiento / Ley Karin
+      </button>
+    </div>
+
+    <!-- Panels -->
+    <div class="mx-auto max-w-6xl">
+      <!-- Destacados -->
+      <div id="panel-destacados" class="diag-panel grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4" role="tabpanel" aria-labelledby="tab-destacados">
+        <a href="https://survey.zohopublic.com/zs/dNRTq9" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-5 flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#107c41] text-2xl font-black text-white shadow-lg shadow-[#107c41]/30">X</div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Diagnóstico Excel</h3>
+              <p class="text-sm text-slate-400">Operación y productividad</p>
+            </div>
+          </div>
+          <p class="mb-5 text-sm leading-6 text-slate-300">Detecta si tu equipo domina planillas, funciones y automatización básica para operar sin fricciones.</p>
+          <span class="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white">Ver diagnóstico <span class="ml-2">→</span></span>
+        </a>
+
+        <a href="https://survey.zohopublic.com/zs/zcBBJC" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-5 flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c2410c] text-lg font-black text-white shadow-lg shadow-[#c2410c]/30">LK</div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Diagnóstico Ley Karin</h3>
+              <p class="text-sm text-slate-400">Cumplimiento y cultura</p>
+            </div>
+          </div>
+          <p class="mb-5 text-sm leading-6 text-slate-300">Evalúa si jefaturas y equipos comprenden prevención, conducta y responsabilidades mínimas exigidas.</p>
+          <span class="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white">Ver diagnóstico <span class="ml-2">→</span></span>
+        </a>
+
+        <a href="https://survey.zohopublic.com/zs/CTat9O" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-5 flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f2c811] text-lg font-black text-slate-900 shadow-lg shadow-[#f2c811]/30">BI</div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Test Power BI</h3>
+              <p class="text-sm text-slate-400">Analítica y dashboards</p>
+            </div>
+          </div>
+          <p class="mb-5 text-sm leading-6 text-slate-300">Evalúa si tu equipo puede modelar datos, interpretar métricas y construir visualizaciones útiles para decidir mejor.</p>
+          <span class="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white">Ver diagnóstico <span class="ml-2">→</span></span>
+        </a>
+
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-5 flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7c3aed] text-lg font-black text-white shadow-lg shadow-[#7c3aed]/30">LD</div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Diagnóstico Liderazgo</h3>
+              <p class="text-sm text-slate-400">Jefaturas y mandos medios</p>
+            </div>
+          </div>
+          <p class="mb-5 text-sm leading-6 text-slate-300">Mide toma de decisiones, gestión de personas y capacidad de conducción en contextos reales de trabajo.</p>
+          <span class="inline-flex items-center text-sm font-semibold text-blue-300 group-hover:text-white">Ver diagnóstico <span class="ml-2">→</span></span>
+        </a>
+      </div>
+
+      <!-- Tecnológicas -->
+      <div id="panel-tecnologicas" class="diag-panel hidden grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3" role="tabpanel" aria-labelledby="tab-tecnologicas">
+        <a href="https://survey.zohopublic.com/zs/dNRTq9" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#107c41] font-black text-white">X</div><div><h3 class="text-lg font-bold text-white">Excel</h3><p class="text-sm text-slate-400">Bases operativas</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Mide nivel real en planillas, funciones y productividad diaria.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://survey.zohopublic.com/zs/CTat9O" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f2c811] font-black text-slate-900">BI</div><div><h3 class="text-lg font-bold text-white">Power BI</h3><p class="text-sm text-slate-400">Analítica y dashboards</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Evalúa modelado, visualización y análisis para decisión basada en datos.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://survey.zohopublic.com/zs/JMCIQh" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#a4373a] font-black text-white">A</div><div><h3 class="text-lg font-bold text-white">Access</h3><p class="text-sm text-slate-400">Bases de datos</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Detecta manejo de tablas, consultas y estructura de información corporativa.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://survey.zohopublic.com/zs/NmBRzG" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#31752f] font-black text-white">Pj</div><div><h3 class="text-lg font-bold text-white">Project</h3><p class="text-sm text-slate-400">Planificación</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Mide capacidad de planificación, control y seguimiento de proyectos.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://survey.zohopublic.com/zs/sOB6pm" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#3776ab] font-black text-white">Py</div><div><h3 class="text-lg font-bold text-white">Python</h3><p class="text-sm text-slate-400">Automatización</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Identifica bases en scripting, automatización y manejo masivo de datos.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+      </div>
+
+      <!-- Blandas -->
+      <div id="panel-blandas" class="diag-panel hidden grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4" role="tabpanel" aria-labelledby="tab-blandas">
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2563eb] font-black text-white">TE</div><div><h3 class="text-lg font-bold text-white">Trabajo en equipo</h3><p class="text-sm text-slate-400">Colaboración</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Evalúa coordinación, compromiso y capacidad de trabajo interáreas.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7c3aed] font-black text-white">LD</div><div><h3 class="text-lg font-bold text-white">Liderazgo</h3><p class="text-sm text-slate-400">Conducción de equipos</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Mide influencia, gestión de personas y conducción de resultados.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0ea5e9] font-black text-white">CE</div><div><h3 class="text-lg font-bold text-white">Comunicación efectiva</h3><p class="text-sm text-slate-400">Claridad y escucha</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Detecta fallas de comunicación que afectan coordinación y clima laboral.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#059669] font-black text-white">GT</div><div><h3 class="text-lg font-bold text-white">Gestión del tiempo</h3><p class="text-sm text-slate-400">Ejecución personal</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Mide hábitos de priorización, foco y cumplimiento en contextos exigentes.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+      </div>
+
+      <!-- Cumplimiento -->
+      <div id="panel-cumplimiento" class="diag-panel hidden grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3" role="tabpanel" aria-labelledby="tab-cumplimiento">
+        <a href="https://survey.zohopublic.com/zs/zcBBJC" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#c2410c] font-black text-white">LK</div><div><h3 class="text-lg font-bold text-white">Ley Karin</h3><p class="text-sm text-slate-400">Prevención obligatoria</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Mide comprensión mínima sobre prevención, denuncia y convivencia laboral.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#dc2626] font-black text-white">AC</div><div><h3 class="text-lg font-bold text-white">Acoso y maltrato</h3><p class="text-sm text-slate-400">Conductas de riesgo</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Identifica vacíos críticos en conductas, prevención y gestión interna de casos.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+        <a href="https://capacita.cl/contacto/" target="_blank" rel="noopener noreferrer" class="group rounded-3xl border border-slate-700 bg-[#16325c]/75 p-6 shadow-xl transition hover:-translate-y-1 hover:border-blue-400/60 hover:bg-[#1a3764]">
+          <div class="mb-4 flex items-center gap-4"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0891b2] font-black text-white">BT</div><div><h3 class="text-lg font-bold text-white">Buen trato laboral</h3><p class="text-sm text-slate-400">Cultura y convivencia</p></div></div>
+          <p class="mb-4 text-sm text-slate-300">Evalúa si tu organización cuenta con bases mínimas de convivencia y respeto.</p><span class="text-sm font-semibold text-blue-300">Ver diagnóstico →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.diag-tab');
+  const panels = document.querySelectorAll('.diag-panel');
+
+  function activateTab(target) {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.tab === target;
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tab.classList.toggle('active', isActive);
+      tab.classList.toggle('bg-white/10', isActive);
+      tab.classList.toggle('border-blue-400/40', isActive);
+      tab.classList.toggle('text-white', isActive);
+      tab.classList.toggle('bg-transparent', !isActive);
+      tab.classList.toggle('border-slate-600', !isActive);
+      tab.classList.toggle('text-slate-300', !isActive);
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.id === `panel-${target}`;
+      panel.classList.toggle('hidden', !isActive);
+      panel.classList.toggle('grid', isActive);
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+  });
+
+  activateTab('destacados');
+});
+</script>
+
+
+
+<!-- ========================================= -->
+<!-- BLOQUE 6: INDICADORES Y DASHBOARD -->
+<!-- ========================================= -->
+<section class="py-24 bg-dark relative overflow-hidden border-t border-white/5">
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px] -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-10 w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="lg:pr-8">
+                <h2 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#60a5fa] to-[#1c4587]">Todo el impacto del aprendizaje,</span><br>
+                    medido en un solo lugar
+                </h2>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    Nuestro modelo formativo no termina en el aula. Visualiza qué habilidades está desarrollando tu equipo, cómo avanzan en su formación y el retorno real de tu inversión (ROI) mediante indicadores claros y precisos.
+                </p>
+                <div class="inline-block border border-white/20 rounded-md px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-widest bg-white/5">
+                    — Exclusivo metodología Capacita —
+                </div>
+            </div>
+
+            <div class="relative mt-12 lg:mt-0">
+                <div class="bg-darkCard border border-white/10 rounded-2xl p-8 pb-12 shadow-2xl relative z-10">
+                    <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                        <h3 class="text-white font-semibold text-lg">Métricas de Impacto Formativo</h3>
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center justify-between border-b border-white/5 pb-6">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <div class="w-2 h-2 rounded-full bg-blue-400"></div>
+                                    <p class="text-slate-300 font-medium">Cobertura diagnóstica</p>
+                                </div>
+                                <p class="text-slate-500 text-sm">Participantes con evaluación inicial completa.</p>
+                            </div>
+                            <div class="text-4xl font-bold text-white tracking-tighter">80<span class="text-slate-500 text-2xl font-medium">%</span></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between border-b border-white/5 pb-6">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <div class="w-2 h-2 rounded-full bg-[#1c4587]"></div>
+                                    <p class="text-slate-300 font-medium">Mejora promedio</p>
+                                </div>
+                                <p class="text-slate-500 text-sm">Variación positiva tras cierre del curso.</p>
+                            </div>
+                            <div class="text-4xl font-bold text-[#60a5fa] tracking-tighter">+20<span class="text-slate-500 text-2xl font-medium"> pts</span></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <div class="w-2 h-2 rounded-full bg-accent"></div>
+                                    <p class="text-slate-300 font-medium">Retención a 6 meses</p>
+                                </div>
+                                <p class="text-slate-500 text-sm">Consolidación posterior al proceso formativo.</p>
+                            </div>
+                            <div class="text-4xl font-bold text-white tracking-tighter">70<span class="text-slate-500 text-2xl font-medium">%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-12 -right-8 lg:-right-12 bg-[#16181d] border border-white/10 rounded-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 w-72 transform transition-transform hover:-translate-y-2 hidden md:block">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-blue-300 text-lg leading-none">✦</span>
+                        <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Insights de Retorno</span>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-4 leading-relaxed">
+                        Crecimiento sostenido verificado en equipos técnicos y de liderazgo.
                     </p>
-                    <div class="inline-block border border-white/20 rounded-md px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-widest bg-white/5">
-                        — Exclusivo metodología Capacita —
-                    </div>
-                </div>
-
-                <div class="relative mt-12 lg:mt-0">
-                    <!-- Tarjeta Principal (Se añadió pb-12 para dar aire a los textos inferiores) -->
-                    <div class="bg-darkCard border border-white/10 rounded-2xl p-8 pb-12 shadow-2xl relative z-10">
-                        <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
-                            <h3 class="text-white font-semibold text-lg">Métricas de Impacto Formativo</h3>
-                            <div class="flex gap-2">
-                                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-8">
-                            <div class="flex items-center justify-between border-b border-white/5 pb-6">
-                                <div>
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                                        <p class="text-slate-300 font-medium">Cobertura diagnóstica</p>
-                                    </div>
-                                    <p class="text-slate-500 text-sm">Participantes con evaluación inicial completa.</p>
-                                </div>
-                                <div class="text-4xl font-bold text-white tracking-tighter">80<span class="text-slate-500 text-2xl font-medium">%</span></div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between border-b border-white/5 pb-6">
-                                <div>
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <div class="w-2 h-2 rounded-full bg-[#10b981]"></div>
-                                        <p class="text-slate-300 font-medium">Mejora promedio</p>
-                                    </div>
-                                    <p class="text-slate-500 text-sm">Variación positiva tras cierre del curso.</p>
-                                </div>
-                                <div class="text-4xl font-bold text-[#10b981] tracking-tighter">+20<span class="text-slate-500 text-2xl font-medium"> pts</span></div>
-                            </div>
-                            
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <div class="w-2 h-2 rounded-full bg-accent"></div>
-                                        <p class="text-slate-300 font-medium">Retención a 6 meses</p>
-                                    </div>
-                                    <p class="text-slate-500 text-sm">Consolidación posterior al proceso formativo.</p>
-                                </div>
-                                <div class="text-4xl font-bold text-white tracking-tighter">70<span class="text-slate-500 text-2xl font-medium">%</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta Flotante (Desplazada hacia afuera, abajo a la derecha) -->
-                    <div class="absolute -bottom-12 -right-8 lg:-right-12 bg-[#16181d] border border-white/10 rounded-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 w-72 transform transition-transform hover:-translate-y-2 hidden md:block">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-purple-400 text-lg leading-none">✦</span>
-                            <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Insights de Retorno</span>
-                        </div>
-                        <p class="text-slate-400 text-xs mb-4 leading-relaxed">
-                            Crecimiento sostenido verificado en equipos técnicos y de liderazgo.
-                        </p>
-                        <div class="h-16 w-full flex items-end justify-between gap-1 mt-4 relative">
-                            <div class="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent rounded-b-md"></div>
-                            <div class="w-full h-full flex items-end justify-between px-1 relative z-10">
-                                <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/3"></div>
-                                <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/4"></div>
-                                <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/2"></div>
-                                <div class="w-[3px] bg-slate-500 rounded-t-sm h-2/5"></div>
-                                <div class="w-[3px] bg-slate-400 rounded-t-sm h-2/3"></div>
-                                <div class="w-[3px] bg-accent/60 rounded-t-sm h-3/4"></div>
-                                <div class="w-[3px] bg-accent rounded-t-sm h-full relative">
-                                    <div class="absolute -top-1.5 -left-1 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_8px_rgba(14,165,233,1)]"></div>
-                                </div>
+                    <div class="h-16 w-full flex items-end justify-between gap-1 mt-4 relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent rounded-b-md"></div>
+                        <div class="w-full h-full flex items-end justify-between px-1 relative z-10">
+                            <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/3"></div>
+                            <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/4"></div>
+                            <div class="w-[3px] bg-slate-600 rounded-t-sm h-1/2"></div>
+                            <div class="w-[3px] bg-slate-500 rounded-t-sm h-2/5"></div>
+                            <div class="w-[3px] bg-slate-400 rounded-t-sm h-2/3"></div>
+                            <div class="w-[3px] bg-accent/60 rounded-t-sm h-3/4"></div>
+                            <div class="w-[3px] bg-accent rounded-t-sm h-full relative">
+                                <div class="absolute -top-1.5 -left-1 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_8px_rgba(96,165,250,1)]"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SENCE & TRANSFORMACION DIGITAL -->
-    <section id="sence" class="py-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <!-- Contenido Izquierda -->
-                <div class="w-full lg:w-1/2">
-                    <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-green-100 text-green-800 text-sm font-bold mb-6">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-                        Optimización Financiera
-                    </span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                        Usa tu Franquicia SENCE para acelerar la <span class="text-primary">Transformación Digital</span>
-                    </h2>
-                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        No dejes presupuesto sobre la mesa. Te guiamos administrativamente para financiar rutas de aprendizaje tecnológico y ofimática avanzada usando tus beneficios tributarios.
-                    </p>
-                    <ul class="space-y-5 mb-10">
-                        <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                            <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-0.5">
-                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div>
-                                <strong class="text-slate-900 block mb-1">Evaluación de Disponibilidad</strong>
-                                <span class="text-slate-500 text-sm">Identificamos rápidamente si esta vía aplica a tu empresa y el fondo disponible.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                            <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-0.5">
-                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <div>
-                                <strong class="text-slate-900 block mb-1">Gestión y Coordinación Total</strong>
-                                <span class="text-slate-500 text-sm">Nos encargamos de toda la carga administrativa y documental exigida por SENCE.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="https://capacita.cl/franquicia-sence/" class="inline-flex items-center font-bold text-primary hover:text-blue-800 transition-colors text-lg group">
-                        Conoce más sobre la gestión SENCE
-                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
-                <!-- Imagen Derecha -->
-                <div class="w-full lg:w-1/2 relative">
-                    <div class="absolute inset-0 bg-gradient-to-bl from-accent/20 to-transparent rounded-3xl transform translate-x-6 -translate-y-6 -z-10"></div>
-                    <img src="https://capacita.cl/wp-content/uploads/2026/04/alumnos-clases-beiersdorf.webp" alt="Gestión de Capacitación SENCE" class="rounded-3xl shadow-2xl border border-white/50 w-full object-cover h-[500px]">
-                    <!-- Badge Flotante para SENCE -->
-                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-5">
-                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center border-4 border-white shadow-inner">
-                            <img src="https://capacita.cl/wp-content/uploads/2023/06/sence.jpg" alt="Logo Sence" class="w-10 h-10 object-contain mix-blend-multiply">
+
+<!-- ========================================= -->
+<!-- BLOQUE 7: SENCE & TRANSFORMACIÓN DIGITAL -->
+<!-- ========================================= -->
+<section id="sence" class="py-24 bg-dark border-t border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <!-- Contenido Izquierda -->
+            <div class="w-full lg:w-1/2">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-blue-500/15 text-blue-300 text-sm font-bold mb-6 border border-blue-400/20">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                    Optimización Financiera
+                </span>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Usa tu Franquicia SENCE para acelerar la <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#60a5fa] to-[#1c4587]">Transformación Digital</span>
+                </h2>
+
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    No dejes presupuesto sobre la mesa. Te guiamos administrativamente para financiar rutas de aprendizaje tecnológico y ofimática avanzada usando tus beneficios tributarios.
+                </p>
+
+                <ul class="space-y-5 mb-10">
+                    <li class="flex items-start bg-white/5 p-4 rounded-xl shadow-sm border border-white/10">
+                        <div class="bg-primary/15 p-2 rounded-lg mr-4 mt-0.5">
+                            <svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-xs font-bold text-accent uppercase tracking-wider mb-1">Acreditados</p>
-                            <p class="text-lg font-extrabold text-slate-900 leading-none">100% Cobertura</p>
-                            <p class="text-sm text-slate-500 mt-1">Programa Pyme Digital</p>
+                            <strong class="text-white block mb-1">Evaluación de Disponibilidad</strong>
+                            <span class="text-slate-400 text-sm">Identificamos rápidamente si esta vía aplica a tu empresa y el fondo disponible.</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </li>
 
-    <!-- COBERTURA NACIONAL -->
-    <section id="cobertura" class="py-24 bg-dark relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 50% 50%, #ffffff 2px, transparent 2px); background-size: 30px 30px;"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-accent font-bold tracking-wider uppercase text-sm mb-2 block">Omnicanalidad Educativa</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Cobertura Nacional y Flexibilidad Total</h2>
-                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                        Entendemos que las corporaciones operan a lo largo de todo el país. Por eso, contamos con una <strong class="text-white">extensa red de relatores y partners expertos desde Arica hasta Punta Arenas</strong>.
-                    </p>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <div class="bg-white/10 p-3 rounded-xl mr-5 border border-white/10 shadow-inner">
-                                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-1">Presencial In-Company</h4>
-                                <p class="text-slate-400 text-base leading-relaxed">Llevamos la sala de clases directamente a tus oficinas, faenas o sucursales operativas en cualquier región de Chile.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="bg-white/10 p-3 rounded-xl mr-5 border border-white/10 shadow-inner">
-                                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-1">Online e Híbrido</h4>
-                                <p class="text-slate-400 text-base leading-relaxed">Formatos sincrónicos y asincrónicos ideales para equipos distribuidos que requieren mayor flexibilidad de turnos y horarios.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="relative mt-10 lg:mt-0">
-                    <div class="aspect-square max-w-md mx-auto bg-gradient-to-tr from-primary to-[#111317] rounded-full flex items-center justify-center p-8 border-8 border-white/5 shadow-2xl relative">
-                        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-accent rounded-full animate-ping"></div>
-                        <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
-                        <div class="absolute top-1/2 right-1/5 w-2 h-2 bg-accent rounded-full animate-ping" style="animation-delay: 1s;"></div>
-                        <div class="text-center z-10">
-                            <span class="text-7xl block mb-4 filter drop-shadow-lg">🇨🇱</span>
-                            <h3 class="text-3xl font-bold text-white mb-2">Formación sin fronteras</h3>
-                            <p class="text-blue-200 text-base">Donde esté tu talento, allí estaremos.</p>
+                    <li class="flex items-start bg-white/5 p-4 rounded-xl shadow-sm border border-white/10">
+                        <div class="bg-primary/15 p-2 rounded-lg mr-4 mt-0.5">
+                            <svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIOS DE CLIENTES -->
-    <section class="py-24 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Lo que dicen nuestros clientes</h2>
-                <p class="text-lg text-slate-500">Historias reales de empresas que han transformado su talento con nuestros programas.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" alt="Cliente 1" class="w-16 h-16 rounded-full object-cover border-2 border-slate-100">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-900">Carlos Mendez</h4>
-                            <p class="text-sm text-slate-500">Gerente de RRHH, TechCorp</p>
+                            <strong class="text-white block mb-1">Gestión y Coordinación Total</strong>
+                            <span class="text-slate-400 text-sm">Nos encargamos de toda la carga administrativa y documental exigida por SENCE.</span>
                         </div>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed italic">"El diagnóstico inicial fue revelador. Capacita no solo nos dio cursos, sino una hoja de ruta clara que mejoró la productividad de nuestro equipo de operaciones en un 25% en solo tres meses."</p>
-                </div>
+                    </li>
+                </ul>
 
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150" alt="Cliente 2" class="w-16 h-16 rounded-full object-cover border-2 border-slate-100">
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900">Laura Vargas</h4>
-                            <p class="text-sm text-slate-500">Jefa de Desarrollo, Constructora Andina</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed italic">"Excelente gestión de la franquicia SENCE. Nos quitaron toda la carga administrativa y los cursos de Excel avanzado fueron justo lo que nuestros ingenieros necesitaban para optimizar sus reportes."</p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-4 mb-6">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150" alt="Cliente 3" class="w-16 h-16 rounded-full object-cover border-2 border-slate-100">
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900">Andrés Pardo</h4>
-                            <p class="text-sm text-slate-500">CEO, Innova Retail</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed italic">"Buscábamos un partner flexible para capacitación híbrida a nivel nacional y Capacita superó las expectativas. Su red de relatores y la calidad del material son de primer nivel."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CÓMO FUNCIONA (Proceso Lúdico y Visual Rediseñado) -->
-    <section class="py-24 bg-dark relative overflow-hidden border-t border-white/5">
-        <!-- Luces neón de fondo -->
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] mix-blend-screen"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-[100px] mix-blend-screen"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-accent font-bold tracking-wider uppercase text-sm mb-3 block">Proceso de Implementación</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Un framework probado, sin fricción operativa</h2>
-                <p class="text-lg text-slate-300">Nos encargamos de la complejidad metodológica y administrativa para que Recursos Humanos solo se enfoque en el crecimiento de su dotación.</p>
-            </div>
-
-            <!-- Gamified Timeline -->
-            <div class="relative">
-                <!-- Línea conectora base (desktop) -->
-                <div class="hidden md:block absolute top-12 left-[10%] w-[80%] h-0.5 bg-gradient-to-r from-accent via-purple-500 to-green-500 opacity-30 z-0"></div>
-
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-                    <!-- Paso 1 -->
-                    <div class="relative z-10 flex flex-col items-center text-center group">
-                        <div class="w-20 h-20 rounded-full bg-slate-900 border-2 border-accent flex items-center justify-center mb-6 text-accent font-black text-2xl shadow-[0_0_15px_rgba(14,165,233,0.3)] group-hover:shadow-[0_0_25px_rgba(14,165,233,0.6)] transition-all">
-                            1
-                        </div>
-                        <h3 class="text-white font-bold mb-2 text-lg">Diagnóstico</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed px-2">Evaluamos brechas exactas con tests gratuitos.</p>
-                    </div>
-
-                    <!-- Paso 2 -->
-                    <div class="relative z-10 flex flex-col items-center text-center group mt-8 md:mt-0">
-                        <div class="w-20 h-20 rounded-full bg-slate-900 border-2 border-[#8b5cf6] flex items-center justify-center mb-6 text-[#8b5cf6] font-black text-2xl shadow-[0_0_15px_rgba(139,92,246,0.3)] group-hover:shadow-[0_0_25px_rgba(139,92,246,0.6)] transition-all">
-                            2
-                        </div>
-                        <h3 class="text-white font-bold mb-2 text-lg">Diseño & SENCE</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed px-2">Estructuramos la malla y documentamos franquicia.</p>
-                    </div>
-
-                    <!-- Paso 3 -->
-                    <div class="relative z-10 flex flex-col items-center text-center group mt-8 md:mt-0">
-                        <div class="w-20 h-20 rounded-full bg-slate-900 border-2 border-[#f59e0b] flex items-center justify-center mb-6 text-[#f59e0b] font-black text-2xl shadow-[0_0_15px_rgba(245,158,11,0.3)] group-hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] transition-all">
-                            3
-                        </div>
-                        <h3 class="text-white font-bold mb-2 text-lg">Ejecución</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed px-2">Despliegue In-Company, híbrido u online.</p>
-                    </div>
-
-                    <!-- Paso 4 -->
-                    <div class="relative z-10 flex flex-col items-center text-center group mt-8 md:mt-0">
-                        <div class="w-20 h-20 rounded-full bg-slate-900 border-2 border-[#14b8a6] flex items-center justify-center mb-6 text-[#14b8a6] font-black text-2xl shadow-[0_0_15px_rgba(20,184,166,0.3)] group-hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transition-all">
-                            4
-                        </div>
-                        <h3 class="text-white font-bold mb-2 text-lg">Medición</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed px-2">Evaluación de impacto y seguimiento a 6 meses.</p>
-                    </div>
-
-                    <!-- Resultado Final (Reporte Entregado) -->
-                    <div class="relative z-10 flex flex-col items-center text-center mt-12 md:mt-0">
-                        <!-- Círculo animado brillante simulando el hito de éxito -->
-                        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-green-500 to-emerald-400 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(34,197,94,0.5)] transform -translate-y-2 hover:scale-105 transition-transform">
-                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h3 class="text-green-400 font-extrabold mb-2 text-xl">Reporte de ROI</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed px-2">La empresa recibe el informe consolidado de crecimiento.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ (Manejo de Objeciones) -->
-    <section class="py-24 bg-white border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Preguntas Frecuentes</h2>
-                <p class="text-lg text-slate-500">Resolvemos las dudas operativas más comunes de los equipos de RRHH y Capacitación.</p>
-            </div>
-            <div class="space-y-4">
-                <details class="group border border-slate-200 rounded-2xl bg-white overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
-                        ¿Cuánto tarda la implementación de un programa corporativo?
-                        <span class="transition duration-300 group-open:-rotate-180 text-accent">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </span>
-                    </summary>
-                    <div class="px-6 py-6 text-slate-600 leading-relaxed border-t border-slate-100">
-                        Desde la aprobación del diagnóstico inicial hasta el inicio de las clases, el proceso toma normalmente entre 2 y 3 semanas. Esto depende principalmente de la rapidez con la que su empresa entregue la documentación para la inscripción SENCE.
-                    </div>
-                </details>
-                <details class="group border border-slate-200 rounded-2xl bg-white overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
-                        ¿Cuentan con código SENCE para todos los cursos?
-                        <span class="transition duration-300 group-open:-rotate-180 text-accent">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </span>
-                    </summary>
-                    <div class="px-6 py-6 text-slate-600 leading-relaxed border-t border-slate-100">
-                        Sí, nuestro catálogo principal enfocado en Transformación Digital, Ofimática Avanzada, IA y Liderazgo cuenta con códigos SENCE vigentes. Nuestro equipo evalúa la renta imponible de sus trabajadores para maximizar el uso del tramo del 100% de franquicia.
-                    </div>
-                </details>
-                <details class="group border border-slate-200 rounded-2xl bg-white overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
-                        Nuestros colaboradores operan en turnos rotativos. ¿Cómo se adaptan?
-                        <span class="transition duration-300 group-open:-rotate-180 text-accent">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </span>
-                    </summary>
-                    <div class="px-6 py-6 text-slate-600 leading-relaxed border-t border-slate-100">
-                        Entendemos la realidad operativa (especialmente en sectores como minería, retail o salud). Diseñamos el plan formativo utilizando plataformas asincrónicas 24/7, combinadas con múltiples cohortes sincrónicas, garantizando que el 100% de la dotación pueda capacitarse sin afectar la productividad.
-                    </div>
-                </details>
-                <details class="group border border-slate-200 rounded-2xl bg-white overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-lg text-slate-900 bg-slate-50 hover:bg-slate-100 transition-colors">
-                        ¿Cómo aseguran que lo aprendido se aplique en el trabajo real?
-                        <span class="transition duration-300 group-open:-rotate-180 text-accent">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </span>
-                    </summary>
-                    <div class="px-6 py-6 text-slate-600 leading-relaxed border-t border-slate-100">
-                        Nos alejamos del modelo "curso dictado, curso olvidado". Nuestra metodología exige que las evaluaciones finales sean proyectos aplicados a problemas reales de su empresa. Además, agendamos un hito de medición a los 6 meses para auditar la retención y aplicación de las herramientas.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL DE CIERRE (BOFU) -->
-    <section class="py-24 bg-dark relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 100% 0%, #0ea5e9 0%, transparent 50%), radial-gradient(circle at 0% 100%, #1c4587 0%, transparent 50%);"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                No dejes que tu competencia <br class="hidden md:block"> capacite mejor a su equipo
-            </h2>
-            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                Da el primer paso hoy. Agenda una reunión estratégica y diseñemos el plan de crecimiento de tu organización optimizando tu franquicia SENCE.
-            </p>
-            <div class="bg-white/10 p-2 rounded-2xl backdrop-blur-md max-w-2xl mx-auto border border-white/20 shadow-2xl">
-                <a href="#registro" class="flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-sky-400 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-accent/50">
-                    Solicitar Propuesta
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="https://capacita.cl/franquicia-sence/" class="inline-flex items-center font-bold text-blue-300 hover:text-blue-200 transition-colors text-lg group">
+                    Conoce más sobre la gestión SENCE
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
-            <p class="text-sm text-slate-400 mt-6 flex items-center justify-center gap-2">
-                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                Asesoría gratuita y sin compromisos.
-            </p>
+
+            <!-- Imagen Derecha -->
+            <div class="w-full lg:w-1/2 relative">
+                <div class="absolute inset-0 bg-gradient-to-bl from-accent/20 to-transparent rounded-3xl transform translate-x-6 -translate-y-6 -z-10"></div>
+
+                <img src="https://capacita.cl/wp-content/uploads/2026/04/alumnos-clases-beiersdorf.webp" alt="Gestión de Capacitación SENCE" class="rounded-3xl shadow-2xl border border-white/10 w-full object-cover h-[500px]">
+
+                <!-- Badge Flotante para SENCE -->
+                <div class="absolute -bottom-8 -left-8 bg-[#16325c] p-6 rounded-2xl shadow-2xl border border-white/10 flex items-center gap-5">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-4 border-[#16325c] shadow-inner">
+                        <img src="https://capacita.cl/wp-content/uploads/2023/06/sence.jpg" alt="Logo Sence" class="w-10 h-10 object-contain mix-blend-multiply">
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-blue-300 uppercase tracking-wider mb-1">Acreditados</p>
+                        <p class="text-lg font-extrabold text-white leading-none">100% Cobertura</p>
+                        <p class="text-sm text-slate-300 mt-1">Programa Pyme Digital</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <script>
-        (() => {
-            const startTime = Date.now();
-            const form = document.getElementById('zoho-native-form');
-            const params = new URLSearchParams(window.location.search);
-            const successBox = document.getElementById('lead-success');
-            const companyName = document.getElementById('company_name');
-            const companySize = document.getElementById('company_size');
-            const phonePrefix = document.getElementById('phone_prefix');
-            const phoneLocal = document.getElementById('lead_phone_local');
-            const phoneField = document.getElementById('lead_phone');
-            const notesField = document.getElementById('lead_notes');
+<!-- ========================================= -->
+<!-- BLOQUE 8: COBERTURA NACIONAL -->
+<!-- ========================================= -->
+<section id="cobertura" class="py-24 bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 50% 50%, #ffffff 2px, transparent 2px); background-size: 30px 30px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-blue-300 font-bold tracking-wider uppercase text-sm mb-2 block">Omnicanalidad Educativa</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Cobertura Nacional y Flexibilidad Total</h2>
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                    Entendemos que las corporaciones operan a lo largo de todo el país. Por eso, contamos con una <strong class="text-white">extensa red de relatores y partners expertos desde Arica hasta Punta Arenas</strong>.
+                </p>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <div class="bg-white/10 p-3 rounded-xl mr-5 border border-white/10 shadow-inner">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-xl mb-1">Presencial In-Company</h4>
+                            <p class="text-slate-400 text-base leading-relaxed">Llevamos la sala de clases directamente a tus oficinas, faenas o sucursales operativas en cualquier región de Chile.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="bg-white/10 p-3 rounded-xl mr-5 border border-white/10 shadow-inner">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-xl mb-1">Online e Híbrido</h4>
+                            <p class="text-slate-400 text-base leading-relaxed">Formatos sincrónicos y asincrónicos ideales para equipos distribuidos que requieren mayor flexibilidad de turnos y horarios.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative mt-10 lg:mt-0">
+                <div class="aspect-square max-w-md mx-auto bg-gradient-to-tr from-primary to-[#0f254a] rounded-full flex items-center justify-center p-8 border-8 border-white/5 shadow-2xl relative">
+                    <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-300 rounded-full animate-ping"></div>
+                    <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+                    <div class="absolute top-1/2 right-1/5 w-2 h-2 bg-blue-300 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                    <div class="text-center z-10">
+                        <span class="text-7xl block mb-4 filter drop-shadow-lg">🇨🇱</span>
+                        <h3 class="text-3xl font-bold text-white mb-2">Formación sin fronteras</h3>
+                        <p class="text-blue-200 text-base">Donde esté tu talento, allí estaremos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            const setValue = (id, value) => {
-                const el = document.getElementById(id);
-                if (el) el.value = value || '';
-            };
+<!-- ========================================= -->
+<!-- BLOQUE 3: CTA FINAL DE CIERRE -->
+<!-- ========================================= -->
+<section class="py-24 bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 100% 0%, #1c4587 0%, transparent 50%), radial-gradient(circle at 0% 100%, #60a5fa 0%, transparent 50%);"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+            No dejes que tu competencia <br class="hidden md:block"> capacite mejor a su equipo
+        </h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+            Da el primer paso hoy. Agenda una reunión estratégica y diseñemos el plan de crecimiento de tu organización optimizando tu franquicia SENCE.
+        </p>
+        <div class="bg-white/10 p-2 rounded-2xl backdrop-blur-md max-w-2xl mx-auto border border-white/20 shadow-2xl">
+            <a href="#registro" class="flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-900/40">
+                Solicitar Propuesta
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        <p class="text-sm text-slate-400 mt-6 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Asesoría gratuita y sin compromisos.
+        </p>
+    </div>
+</section>
 
-            const getParam = (name) => params.get(name) || '';
+<script>
+(() => {
+    const startTime = Date.now();
+    const form = document.getElementById('zoho-native-form');
+    const params = new URLSearchParams(window.location.search);
+    const successBox = document.getElementById('lead-success');
+    const phonePrefix = document.getElementById('phone_prefix');
+    const phoneLocal = document.getElementById('lead_phone_local');
+    const phoneField = document.getElementById('lead_phone');
 
-            const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-            const currentUrl = isLocal ? 'https://capacita.cl' : window.location.href;
-            const cleanUrl = isLocal ? 'https://capacita.cl' : window.location.href.split('#')[0];
-            const referrer = document.referrer || 'https://capacita.cl';
+    const setValue = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.value = value || '';
+    };
 
-            if (params.get('lead') === 'ok' && successBox) {
-                successBox.classList.remove('hidden');
-            }
+    const getParam = (name) => params.get(name) || '';
 
-            setValue('landing_url', currentUrl);
-            setValue('referente', referrer);
-            setValue('zf_referrer_name', referrer);
-            setValue('zf_redirect_url', cleanUrl);
+    const isLocal =
+        location.hostname === 'localhost' ||
+        location.hostname === '127.0.0.1';
 
-            setValue('utm_source', getParam('utm_source'));
-            setValue('utm_medium', getParam('utm_medium'));
-            setValue('utm_campaign', getParam('utm_campaign'));
-            setValue('utm_term', getParam('utm_term'));
-            setValue('utm_content', getParam('utm_content'));
-            setValue('utm_id', getParam('utm_id'));
-            setValue('gclid', getParam('gclid'));
-            setValue('gbraid', getParam('gbraid'));
-            setValue('wbraid', getParam('wbraid'));
-            setValue('fbclid', getParam('fbclid'));
-            setValue('msclkid', getParam('msclkid'));
-            setValue('li_fat_id', getParam('li_fat_id'));
-            setValue('ttclid', getParam('ttclid'));
+    const currentUrl = isLocal ? 'https://capacita.cl' : window.location.href;
+    const cleanUrl = isLocal ? 'https://capacita.cl' : window.location.href.split('#')[0];
+    const referrer = document.referrer || 'https://capacita.cl';
 
-            setValue('user_agent', navigator.userAgent.substring(0, 255));
-            setValue('page_title', document.title);
-            setValue('user_language', navigator.language || '');
-            setValue('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone || '');
-            setValue('dispositivo', /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop');
+    if (params.get('lead') === 'ok' && successBox) {
+        successBox.classList.remove('hidden');
+    }
 
-            fetch('https://ipapi.co/json/')
-                .then((r) => (r.ok ? r.json() : null))
-                .then((data) => {
-                    if (!data) return;
-                    setValue('ciudad_user', data.city || '');
-                    setValue('pais_user', data.country_name || '');
-                })
-                .catch(() => {});
+    setValue('landing_url', currentUrl);
+    setValue('referente', referrer);
+    setValue('zf_referrer_name', referrer);
+    setValue('zf_redirect_url', cleanUrl);
 
-            form?.addEventListener('submit', (event) => {
-                const phone = `${phonePrefix?.value || ''} ${phoneLocal?.value || ''}`.trim();
-                const company = companyName?.value?.trim() || '';
-                const employees = companySize?.value?.trim() || '';
-                const seconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
+    setValue('utm_source', getParam('utm_source'));
+    setValue('utm_medium', getParam('utm_medium'));
+    setValue('utm_campaign', getParam('utm_campaign'));
+    setValue('utm_term', getParam('utm_term'));
+    setValue('utm_content', getParam('utm_content'));
+    setValue('utm_id', getParam('utm_id'));
+    setValue('gclid', getParam('gclid'));
+    setValue('gbraid', getParam('gbraid'));
+    setValue('wbraid', getParam('wbraid'));
+    setValue('fbclid', getParam('fbclid'));
+    setValue('msclkid', getParam('msclkid'));
+    setValue('li_fat_id', getParam('li_fat_id'));
+    setValue('ttclid', getParam('ttclid'));
 
-                if (!phoneLocal?.value?.trim()) {
-                    event.preventDefault();
-                    phoneLocal?.focus();
-                    return;
-                }
+    setValue('user_agent', navigator.userAgent.substring(0, 255));
+    setValue('page_title', document.title);
+    setValue('user_language', navigator.language || '');
+    setValue('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    setValue('dispositivo', /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop');
 
-                phoneField.value = phone;
-                notesField.value = [
-                    `Empresa: ${company}`,
-                    `Tamaño empresa: ${employees}`,
-                    'Origen: Landing Empresas B2B'
-                ].join(' | ');
+    fetch('https://ipapi.co/json/')
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+            if (!data) return;
+            setValue('ciudad_user', data.city || '');
+            setValue('pais_user', data.country_name || '');
+        })
+        .catch(() => {});
 
-                setValue('tiempo_pagina', String(seconds));
-                setValue('landing_url', isLocal ? 'https://capacita.cl' : window.location.href);
-                setValue('referente', document.referrer || 'https://capacita.cl');
-            });
-        })();
-    </script>
+    form?.addEventListener('submit', (event) => {
+        const phone = `${phonePrefix?.value || ''} ${phoneLocal?.value || ''}`.trim();
+        const seconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
 
-</body>
-</html>
+        if (!phoneLocal?.value?.trim()) {
+            event.preventDefault();
+            phoneLocal?.focus();
+            return;
+        }
+
+        phoneField.value = phone;
+
+        setValue('tiempo_pagina', String(seconds));
+        setValue('landing_url', isLocal ? 'https://capacita.cl' : window.location.href);
+        setValue('referente', document.referrer || 'https://capacita.cl');
+    });
+})();
+</script>
