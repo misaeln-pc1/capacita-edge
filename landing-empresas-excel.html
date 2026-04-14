@@ -1,1 +1,193 @@
+<head>
+    <!-- ========================================= -->
+    <!-- BLOQUE 1: HEAD / META / CONFIG / ESTILOS -->
+    <!-- ========================================= -->
+    <link rel="canonical" href="https://capacita.cl/cursos-empresa-excel" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Excel para Empresas | Programas de Capacitación Empresarial</title>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#1c4587',
+                        secondary: '#eef4fb',
+                        accent: '#1c4587',
+                        dark: '#0f254a',
+                        darkCard: '#16325c',
+                    },
+                    animation: {
+                        marquee: 'marquee 35s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #1c4587 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .big-test-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .big-test-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .hero-image-mask-left {
+            mask-image: linear-gradient(to right, transparent, black 20%);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%);
+        }
+
+        .hp-field {
+            position: absolute !important;
+            left: -9999px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+    </style>
+</head>
+                    <div class="absolute top-1/2 right-1/5 w-2 h-2 bg-blue-300 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                    <div class="text-center z-10">
+                        <span class="text-7xl block mb-4 filter drop-shadow-lg">🇨🇱</span>
+                        <h3 class="text-3xl font-bold text-white mb-2">Formación en Santiago y Regiones</h3>
+                        <p class="text-blue-200 text-base">Formación continua, desarrollo de talento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- BLOQUE 3: CTA FINAL DE CIERRE -->
+<!-- ========================================= -->
+<section class="py-24 bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 100% 0%, #1c4587 0%, transparent 50%), radial-gradient(circle at 0% 100%, #60a5fa 0%, transparent 50%);"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+            No dejes que tu competencia <br class="hidden md:block"> capacite mejor a su equipo
+        </h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+            Da el primer paso hoy. Agenda una reunión estratégica y diseñemos el plan de crecimiento de tu organización optimizando tu franquicia SENCE.
+        </p>
+        <div class="bg-white/10 p-2 rounded-2xl backdrop-blur-md max-w-2xl mx-auto border border-white/20 shadow-2xl">
+            <a href="#registro" class="flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-900/40">
+                Solicitar Propuesta
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+        <p class="text-sm text-slate-400 mt-6 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Asesoría gratuita y sin compromisos.
+        </p>
+    </div>
+</section>
+
+<script>
+(() => {
+    const startTime = Date.now();
+    const form = document.getElementById('zoho-native-form');
+    const params = new URLSearchParams(window.location.search);
+    const successBox = document.getElementById('lead-success');
+    const phonePrefix = document.getElementById('phone_prefix');
+    const phoneLocal = document.getElementById('lead_phone_local');
+    const phoneField = document.getElementById('lead_phone');
+
+    const setValue = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.value = value || '';
+    };
+
+    const getParam = (name) => params.get(name) || '';
+
+    const isLocal =
+        location.hostname === 'localhost' ||
+        location.hostname === '127.0.0.1';
+
+    const currentUrl = isLocal ? 'https://capacita.cl' : window.location.href;
+    const cleanUrl = isLocal ? 'https://capacita.cl' : window.location.href.split('#')[0];
+    const referrer = document.referrer || 'https://capacita.cl';
+
+    if (params.get('lead') === 'ok' && successBox) {
+        successBox.classList.remove('hidden');
+    }
+
+    setValue('landing_url', currentUrl);
+    setValue('referente', referrer);
+    setValue('zf_referrer_name', referrer);
+    setValue('zf_redirect_url', cleanUrl);
+
+    setValue('utm_source', getParam('utm_source'));
+    setValue('utm_medium', getParam('utm_medium'));
+    setValue('utm_campaign', getParam('utm_campaign'));
+    setValue('utm_term', getParam('utm_term'));
+    setValue('utm_content', getParam('utm_content'));
+    setValue('utm_id', getParam('utm_id'));
+    setValue('gclid', getParam('gclid'));
+    setValue('gbraid', getParam('gbraid'));
+    setValue('wbraid', getParam('wbraid'));
+    setValue('fbclid', getParam('fbclid'));
+    setValue('msclkid', getParam('msclkid'));
+    setValue('li_fat_id', getParam('li_fat_id'));
+    setValue('ttclid', getParam('ttclid'));
+
+    setValue('user_agent', navigator.userAgent.substring(0, 255));
+    setValue('page_title', document.title);
+    setValue('user_language', navigator.language || '');
+    setValue('timezone', Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+    setValue('dispositivo', /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop');
+
+    fetch('https://ipapi.co/json/')
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+            if (!data) return;
+            setValue('ciudad_user', data.city || '');
+            setValue('pais_user', data.country_name || '');
+        })
+        .catch(() => {});
+
+    form?.addEventListener('submit', (event) => {
+        const phone = `${phonePrefix?.value || ''} ${phoneLocal?.value || ''}`.trim();
+        const seconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
+
+        if (!phoneLocal?.value?.trim()) {
+            event.preventDefault();
+            phoneLocal?.focus();
+            return;
+        }
+
+        phoneField.value = phone;
+
+        setValue('tiempo_pagina', String(seconds));
+        setValue('landing_url', isLocal ? 'https://capacita.cl' : window.location.href);
+        setValue('referente', document.referrer || 'https://capacita.cl');
+    });
+})();
+</script>
