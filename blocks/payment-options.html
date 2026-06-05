@@ -1,0 +1,32 @@
+<section id="formas-de-pago" class="block-payment-options" aria-labelledby="payment-options-title">
+  <style>
+    .block-payment-options { max-width: 1120px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; background: #f8fafc; border-radius: 24px; }
+    .block-payment-options h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-payment-options p { margin-bottom: 30px; color: #475569; line-height: 1.75; }
+    .payment-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .payment-card { background: white; border-radius: 22px; padding: 26px; border: 1px solid #e2e8f0; box-shadow: 0 12px 24px rgba(15, 75, 182, 0.06); }
+    .payment-card h3 { margin: 0 0 14px; font-size: 1.2rem; color: #0f4bb6; }
+    .payment-card p { margin: 0; color: #334155; line-height: 1.7; }
+    @media (max-width: 960px) { .payment-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="payment-options-title">{{PAYMENT_OPTIONS_TITLE}}</h2>
+    <p>{{PAYMENT_OPTIONS_DESCRIPTION}}</p>
+
+    <div class="payment-grid">
+      <article class="payment-card">
+        <h3>{{PAYMENT_METHOD_1_TITLE}}</h3>
+        <p>{{PAYMENT_METHOD_1_DESCRIPTION}}</p>
+      </article>
+      <article class="payment-card">
+        <h3>{{PAYMENT_METHOD_2_TITLE}}</h3>
+        <p>{{PAYMENT_METHOD_2_DESCRIPTION}}</p>
+      </article>
+      <article class="payment-card">
+        <h3>{{PAYMENT_METHOD_3_TITLE}}</h3>
+        <p>{{PAYMENT_METHOD_3_DESCRIPTION}}</p>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section id="ubicacion" class="block-location-section" aria-labelledby="location-title">
+  <style>
+    .block-location-section { max-width: 1180px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; }
+    .block-location-section h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-location-section p { margin-bottom: 24px; color: #475569; line-height: 1.7; }
+    .location-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .location-info { background: #f8fafc; border-radius: 24px; padding: 28px; border: 1px solid #e2e8f0; }
+    .location-info dt { font-weight: 700; color: #0f4bb6; margin-top: 18px; }
+    .location-info dd { margin: 6px 0 0 0; color: #334155; }
+    .location-map { border-radius: 24px; overflow: hidden; border: 1px solid #e2e8f0; height: 100%; min-height: 360px; }
+    .location-map iframe { width: 100%; height: 100%; border: 0; }
+    .location-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .location-photos img { width: 100%; border-radius: 18px; object-fit: cover; min-height: 160px; }
+    @media (max-width: 900px) { .location-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="location-title">{{LOCATION_TITLE}}</h2>
+    <p>{{LOCATION_DESCRIPTION}}</p>
+    <div class="location-grid">
+      <div class="location-map">
+        <iframe src="{{GOOGLE_MAPS_EMBED_URL}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación"></iframe>
+      </div>
+      <div class="location-info">
+        <dl>
+          <dt>Dirección</dt>
+          <dd>{{LOCATION_ADDRESS}}</dd>
+          <dt>Sede</dt>
+          <dd>{{LOCATION_SEDE}}</dd>
+          <dt>Acceso</dt>
+          <dd>{{LOCATION_ACCESS}}</dd>
+          <dt>Horario</dt>
+          <dd>{{LOCATION_HOURS}}</dd>
+        </dl>
+        <div class="location-photos">
+          <img src="{{LOCATION_PHOTO_1}}" alt="{{LOCATION_PHOTO_1_ALT}}">
+          <img src="{{LOCATION_PHOTO_2}}" alt="{{LOCATION_PHOTO_2_ALT}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

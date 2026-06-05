@@ -1,0 +1,35 @@
+<section id="testimonios" class="block-testimonials" aria-labelledby="testimonials-title">
+  <style>
+    .block-testimonials { max-width: 1140px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; }
+    .block-testimonials h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-testimonials p { margin-bottom: 32px; color: #475569; line-height: 1.75; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .testimonial-card { background: #f8fafc; border-radius: 24px; padding: 28px; border: 1px solid #e2e8f0; }
+    .testimonial-quote { margin-bottom: 18px; font-size: 1rem; color: #0f172a; line-height: 1.8; }
+    .testimonial-author { font-weight: 700; color: #0f4bb6; margin: 0 0 4px; }
+    .testimonial-role { margin: 0; color: #64748b; font-size: 0.95rem; }
+    @media (max-width: 960px) { .testimonial-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="testimonials-title">{{TESTIMONIALS_TITLE}}</h2>
+    <p>{{TESTIMONIALS_DESCRIPTION}}</p>
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <p class="testimonial-quote">“{{TESTIMONIAL_1_QUOTE}}”</p>
+        <p class="testimonial-author">{{TESTIMONIAL_1_AUTHOR}}</p>
+        <p class="testimonial-role">{{TESTIMONIAL_1_ROLE}}</p>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-quote">“{{TESTIMONIAL_2_QUOTE}}”</p>
+        <p class="testimonial-author">{{TESTIMONIAL_2_AUTHOR}}</p>
+        <p class="testimonial-role">{{TESTIMONIAL_2_ROLE}}</p>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-quote">“{{TESTIMONIAL_3_QUOTE}}”</p>
+        <p class="testimonial-author">{{TESTIMONIAL_3_AUTHOR}}</p>
+        <p class="testimonial-role">{{TESTIMONIAL_3_ROLE}}</p>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section id="perfil-recomendado-curso" class="block-course-fit" aria-labelledby="perfil-recomendado-curso-title">
+  <style>
+    .block-course-fit { max-width: 1120px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; background: #f9fafb; border-radius: 24px; }
+    .block-course-fit h2 { margin: 0 0 16px; font-size: 2rem; color: #073763; }
+    .block-course-fit .intro { margin-bottom: 24px; color: #334155; font-size: 1rem; line-height: 1.6; }
+    .block-course-fit .criteria-list { display: grid; gap: 12px; margin-bottom: 28px; padding-left: 0; list-style: none; }
+    .block-course-fit .criteria-list li { padding: 16px; background: white; border: 1px solid #e2e8f0; border-radius: 16px; color: #0f172a; }
+    .block-course-fit .cta-button { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; border-radius: 999px; background: #0f4bb6; color: white; text-decoration: none; font-weight: 700; transition: background 0.2s ease; }
+    .block-course-fit .cta-button:hover { background: #0b3a8d; }
+    .block-course-fit .eyebrow { display: inline-block; margin-bottom: 12px; font-size: 0.86rem; letter-spacing: 0.1em; text-transform: uppercase; color: #0f4bb6; }
+  </style>
+
+  <div class="block-content">
+    <span class="eyebrow">{{COURSE_FIT_LABEL}}</span>
+    <h2 id="perfil-recomendado-curso-title">{{COURSE_FIT_TITLE}}</h2>
+    <p class="intro">{{COURSE_FIT_DESCRIPTION}}</p>
+    <ul class="criteria-list" aria-label="Características del perfil recomendado">
+      <li>{{COURSE_FIT_CRITERIO_1}}</li>
+      <li>{{COURSE_FIT_CRITERIO_2}}</li>
+      <li>{{COURSE_FIT_CRITERIO_3}}</li>
+    </ul>
+    <a href="#registro" class="cta-button">{{COURSE_FIT_CTA_TEXT}}</a>
+  </div>
+</section>

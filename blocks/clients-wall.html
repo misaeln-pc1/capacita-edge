@@ -1,0 +1,41 @@
+<section id="clientes" class="block-clients-wall" aria-labelledby="clients-title">
+  <style>
+    .block-clients-wall { max-width: 1120px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; background: #ffffff; }
+    .block-clients-wall h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-clients-wall p { margin-bottom: 30px; color: #475569; line-height: 1.7; }
+    .clients-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: center; }
+    .client-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border: 1px solid #e2e8f0; border-radius: 18px; background: #f8fafc; min-height: 160px; }
+    .client-logo { max-width: 120px; width: 100%; height: auto; margin-bottom: 16px; }
+    .client-name { font-weight: 700; color: #0f4bb6; margin-bottom: 6px; }
+    .client-category { margin: 0; color: #64748b; font-size: 0.95rem; text-align: center; }
+    @media (max-width: 960px) { .clients-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .clients-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="clients-title">{{CLIENTS_TITLE}}</h2>
+    <p>{{CLIENTS_DESCRIPTION}}</p>
+    <div class="clients-grid">
+      <article class="client-card">
+        <img class="client-logo" src="{{CLIENT_LOGO_1}}" alt="{{CLIENT_LOGO_1_ALT}}">
+        <p class="client-name">{{CLIENT_NAME_1}}</p>
+        <p class="client-category">{{CLIENT_CATEGORY_1}}</p>
+      </article>
+      <article class="client-card">
+        <img class="client-logo" src="{{CLIENT_LOGO_2}}" alt="{{CLIENT_LOGO_2_ALT}}">
+        <p class="client-name">{{CLIENT_NAME_2}}</p>
+        <p class="client-category">{{CLIENT_CATEGORY_2}}</p>
+      </article>
+      <article class="client-card">
+        <img class="client-logo" src="{{CLIENT_LOGO_3}}" alt="{{CLIENT_LOGO_3_ALT}}">
+        <p class="client-name">{{CLIENT_NAME_3}}</p>
+        <p class="client-category">{{CLIENT_CATEGORY_3}}</p>
+      </article>
+      <article class="client-card">
+        <img class="client-logo" src="{{CLIENT_LOGO_4}}" alt="{{CLIENT_LOGO_4_ALT}}">
+        <p class="client-name">{{CLIENT_NAME_4}}</p>
+        <p class="client-category">{{CLIENT_CATEGORY_4}}</p>
+      </article>
+    </div>
+  </div>
+</section>

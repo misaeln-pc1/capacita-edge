@@ -55,3 +55,18 @@
 - Evitar cambios directos en HTML productivo sin revisión de Worker y rutas.
 - Mantener los bloques de tracking y datos dentro de los mismos patrones existentes.
 - Todas las nuevas landings deben documentarse aquí y en `LANDINGS_BACKLOG.md`.
+
+## Biblioteca de bloques HTML estáticos V1
+
+Se agregó la nueva biblioteca de bloques estáticos bajo `blocks/` para usos de landing pages que no requieren Astro ni frameworks.
+- `blocks/course-fit.html`
+- `blocks/infrastructure-gallery.html`
+- `blocks/benefits-grid.html`
+- `blocks/syllabus-section.html`
+- `blocks/payment-options.html`
+- `blocks/testimonials-section.html`
+- `blocks/clients-wall.html`
+- `blocks/location-section.html`
+- `blocks/quality-seals.html`
+
+Todos los bloques usan placeholders `{{...}}` y mantienen IDs semánticos para anclaje.

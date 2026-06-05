@@ -1,87 +1,98 @@
 {
-  "schemaVersion": 1,
-  "landingKey": "excel-presencial",
-  "publishedAt": "2026-04-01T00:00:00-03:00",
-  "seo": {
-    "title": "Curso de Excel Presencial en Santiago | Capacita.cl",
-    "description": "Capacitacion practica presencial en Santiago Centro. Incluye diploma y apoyo de coordinacion.",
-    "canonical": "https://capacita.cl/curso-de-excel-presencial-en-santiago/"
-  },
-  "identity": {
-    "courseTitle": "Curso de Excel Presencial",
-    "courseShortName": "Excel Presencial",
-    "modality": "Presencial",
-    "duration": "16 horas",
-    "location": "Santiago Centro",
-    "landingCode": "EXCEL_PRESENCIAL_EDGE"
-  },
-  "hero": {
-    "title": "Curso de Excel Presencial",
-    "subtitle": "Nivel basico e intermedio",
-    "description": "Aprende Excel paso a paso en sala, con ejercicios practicos y apoyo de un relator.",
-    "badges": ["Santiago Centro", "100% presencial", "Diploma certificado"]
-  },
-  "mainForm": {
-    "action": "/api/forms/lead",
-    "landingFuente": "excel-presencial",
-    "cursoInteresado": "Excel Presencial",
-    "tipoModalidad": "Presencial",
-    "landingCode": "EXCEL_PRESENCIAL_EDGE",
-    "turnstileSiteKey": "PUBLIC_SITEKEY_PLACEHOLDER",
-    "startLabel": "Proximo inicio",
-    "startText": "Cupos limitados. Solicita el programa aqui.",
-    "submitText": "Solicitar informacion"
-  },
-  "quickFacts": {
-    "duration": "16 horas",
-    "modality": "100% presencial",
-    "priceLabel": "$112.000",
-    "location": "Santiago Centro"
-  },
-  "outcomes": {
-    "primaryItems": [
-      "Ordenar y estructurar planillas de trabajo con mejor criterio.",
-      "Usar funciones clave de busqueda, referencia y condicionales.",
-      "Crear reportes mas claros para tareas administrativas o de analisis."
+  "landing_key": "excel-presencial",
+  "title": "Curso de Excel Presencial en Santiago",
+  "description": "Entrenamiento práctico para dominar Excel básico e intermedio en modalidad presencial.",
+  "course_fit": {
+    "title": "¿Este curso es para ti?",
+    "description": "{{COURSE_FIT_DESCRIPTION}}",
+    "criteria": [
+      "{{COURSE_FIT_CRITERIO_1}}",
+      "{{COURSE_FIT_CRITERIO_2}}",
+      "{{COURSE_FIT_CRITERIO_3}}"
     ],
-    "secondaryItems": ["Diploma al finalizar.", "Material de apoyo.", "Base para continuar con Excel avanzado o Power BI."]
+    "cta_text": "Reservar mi cupo"
   },
-  "courseFit": {
-    "yesItems": ["Usas Excel en tu trabajo.", "Prefieres aprender presencialmente.", "Buscas aplicar Excel en tareas reales."],
-    "noItems": ["Ya manejas automatizacion avanzada.", "Buscas un curso grabado.", "Necesitas dashboards avanzados desde el inicio."]
-  },
-  "schedules": [
-    {
-      "slotKey": "pm-lun-mie",
-      "slotLabel": "Jornada Tarde",
-      "days": "Lunes y Miercoles",
-      "time": "19:30 a 22:10 hrs",
-      "start": "2026-04-06",
-      "startLabel": "Lunes 6 de abril",
-      "seats": 8,
-      "price": 112000,
-      "priceLabel": "$112.000",
-      "installmentsLabel": "2 cuotas de $56.000",
-      "sortOrder": 1
-    }
-  ],
   "infrastructure": {
-    "title": "Infraestructura equipada",
-    "description": "Sala presencial con estacion individual por alumno.",
-    "images": []
-  },
-  "benefits": {"items": ["Material de apoyo", "Diploma", "Pago en cuotas", "Ubicacion central"]},
-  "syllabus": {
-    "modules": [
-      {"title": "Generales y nivelacion", "items": ["Administracion de libros y hojas", "Referencias relativas y absolutas", "Funciones basicas"]},
-      {"title": "Busqueda, condicionales y reportes", "items": ["BUSCARV", "Funciones SI", "Tablas dinamicas iniciales"]}
+    "title": "Infraestructura moderna y equipada",
+    "description": "{{INFRASTRUCTURE_DESCRIPTION}}",
+    "images": [
+      { "src": "{{INFRA_IMG_1}}", "alt": "{{INFRA_IMG_1_ALT}}", "badge": "{{INFRA_BADGE_1}}" },
+      { "src": "{{INFRA_IMG_2}}", "alt": "{{INFRA_IMG_2_ALT}}", "badge": "{{INFRA_BADGE_2}}" },
+      { "src": "{{INFRA_IMG_3}}", "alt": "{{INFRA_IMG_3_ALT}}", "badge": "{{INFRA_BADGE_3}}" }
+    ],
+    "features": [
+      { "label": "{{INFRA_FEATURE_LABEL_1}}", "description": "{{INFRA_FEATURE_DESC_1}}" },
+      { "label": "{{INFRA_FEATURE_LABEL_2}}", "description": "{{INFRA_FEATURE_DESC_2}}" },
+      { "label": "{{INFRA_FEATURE_LABEL_3}}", "description": "{{INFRA_FEATURE_DESC_3}}" }
     ]
   },
-  "paymentOptions": {"items": ["Transferencia", "Tarjeta", "Empresa/SENCE previa coordinacion"]},
-  "testimonials": {"items": []},
-  "clients": {"items": []},
-  "faqs": {"items": [{"question": "Pregunta frecuente de ejemplo", "answer": "Respuesta editable de ejemplo."}]},
-  "location": {"address": "DIRECCION_PUBLICA_PLACEHOLDER"},
-  "seals": {"items": ["OTEC", "NCh 2728"]},
-  "schema": {"@context": "https://schema.org", "@type": "Course", "name": "Curso de Excel Presencial"}
+  "benefits": {
+    "title": "Beneficios del curso",
+    "description": "{{BENEFITS_DESCRIPTION}}",
+    "cards": [
+      { "title": "{{BENEFIT_CARD_1_TITLE}}", "items": ["{{BENEFIT_CARD_1_ITEM_1}}", "{{BENEFIT_CARD_1_ITEM_2}}", "{{BENEFIT_CARD_1_ITEM_3}}"] },
+      { "title": "{{BENEFIT_CARD_2_TITLE}}", "items": ["{{BENEFIT_CARD_2_ITEM_1}}", "{{BENEFIT_CARD_2_ITEM_2}}", "{{BENEFIT_CARD_2_ITEM_3}}"] },
+      { "title": "{{BENEFIT_CARD_3_TITLE}}", "items": ["{{BENEFIT_CARD_3_ITEM_1}}", "{{BENEFIT_CARD_3_ITEM_2}}", "{{BENEFIT_CARD_3_ITEM_3}}"] }
+    ]
+  },
+  "syllabus": {
+    "title": "Temario del curso detallado",
+    "description": "{{SYLLABUS_DESCRIPTION}}",
+    "modules": [
+      { "title": "{{SYLLABUS_MODULE_1_TITLE}}", "points": ["{{SYLLABUS_MODULE_1_POINT_1}}", "{{SYLLABUS_MODULE_1_POINT_2}}", "{{SYLLABUS_MODULE_1_POINT_3}}"] },
+      { "title": "{{SYLLABUS_MODULE_2_TITLE}}", "points": ["{{SYLLABUS_MODULE_2_POINT_1}}", "{{SYLLABUS_MODULE_2_POINT_2}}", "{{SYLLABUS_MODULE_2_POINT_3}}"] },
+      { "title": "{{SYLLABUS_MODULE_3_TITLE}}", "points": ["{{SYLLABUS_MODULE_3_POINT_1}}", "{{SYLLABUS_MODULE_3_POINT_2}}", "{{SYLLABUS_MODULE_3_POINT_3}}"] }
+    ]
+  },
+  "payment_options": {
+    "title": "Formas de pago disponibles",
+    "description": "{{PAYMENT_OPTIONS_DESCRIPTION}}",
+    "methods": [
+      { "title": "{{PAYMENT_METHOD_1_TITLE}}", "description": "{{PAYMENT_METHOD_1_DESCRIPTION}}" },
+      { "title": "{{PAYMENT_METHOD_2_TITLE}}", "description": "{{PAYMENT_METHOD_2_DESCRIPTION}}" },
+      { "title": "{{PAYMENT_METHOD_3_TITLE}}", "description": "{{PAYMENT_METHOD_3_DESCRIPTION}}" }
+    ]
+  },
+  "testimonials": {
+    "title": "Opiniones de alumnos",
+    "description": "{{TESTIMONIALS_DESCRIPTION}}",
+    "items": [
+      { "quote": "{{TESTIMONIAL_1_QUOTE}}", "author": "{{TESTIMONIAL_1_AUTHOR}}", "role": "{{TESTIMONIAL_1_ROLE}}" },
+      { "quote": "{{TESTIMONIAL_2_QUOTE}}", "author": "{{TESTIMONIAL_2_AUTHOR}}", "role": "{{TESTIMONIAL_2_ROLE}}" },
+      { "quote": "{{TESTIMONIAL_3_QUOTE}}", "author": "{{TESTIMONIAL_3_AUTHOR}}", "role": "{{TESTIMONIAL_3_ROLE}}" }
+    ]
+  },
+  "clients": {
+    "title": "Clientes que confían en nosotros",
+    "description": "{{CLIENTS_DESCRIPTION}}",
+    "items": [
+      { "logo": "{{CLIENT_LOGO_1}}", "alt": "{{CLIENT_LOGO_1_ALT}}", "name": "{{CLIENT_NAME_1}}", "category": "{{CLIENT_CATEGORY_1}}" },
+      { "logo": "{{CLIENT_LOGO_2}}", "alt": "{{CLIENT_LOGO_2_ALT}}", "name": "{{CLIENT_NAME_2}}", "category": "{{CLIENT_CATEGORY_2}}" },
+      { "logo": "{{CLIENT_LOGO_3}}", "alt": "{{CLIENT_LOGO_3_ALT}}", "name": "{{CLIENT_NAME_3}}", "category": "{{CLIENT_CATEGORY_3}}" },
+      { "logo": "{{CLIENT_LOGO_4}}", "alt": "{{CLIENT_LOGO_4_ALT}}", "name": "{{CLIENT_NAME_4}}", "category": "{{CLIENT_CATEGORY_4}}" }
+    ]
+  },
+  "location": {
+    "title": "Ubicación y sede",
+    "description": "{{LOCATION_DESCRIPTION}}",
+    "address": "{{LOCATION_ADDRESS}}",
+    "sede": "{{LOCATION_SEDE}}",
+    "access": "{{LOCATION_ACCESS}}",
+    "hours": "{{LOCATION_HOURS}}",
+    "google_maps_embed_url": "{{GOOGLE_MAPS_EMBED_URL}}",
+    "photos": [
+      { "src": "{{LOCATION_PHOTO_1}}", "alt": "{{LOCATION_PHOTO_1_ALT}}" },
+      { "src": "{{LOCATION_PHOTO_2}}", "alt": "{{LOCATION_PHOTO_2_ALT}}" }
+    ]
+  },
+  "quality_seals": {
+    "title": "Sellos de calidad",
+    "description": "{{QUALITY_SEALS_DESCRIPTION}}",
+    "items": [
+      { "logo": "{{SEAL_IMAGE_1}}", "alt": "{{SEAL_IMAGE_1_ALT}}", "title": "{{SEAL_1_TITLE}}", "description": "{{SEAL_1_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_2}}", "alt": "{{SEAL_IMAGE_2_ALT}}", "title": "{{SEAL_2_TITLE}}", "description": "{{SEAL_2_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_3}}", "alt": "{{SEAL_IMAGE_3_ALT}}", "title": "{{SEAL_3_TITLE}}", "description": "{{SEAL_3_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_4}}", "alt": "{{SEAL_IMAGE_4_ALT}}", "title": "{{SEAL_4_TITLE}}", "description": "{{SEAL_4_DESCRIPTION}}" }
+    ]
+  }
 }
