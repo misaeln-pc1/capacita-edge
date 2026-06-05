@@ -132,14 +132,14 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 | Honeypot | ❌ No | ❌ No |
 | Riesgo | 🔴 Alto | 🔴 Alto |
 
-### Landing Power BI (ROTA)
+### Landing Power BI (ESTANDAR)
 | Propiedad | landing-powerbi12-elearning |
 |-----------|----------------------------|
-| Action | REEMPLAZAR_ACTION_ZOHO_O_WORKER |
-| Validación server-side | ❌ Placeholders |
-| Turnstile | REEMPLAZAR_SITEKEY_TURNSTILE |
-| Honeypot | Sí, pero placeholders |
-| Riesgo | 🔴 Rota |
+| Action | `/api/forms/lead` |
+| Validación server-side | ✅ Sí |
+| Turnstile | ✅ Real |
+| Honeypot | ✅ hp_field |
+| Riesgo | 🟢 Bajo |
 
 ## Recomendación
 
