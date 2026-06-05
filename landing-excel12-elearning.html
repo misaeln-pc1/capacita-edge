@@ -30,7 +30,8 @@
 
 <script type="text/javascript">(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/capacita736/ed6f668371e945378c1de1b2a26c9a89.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");</script>
 
-
+    <!-- BLOQUE 2.6: TURNSTILE (CLIENTE) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0.api.js" async defer></script>
 
     <!-- BLOQUE 3: SCHEMA CORREGIDO PARA E-LEARNING SINCRONICO -->
     <script type="application/ld+json">
@@ -45,7 +46,7 @@
         "@type": "Organization",
         "name": "Capacita.cl",
         "url": "https://capacita.cl",
-        "logo": "/assets/img/landings/excel-elearning/logo-capacita-850x300-e1602863310152.jpg"
+        "logo": "/assets/img/landings/excel-elearning/logo-oficial-capacita.webp"
       },
       "hasCourseInstance": [
         {
@@ -128,8 +129,8 @@
     </style>
 
     <div class="hero-info-v18">
-        <!-- Actualización del logotip desde el CDN de GitHub con fondo blanco para contraste -->
-        <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/logo-oficial-capacita.webp" alt="Logo Capacita.cl - Cursos de Excel Online y Presencial" class="hero-logo-v18" width="180" height="64">
+        <!-- Logo local migrado desde GitHub -->
+        <img src="/assets/img/landings/excel-elearning/logo-oficial-capacita.webp" alt="Logo Capacita.cl - Cursos de Excel Online y Presencial" class="hero-logo-v18" width="180" height="64">
         <div class="cp-badges-row-v18">
             <div class="cp-base-badge-bar-v18 badge-location-v18">🔴 100% en Vivo con Profesor</div>
             <div class="cp-base-badge-bar-v18 cp-badge-experience-v18"><span>🏅</span> Más de 10 años capacitando</div>
@@ -156,32 +157,61 @@
             <p>Inicio de clases 29 de Junio:</p>
         </div>
 
-        <form action="https://forms.zohopublic.com/capacita736/form/FormularioExcelBsico/formperma/l4u6SgomBWOOOjd6dc7A3MCf7b3uB0r5OE1nAfs7n8w/htmlRecords/submit" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="zoho-v18-form">
+        <form id="lead-form" action="/api/forms/lead" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" class="zoho-v18-form">
 
             <input type="hidden" name="zf_referrer_name" value="">
             <input type="hidden" name="zf_redirect_url" value="">
             <input type="hidden" name="zc_gad" value="">
+            <input type="hidden" name="Website" id="landing_url" value="">
+            <input type="hidden" name="Website1" id="referente" value="">
+            <input type="hidden" name="SingleLine2" id="curso_interesado" value="Curso Excel Básico Intermedio Online en Vivo">
+            <input type="hidden" name="SingleLine1" id="tipo_modalidad" value="E-learning Sincrónico">
+            <input type="hidden" name="SingleLine15" id="landing_code" value="EXCEL_ELEARNING_SYNC_V1">
+
+            <div class="hidden-trap">
+              <label for="hp_field">No llenar</label>
+              <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off">
+            </div>
 
             <label>Nombres:<em>*</em></label>
             <input type="text" name="SingleLine" placeholder="Tu nombre" required maxlength="255">
 
             <label>Email:<em>*</em></label>
-            <input type="text" name="Email" placeholder="tu@correo.cl" required maxlength="255">
+            <input type="email" name="Email" placeholder="tu@correo.cl" required maxlength="255">
 
             <label>Teléfono / WhatsApp:</label>
-            <input type="text" name="PhoneNumber_countrycode" placeholder="9 1234 5678" maxlength="20">
+            <input type="text" name="PhoneNumber_countrycode" placeholder="9 1234 5678" maxlength="40">
 
             <label>Mensaje / Dudas:</label>
             <textarea name="MultiLine" placeholder="Consulta sobre pagos, horarios, etc..." maxlength="65535"></textarea>
+
+            <div style="margin-top: 15px;">
+              <div class="cf-turnstile"
+                   data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
+                   data-theme="light"
+                   data-appearance="interaction-only"
+                   data-response-field-name="cf-turnstile-response"></div>
+            </div>
 
             <!-- INGENIERÍA: CTA de baja fricción para maximizar captura de leads -->
             <button type="submit" class="btn-submit-v18">Solicitar Información</button>
 
             <div class="infographic-notice-v18">
-                <div style="font-size: 16px;">⏱️</div>
-                <span>Cupos limitados por sala virtual</span>
+                <div style="font-size: 16px;">🔒</div>
+                <span>Datos protegidos y verificados por Turnstile</span>
             </div>
         </form>
+
+        <script>
+          // Populate tracking fields on form load
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('lead-form');
+            if (form) {
+              document.getElementById('landing_url').value = window.location.href;
+              document.getElementById('referente').value = document.referrer || 'https://capacita.cl';
+            }
+          });
+        </script>
     </div>
 </section>
 
@@ -265,15 +295,15 @@
 
     <div class="bento-gallery">
         <div class="bento-item item-main">
-            <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-1.webp" alt="Plataforma de Clases en Vivo Teams Capacita para Curso de Excel" loading="lazy" width="800" height="600">
+            <img src="/assets/img/landings/excel-elearning/pantalla-excel-online-1.webp" alt="Plataforma de Clases en Vivo Teams Capacita para Curso de Excel" loading="lazy" width="800" height="600">
             <div class="spec-badge">Clases Integradas vía Zoom/Teams</div>
         </div>
         <div class="bento-item">
-            <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-2.webp" alt="Grabaciones de Clases de Excel en Alta Resolución HD" loading="lazy" width="400" height="300">
+            <img src="/assets/img/landings/excel-elearning/pantalla-excel-online-2.webp" alt="Grabaciones de Clases de Excel en Alta Resolución HD" loading="lazy" width="400" height="300">
             <div class="spec-badge">Acceso a Grabaciones en Video HD</div>
         </div>
         <div class="bento-item">
-            <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-3.webp" alt="Soporte y Foro con Tutor Académico Experto en Excel" loading="lazy" width="400" height="300">
+            <img src="/assets/img/landings/excel-elearning/pantalla-excel-online-3.webp" alt="Soporte y Foro con Tutor Académico Experto en Excel" loading="lazy" width="400" height="300">
             <div class="spec-badge">Foro y Material Complementario</div>
         </div>
     </div>
@@ -583,19 +613,19 @@
 
         <div class="testi-grid-v3">
             <div class="testi-item-v3">
-                <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-felipe.webp" class="testi-avatar-v3" alt="Testimonio de Felipe S., Ejecutivo de Cuentas, sobre el curso de Excel Sincrónico" loading="lazy" width="260" height="390">
+                <img src="/assets/img/landings/excel-elearning/testimonio-curso-excel-online-felipe.webp" class="testi-avatar-v3" alt="Testimonio de Felipe S., Ejecutivo de Cuentas, sobre el curso de Excel Sincrónico" loading="lazy" width="260" height="390">
                 <div class="testi-name-v3">Felipe S.</div>
                 <div class="testi-role-v3">Ejecutivo de Cuentas</div>
                 <p class="testi-quote-v3">"Pensé que al ser online sería difícil de seguir, pero el profesor está siempre ahí. Poder compartirle mi pantalla para que me corrigiera una fórmula en vivo fue clave para aprender de verdad."</p>
             </div>
             <div class="testi-item-v3">
-                <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-daniela.webp" class="testi-avatar-v3" alt="Reseña de Daniela P., Coordinadora de Proyectos, recomendando las clases en vivo de Excel" loading="lazy" width="260" height="390">
+                <img src="/assets/img/landings/excel-elearning/testimonio-curso-excel-online-daniela.webp" class="testi-avatar-v3" alt="Reseña de Daniela P., Coordinadora de Proyectos, recomendando las clases en vivo de Excel" loading="lazy" width="260" height="390">
                 <div class="testi-name-v3">Daniela P.</div>
                 <div class="testi-role-v3">Coordinadora de Proyectos</div>
                 <p class="testi-quote-v3">"Lo mejor es la comodidad de estudiar desde casa sin perder la cercanía. Poder hacer preguntas por el micrófono y que te guíen paso a paso hizo que perdiera el miedo a las tablas dinámicas."</p>
             </div>
             <div class="testi-item-v3">
-                <img src="https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-carolina.webp" class="testi-avatar-v3" alt="Opinión de Carolina A., Analista de Logística, sobre su experiencia en el curso de Excel online" loading="lazy" width="260" height="390">
+                <img src="/assets/img/landings/excel-elearning/testimonio-curso-excel-online-carolina.webp" class="testi-avatar-v3" alt="Opinión de Carolina A., Analista de Logística, sobre su experiencia en el curso de Excel online" loading="lazy" width="260" height="390">
                 <div class="testi-name-v3">Carolina A.</div>
                 <div class="testi-role-v3">Analista de Logística</div>
                 <p class="testi-quote-v3">"Tener al profesor en vivo explicando marca toda la diferencia frente a esos cursos genéricos grabados. Y si algún día me tocaba turno tarde, revisaba la grabación de la clase sin problemas."</p>

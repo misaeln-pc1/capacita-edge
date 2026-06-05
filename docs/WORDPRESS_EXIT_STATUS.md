@@ -125,3 +125,33 @@ Reducir dependencia funcional de WordPress migrando imagenes usadas por landings
 2. Aplicar cambios equivalentes en Worker real solo mediante flujo controlado si corresponde.
 3. Mantener nuevas landings con imagenes bajo `/assets/img/landings/...`, no desde WordPress.
 4. Mantener formularios nuevos con `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile `interaction-only` y validacion server-side.
+
+## Actualización Sprint 2026-06-05
+
+### GitHub URLs Migradas
+Se encontraron y migraron 7 URLs alojadas en GitHub (misaeln-pc1.github.io) desde landing-excel12-elearning.html:
+
+| Archivo | URL GitHub original | Ruta local nueva | Estado |
+|---|---|---|---|
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/logo-oficial-capacita.webp | /assets/img/landings/excel-elearning/logo-oficial-capacita.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-1.webp | /assets/img/landings/excel-elearning/pantalla-excel-online-1.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-2.webp | /assets/img/landings/excel-elearning/pantalla-excel-online-2.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/Pantalla-Excel-online-3.webp | /assets/img/landings/excel-elearning/pantalla-excel-online-3.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-felipe.webp | /assets/img/landings/excel-elearning/testimonio-curso-excel-online-felipe.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-daniela.webp | /assets/img/landings/excel-elearning/testimonio-curso-excel-online-daniela.webp | migrated |
+| landing-excel12-elearning.html | https://misaeln-pc1.github.io/capacita-edge/assets/img/testimonio-curso-excel-online-carolina.webp | /assets/img/landings/excel-elearning/testimonio-curso-excel-online-carolina.webp | migrated |
+
+### Formularios Migrados
+- **landing-excel12-elearning.html**: Formulario principal migrado de `forms.zohopublic.com` a `/api/forms/lead` con Turnstile `interaction-only`
+  - Agregado: `hp_field` (honeypot trap)
+  - Agregado: `Website` / `Website1` campos ocultos para tracking
+  - Agregado: Turnstile con `data-appearance="interaction-only"`
+  - Agregado: Script de poblado automático de campos de tracking
+  - Mantenido: Formulario secundario de descarga de temario (Zoho) como legacy
+
+### Estado actual de landings
+Todas las 5 landings raíz están ahora:
+✅ Sin dependencia de WordPress en imágenes
+✅ Con assets locales en `/assets/img/landings/{landing-key}/`
+✅ Con formularios modernos usando `/api/forms/lead` (excepto Excel presencial legacy)
+✅ Con Turnstile `interaction-only` en formularios nuevos (Power BI, Empresas, Empresas-Excel, Excel e-learning)
