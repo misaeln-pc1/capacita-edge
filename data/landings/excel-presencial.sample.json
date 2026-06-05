@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "landingKey": "excel-presencial",
+  "publishedAt": "2026-04-01T00:00:00-03:00",
+  "seo": {
+    "title": "Curso de Excel Presencial en Santiago | Capacita.cl",
+    "description": "Capacitacion practica presencial en Santiago Centro. Incluye diploma y apoyo de coordinacion.",
+    "canonical": "https://capacita.cl/curso-de-excel-presencial-en-santiago/"
+  },
+  "identity": {
+    "courseTitle": "Curso de Excel Presencial",
+    "courseShortName": "Excel Presencial",
+    "modality": "Presencial",
+    "duration": "16 horas",
+    "location": "Santiago Centro",
+    "landingCode": "EXCEL_PRESENCIAL_EDGE"
+  },
+  "hero": {
+    "title": "Curso de Excel Presencial",
+    "subtitle": "Nivel basico e intermedio",
+    "description": "Aprende Excel paso a paso en sala, con ejercicios practicos y apoyo de un relator.",
+    "badges": ["Santiago Centro", "100% presencial", "Diploma certificado"]
+  },
+  "mainForm": {
+    "action": "/api/forms/lead",
+    "landingFuente": "excel-presencial",
+    "cursoInteresado": "Excel Presencial",
+    "tipoModalidad": "Presencial",
+    "landingCode": "EXCEL_PRESENCIAL_EDGE",
+    "turnstileSiteKey": "PUBLIC_SITEKEY_PLACEHOLDER",
+    "startLabel": "Proximo inicio",
+    "startText": "Cupos limitados. Solicita el programa aqui.",
+    "submitText": "Solicitar informacion"
+  },
+  "quickFacts": {
+    "duration": "16 horas",
+    "modality": "100% presencial",
+    "priceLabel": "$112.000",
+    "location": "Santiago Centro"
+  },
+  "outcomes": {
+    "primaryItems": [
+      "Ordenar y estructurar planillas de trabajo con mejor criterio.",
+      "Usar funciones clave de busqueda, referencia y condicionales.",
+      "Crear reportes mas claros para tareas administrativas o de analisis."
+    ],
+    "secondaryItems": ["Diploma al finalizar.", "Material de apoyo.", "Base para continuar con Excel avanzado o Power BI."]
+  },
+  "courseFit": {
+    "yesItems": ["Usas Excel en tu trabajo.", "Prefieres aprender presencialmente.", "Buscas aplicar Excel en tareas reales."],
+    "noItems": ["Ya manejas automatizacion avanzada.", "Buscas un curso grabado.", "Necesitas dashboards avanzados desde el inicio."]
+  },
+  "schedules": [
+    {
+      "slotKey": "pm-lun-mie",
+      "slotLabel": "Jornada Tarde",
+      "days": "Lunes y Miercoles",
+      "time": "19:30 a 22:10 hrs",
+      "start": "2026-04-06",
+      "startLabel": "Lunes 6 de abril",
+      "seats": 8,
+      "price": 112000,
+      "priceLabel": "$112.000",
+      "installmentsLabel": "2 cuotas de $56.000",
+      "sortOrder": 1
+    }
+  ],
+  "infrastructure": {
+    "title": "Infraestructura equipada",
+    "description": "Sala presencial con estacion individual por alumno.",
+    "images": []
+  },
+  "benefits": {"items": ["Material de apoyo", "Diploma", "Pago en cuotas", "Ubicacion central"]},
+  "syllabus": {
+    "modules": [
+      {"title": "Generales y nivelacion", "items": ["Administracion de libros y hojas", "Referencias relativas y absolutas", "Funciones basicas"]},
+      {"title": "Busqueda, condicionales y reportes", "items": ["BUSCARV", "Funciones SI", "Tablas dinamicas iniciales"]}
+    ]
+  },
+  "paymentOptions": {"items": ["Transferencia", "Tarjeta", "Empresa/SENCE previa coordinacion"]},
+  "testimonials": {"items": []},
+  "clients": {"items": []},
+  "faqs": {"items": [{"question": "Pregunta frecuente de ejemplo", "answer": "Respuesta editable de ejemplo."}]},
+  "location": {"address": "DIRECCION_PUBLICA_PLACEHOLDER"},
+  "seals": {"items": ["OTEC", "NCh 2728"]},
+  "schema": {"@context": "https://schema.org", "@type": "Course", "name": "Curso de Excel Presencial"}
+}
