@@ -6,8 +6,10 @@
 3. No incluir lógica de ejecución ni sintaxis de template de framework en el HTML final.
 4. Reemplazar datos variables por placeholders `{{...}}`.
 5. Solo usar CSS inline estrictamente necesario para mantener presentación mínima.
-6. Evitar formularios productivos en los bloques. Si se incluye un formulario, usar `/api/forms/lead` y campo honeypot `hp_field`.
+6. Evitar formularios productivos en los bloques. Si se incluye un formulario, usar `/api/forms/lead`, campo honeypot `hp_field`, `Website`, `Website1` y nombres Zoho/SingleLine compatibles.
 7. No introducir scripts de terceros salvo Turnstile en bloques con formulario, usando solo sitekey publica o placeholder. La secret key nunca debe ir en HTML.
+8. Turnstile en formularios nuevos debe usar `class="cf-turnstile"`, `data-response-field-name="cf-turnstile-response"` y `data-appearance="interaction-only"` para baja friccion visual sin ocultar el widget.
+9. No ocultar Turnstile con CSS (`display:none`, `visibility:hidden`, `opacity:0`, posicionamiento fuera de pantalla ni hacks visuales). La validacion debe seguir ocurriendo server-side en `/api/forms/lead`.
 
 ## Estructura recomendada
 - `section` con `aria-labelledby`.
