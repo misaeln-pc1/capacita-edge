@@ -7,7 +7,7 @@
 4. Reemplazar datos variables por placeholders `{{...}}`.
 5. Solo usar CSS inline estrictamente necesario para mantener presentación mínima.
 6. Evitar formularios productivos en los bloques. Si se incluye un formulario, usar `/api/forms/lead` y campo honeypot `hp_field`.
-7. No introducir scripts de terceros dentro de bloques nuevos.
+7. No introducir scripts de terceros salvo Turnstile en bloques con formulario, usando solo sitekey publica o placeholder. La secret key nunca debe ir en HTML.
 
 ## Estructura recomendada
 - `section` con `aria-labelledby`.
