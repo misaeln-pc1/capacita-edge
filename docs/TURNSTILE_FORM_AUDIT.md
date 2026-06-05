@@ -8,9 +8,9 @@ Tabla de auditoría de configuración Turnstile y formularios en cada landing.
 |---------|---------|---|---|---|---|---|---|---|---|---|---|---|
 | Empresas | landing-empresas.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | ✅ Funcional |
 | Empresas Excel | landing-empresas-excel.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | ✅ Funcional |
-| Excel Presencial | landing-excel12-presencial.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | 🔴 Alto | Migrar a `/api/forms/lead` + Turnstile | ⚠️ Comercial pero no seguro |
-| Excel E-learning | landing-excel12-elearning.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | 🔴 Alto | Migrar a `/api/forms/lead` + Turnstile | ⚠️ Comercial pero no seguro |
-| Power BI E-learning | landing-powerbi12-elearning.html | REEMPLAZAR_ACTION_ZOHO_O_WORKER | [POR_CONFIRMAR] | [POR_CONFIRMAR] | Parcial | REEMPLAZAR_SITEKEY_TURNSTILE | ✅ company_website | ✅ | ❌ | 🔴 Rota | Reemplazar placeholders | ❌ Rota |
+| Excel Presencial | landing-excel12-presencial.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. | Legacy funcional temporal |
+| Excel E-learning | landing-excel12-elearning.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. | Legacy funcional temporal |
+| Power BI E-learning | landing-powerbi12-elearning.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | ✅ Funcional |
 
 ## Detalles por landing
 
@@ -52,13 +52,10 @@ Idéntica configuración segura. Ambas son referencias válidas.
 - Sin honeypot real (puede tener en JS pero no protege)
 - Spammeable
 
-**Corrección requerida**:
-1. Cambiar action a `/api/forms/lead`
-2. Agregar Turnstile cliente
-3. Agregar honeypot HTML
-4. Validar en `functions/api/forms/lead.js` que existe TURNSTILE_SECRET y ZOHO_LEAD_FORM_URL
+**Decisión de fase**:
+No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas.
 
-**Prueba después**:
+**Prueba en hito posterior**:
 - Enviar formulario valido → debe redirigir con ?lead=ok#registro
 - Enviar con Turnstile inválido → debe rechazar
 - Enviar con honeypot relleno → debe rechazar
@@ -70,32 +67,25 @@ Igual problema que `landing-excel12-presencial.html`.
 
 **Corrección**: Idéntica al anterior.
 
-### ❌ landing-powerbi12-elearning.html
-**Rota con placeholders**
+### ✅ landing-powerbi12-elearning.html
+**Funcional con `/api/forms/lead`**
 
 ```html
-<form id="zoho-native-form" action="REEMPLAZAR_ACTION_ZOHO_O_WORKER" method="POST">
-  <!-- honeypot: company_website -->
+<form id="zoho-native-form" action="/api/forms/lead" method="POST">
+  <!-- honeypot: hp_field -->
   <div class="cf-turnstile"
-       data-sitekey="REEMPLAZAR_SITEKEY_TURNSTILE"
+       data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
        data-response-field-name="cf-turnstile-response"></div>
 </form>
 ```
 
-**Problemas**:
-- `action` tiene placeholder sin reemplazar
-- `data-sitekey` tiene placeholder sin reemplazar
-- Formulario no funciona en estado actual
-- Script valida honeypot pero form no envía a ningún lado
+**Estado**:
+- `action` apunta a `/api/forms/lead`
+- `data-sitekey` usa la sitekey publica funcional
+- Honeypot usa `hp_field`
+- Campos visibles y tracking usan nombres Zoho/SingleLine compatibles
 
-**Corrección requerida**:
-1. Decidir: ¿usar `/api/forms/lead` o Zoho directo?
-   - **Recomendación**: `/api/forms/lead` (más seguro)
-2. Reemplazar `action="/api/forms/lead"`
-3. Reemplazar `data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"`
-4. Validar que TURNSTILE_SECRET y ZOHO_LEAD_FORM_URL existan en Cloudflare
-
-**Validación**: Igual que excel12-presencial.
+**Validacion**: Igual que landings B2B funcionales.
 
 ## Campos esperados en formulario
 
@@ -106,7 +96,7 @@ Igual problema que `landing-excel12-presencial.html`.
 - **Requerido**: Sí
 
 ### Honeypot
-- **Campo**: `hp_field` (recomendado) o `company_website` (usado en Power BI)
+- **Campo**: `hp_field`
 - **Atributos**: `type="text"`, `tabindex="-1"`, `autocomplete="off"`
 - **Oculto a**: Humanos (CSS o JS)
 - **Relleno por**: Bots simples
@@ -150,13 +140,13 @@ Igual problema que `landing-excel12-presencial.html`.
 |---------|--------|-----------|
 | landing-empresas.html | 🟢 Bajo | Mantener. Validación centralizada. |
 | landing-empresas-excel.html | 🟢 Bajo | Mantener. Validación centralizada. |
-| landing-excel12-presencial.html | 🔴 Alto | Urgente: migrar a `/api/forms/lead` + Turnstile. |
-| landing-excel12-elearning.html | 🔴 Alto | Urgente: migrar a `/api/forms/lead` + Turnstile. |
-| landing-powerbi12-elearning.html | 🔴 Crítica | Urgente: reemplazar placeholders. |
+| landing-excel12-presencial.html | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. |
+| landing-excel12-elearning.html | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. |
+| landing-powerbi12-elearning.html | 🟢 Bajo | Mantener. Validación centralizada. |
 
 ## Próximas acciones
 
-1. **Inmediato**: Reemplazar placeholders en `landing-powerbi12-elearning.html`.
-2. **Corto plazo**: Migrar Excel y Power BI a flujo seguro `/api/forms/lead` + Turnstile.
+1. **Inmediato**: Validar envío real de `landing-powerbi12-elearning.html` en entorno controlado.
+2. **Corto plazo**: Mantener Excel presencial y Excel e-learning como legacy funcional temporal; migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas.
 3. **Validación**: Auditar cada cambio con pruebas de envío.
 4. **Documentación**: Actualizar ZOHOFORMS_FIELD_MAP.md con campos específicos por landing.

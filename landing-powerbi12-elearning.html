@@ -621,41 +621,48 @@
             - La SECRET KEY NO debe ir en HTML.
             - Si quieres validación real anti-bot, la verificación del token debe hacerse en Worker / backend antes de enviar a Zoho.
           -->
-          <form id="zoho-native-form" action="REEMPLAZAR_ACTION_ZOHO_O_WORKER" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-            <input type="hidden" name="course_name" value="Curso Power BI Básico Intermedio Online en Vivo">
+          <form id="zoho-native-form" action="/api/forms/lead" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="hidden" id="zf_referrer_name" name="zf_referrer_name" value="">
             <input type="hidden" id="zf_redirect_url" name="zf_redirect_url" value="">
             <input type="hidden" id="zc_gad" name="zc_gad" value="">
 
-            <input type="hidden" id="utm_source" name="utm_source" value="">
-            <input type="hidden" id="utm_medium" name="utm_medium" value="">
-            <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
-            <input type="hidden" id="utm_term" name="utm_term" value="">
-            <input type="hidden" id="utm_content" name="utm_content" value="">
-            <input type="hidden" id="gclid" name="gclid" value="">
-            <input type="hidden" id="gbraid" name="gbraid" value="">
-            <input type="hidden" id="wbraid" name="wbraid" value="">
-            <input type="hidden" id="referente" name="referente" value="">
-            <input type="hidden" id="user_agent" name="user_agent" value="">
-            <input type="hidden" id="page_title" name="page_title" value="">
-            <input type="hidden" id="user_language" name="user_language" value="">
-            <input type="hidden" id="timezone" name="timezone" value="">
-            <input type="hidden" id="dispositivo" name="dispositivo" value="">
-            <input type="hidden" id="ciudad_user" name="ciudad_user" value="">
-            <input type="hidden" id="pais_user" name="pais_user" value="">
-            <input type="hidden" id="capture_date" name="capture_date" value="">
-            <input type="hidden" id="capture_hours" name="capture_hours" value="">
-            <input type="hidden" id="capture_minutes" name="capture_minutes" value="">
-            <input type="hidden" id="capture_meridiem" name="capture_meridiem" value="">
-            <input type="hidden" id="client_id" name="client_id" value="">
-            <input type="hidden" id="session_id" name="session_id" value="">
-            <input type="hidden" id="tiempo_pagina" name="tiempo_pagina" value="">
-            <input type="hidden" id="page_path" name="page_path" value="">
-            <input type="hidden" id="landing_code" name="landing_code" value="powerbi_online_sync_v1">
+            <input type="hidden" name="Website" id="landing_url" value="">
+            <input type="hidden" name="Website1" id="referente" value="">
+            <input type="hidden" name="SingleLine14" id="utm_source" value="">
+            <input type="hidden" name="SingleLine18" id="utm_medium" value="">
+            <input type="hidden" name="SingleLine13" id="utm_campaign" value="">
+            <input type="hidden" name="SingleLine17" id="utm_term" value="">
+            <input type="hidden" name="SingleLine16" id="utm_content" value="">
+            <input type="hidden" name="SingleLine11" id="utm_id" value="">
+            <input type="hidden" name="SingleLine5" id="gclid" value="">
+            <input type="hidden" name="SingleLine6" id="gbraid" value="">
+            <input type="hidden" name="SingleLine12" id="wbraid" value="">
+            <input type="hidden" name="SingleLine8" id="fbclid" value="">
+            <input type="hidden" name="SingleLine7" id="msclkid" value="">
+            <input type="hidden" name="SingleLine9" id="li_fat_id" value="">
+            <input type="hidden" name="SingleLine10" id="ttclid" value="">
+            <input type="hidden" name="SingleLine24" id="client_id" value="">
+            <input type="hidden" name="SingleLine25" id="session_id" value="">
+            <input type="hidden" name="SingleLine23" id="lead_event_id" value="">
+            <input type="hidden" name="SingleLine19" id="dispositivo" value="">
+            <input type="hidden" name="SingleLine20" id="user_agent" value="">
+            <input type="hidden" name="SingleLine21" id="page_title" value="">
+            <input type="hidden" name="SingleLine22" id="user_language" value="">
+            <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
+            <input type="hidden" name="SingleLine27" id="pais_user" value="">
+            <input type="hidden" name="SingleLine28" id="timezone" value="">
+            <input type="hidden" name="SingleLine29" id="tiempo_pagina" value="">
+            <input type="hidden" name="DateTime_date" id="capture_date" value="">
+            <input type="hidden" name="DateTime_hours" id="capture_hours" value="">
+            <input type="hidden" name="DateTime_minutes" id="capture_minutes" value="">
+            <input type="hidden" name="DateTime_meridiem" id="capture_meridiem" value="">
+            <input type="hidden" name="SingleLine2" id="curso_interesado" value="Curso Power BI Básico Intermedio Online en Vivo">
+            <input type="hidden" name="SingleLine1" id="tipo_modalidad" value="Online Sincrónico">
+            <input type="hidden" name="SingleLine15" id="landing_code" value="POWERBI_ONLINE_SYNC_V1">
 
             <div class="hidden-trap">
-              <label for="company_website">No llenar</label>
-              <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+              <label for="hp_field">No llenar</label>
+              <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off">
             </div>
 
             <div class="field">
@@ -668,15 +675,12 @@
               <input type="text" name="PhoneNumber_countrycode" placeholder="Teléfono" maxlength="40">
             </div>
             <div class="field">
-              <input type="text" name="SingleLine1" placeholder="Empresa (opcional)" maxlength="255">
-            </div>
-            <div class="field">
               <textarea name="MultiLine" placeholder="Cuéntanos tu interés o tu contexto."></textarea>
             </div>
 
             <div class="turnstile-wrap">
               <div class="cf-turnstile"
-                   data-sitekey="REEMPLAZAR_SITEKEY_TURNSTILE"
+                   data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
                    data-theme="light"
                    data-response-field-name="cf-turnstile-response"></div>
             </div>
@@ -972,7 +976,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
-      const fieldsToMap = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'];
+      const fieldsToMap = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','utm_id','gclid','gbraid','wbraid','fbclid','msclkid','li_fat_id','ttclid'];
       const formElement = document.getElementById('zoho-native-form');
 
       fieldsToMap.forEach(function(param) {
@@ -996,7 +1000,7 @@
       if (document.getElementById('page_title')) document.getElementById('page_title').value = document.title;
       if (document.getElementById('user_language')) document.getElementById('user_language').value = navigator.language;
       if (document.getElementById('timezone')) document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Desconocida';
-      if (document.getElementById('page_path')) document.getElementById('page_path').value = window.location.pathname;
+      if (document.getElementById('landing_url')) document.getElementById('landing_url').value = window.location.href;
 
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       if (document.getElementById('dispositivo')) document.getElementById('dispositivo').value = isMobile ? 'Mobile' : 'Desktop';
@@ -1047,7 +1051,7 @@
 
       if (formElement) {
         formElement.addEventListener('submit', function(e) {
-          const honeypot = document.getElementById('company_website');
+          const honeypot = document.getElementById('hp_field');
           const turnstileToken = formElement.querySelector('[name="cf-turnstile-response"]');
           const timeSpentSeconds = Math.floor((Date.now() - startTime) / 1000);
 
