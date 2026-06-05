@@ -73,10 +73,12 @@ Redirect final: landing_url?lead=ok#registro
 ```html
 <div class="cf-turnstile"
      data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
+     data-appearance="interaction-only"
      data-response-field-name="cf-turnstile-response"></div>
 ```
 - **Visibilidad**: Pública, seguro exponerla en frontend
 - **No cambiar**: Solo Cloudflare puede generar sitekeys validadas
+- **Apariencia estandar**: `data-appearance="interaction-only"` para baja friccion visual sin ocultar el widget
 
 ### Honeypot (campo de trampa)
 ```html
@@ -114,7 +116,7 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 
 ## Decisión operativa actual
 
-Excel presencial y Excel e-learning quedan temporalmente como landings legacy funcionales con envío directo a Zoho. No deben modificarse en esta fase para evitar riesgo comercial. Toda landing nueva o corregida desde Power BI en adelante debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile y nombres Zoho/SingleLine compatibles.
+Excel presencial y Excel e-learning quedan temporalmente como landings legacy funcionales con envío directo a Zoho. No deben modificarse en esta fase para evitar riesgo comercial. Toda landing nueva o corregida desde Power BI en adelante debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile con `data-appearance="interaction-only"` y `data-response-field-name="cf-turnstile-response"`, y nombres Zoho/SingleLine compatibles.
 
 ## Diferencias entre landings actuales
 
@@ -147,7 +149,7 @@ Excel presencial y Excel e-learning quedan temporalmente como landings legacy fu
 
 ## Recomendación
 
-**Estandarizar toda landing nueva o corregida desde Power BI en adelante a usar `/api/forms/lead` con Turnstile real y honeypot.**
+**Estandarizar toda landing nueva o corregida desde Power BI en adelante a usar `/api/forms/lead` con Turnstile real, `data-appearance="interaction-only"` y honeypot.**
 
 Ventajas:
 - Validación server-side consistente
