@@ -1,0 +1,44 @@
+<section id="temario" class="block-syllabus-section" aria-labelledby="syllabus-title">
+  <style>
+    .block-syllabus-section { max-width: 1080px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; }
+    .block-syllabus-section h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-syllabus-section p { margin-bottom: 26px; color: #475569; line-height: 1.75; }
+    .module-list { display: grid; gap: 18px; }
+    .module-card { padding: 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; }
+    .module-card h3 { margin: 0 0 12px; font-size: 1.1rem; color: #0f4bb6; }
+    .module-card ol { margin: 0; padding-left: 18px; color: #334155; line-height: 1.8; }
+    .module-card li { margin-bottom: 10px; }
+  </style>
+
+  <div class="block-content">
+    <h2 id="syllabus-title">{{SYLLABUS_TITLE}}</h2>
+    <p>{{SYLLABUS_DESCRIPTION}}</p>
+
+    <div class="module-list">
+      <article class="module-card">
+        <h3>{{SYLLABUS_MODULE_1_TITLE}}</h3>
+        <ol>
+          <li>{{SYLLABUS_MODULE_1_POINT_1}}</li>
+          <li>{{SYLLABUS_MODULE_1_POINT_2}}</li>
+          <li>{{SYLLABUS_MODULE_1_POINT_3}}</li>
+        </ol>
+      </article>
+      <article class="module-card">
+        <h3>{{SYLLABUS_MODULE_2_TITLE}}</h3>
+        <ol>
+          <li>{{SYLLABUS_MODULE_2_POINT_1}}</li>
+          <li>{{SYLLABUS_MODULE_2_POINT_2}}</li>
+          <li>{{SYLLABUS_MODULE_2_POINT_3}}</li>
+        </ol>
+      </article>
+      <article class="module-card">
+        <h3>{{SYLLABUS_MODULE_3_TITLE}}</h3>
+        <ol>
+          <li>{{SYLLABUS_MODULE_3_POINT_1}}</li>
+          <li>{{SYLLABUS_MODULE_3_POINT_2}}</li>
+          <li>{{SYLLABUS_MODULE_3_POINT_3}}</li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>

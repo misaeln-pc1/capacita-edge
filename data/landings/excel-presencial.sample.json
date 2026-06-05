@@ -1,0 +1,98 @@
+{
+  "landing_key": "excel-presencial",
+  "title": "Curso de Excel Presencial en Santiago",
+  "description": "Entrenamiento práctico para dominar Excel básico e intermedio en modalidad presencial.",
+  "course_fit": {
+    "title": "¿Este curso es para ti?",
+    "description": "{{COURSE_FIT_DESCRIPTION}}",
+    "criteria": [
+      "{{COURSE_FIT_CRITERIO_1}}",
+      "{{COURSE_FIT_CRITERIO_2}}",
+      "{{COURSE_FIT_CRITERIO_3}}"
+    ],
+    "cta_text": "Reservar mi cupo"
+  },
+  "infrastructure": {
+    "title": "Infraestructura moderna y equipada",
+    "description": "{{INFRASTRUCTURE_DESCRIPTION}}",
+    "images": [
+      { "src": "{{INFRA_IMG_1}}", "alt": "{{INFRA_IMG_1_ALT}}", "badge": "{{INFRA_BADGE_1}}" },
+      { "src": "{{INFRA_IMG_2}}", "alt": "{{INFRA_IMG_2_ALT}}", "badge": "{{INFRA_BADGE_2}}" },
+      { "src": "{{INFRA_IMG_3}}", "alt": "{{INFRA_IMG_3_ALT}}", "badge": "{{INFRA_BADGE_3}}" }
+    ],
+    "features": [
+      { "label": "{{INFRA_FEATURE_LABEL_1}}", "description": "{{INFRA_FEATURE_DESC_1}}" },
+      { "label": "{{INFRA_FEATURE_LABEL_2}}", "description": "{{INFRA_FEATURE_DESC_2}}" },
+      { "label": "{{INFRA_FEATURE_LABEL_3}}", "description": "{{INFRA_FEATURE_DESC_3}}" }
+    ]
+  },
+  "benefits": {
+    "title": "Beneficios del curso",
+    "description": "{{BENEFITS_DESCRIPTION}}",
+    "cards": [
+      { "title": "{{BENEFIT_CARD_1_TITLE}}", "items": ["{{BENEFIT_CARD_1_ITEM_1}}", "{{BENEFIT_CARD_1_ITEM_2}}", "{{BENEFIT_CARD_1_ITEM_3}}"] },
+      { "title": "{{BENEFIT_CARD_2_TITLE}}", "items": ["{{BENEFIT_CARD_2_ITEM_1}}", "{{BENEFIT_CARD_2_ITEM_2}}", "{{BENEFIT_CARD_2_ITEM_3}}"] },
+      { "title": "{{BENEFIT_CARD_3_TITLE}}", "items": ["{{BENEFIT_CARD_3_ITEM_1}}", "{{BENEFIT_CARD_3_ITEM_2}}", "{{BENEFIT_CARD_3_ITEM_3}}"] }
+    ]
+  },
+  "syllabus": {
+    "title": "Temario del curso detallado",
+    "description": "{{SYLLABUS_DESCRIPTION}}",
+    "modules": [
+      { "title": "{{SYLLABUS_MODULE_1_TITLE}}", "points": ["{{SYLLABUS_MODULE_1_POINT_1}}", "{{SYLLABUS_MODULE_1_POINT_2}}", "{{SYLLABUS_MODULE_1_POINT_3}}"] },
+      { "title": "{{SYLLABUS_MODULE_2_TITLE}}", "points": ["{{SYLLABUS_MODULE_2_POINT_1}}", "{{SYLLABUS_MODULE_2_POINT_2}}", "{{SYLLABUS_MODULE_2_POINT_3}}"] },
+      { "title": "{{SYLLABUS_MODULE_3_TITLE}}", "points": ["{{SYLLABUS_MODULE_3_POINT_1}}", "{{SYLLABUS_MODULE_3_POINT_2}}", "{{SYLLABUS_MODULE_3_POINT_3}}"] }
+    ]
+  },
+  "payment_options": {
+    "title": "Formas de pago disponibles",
+    "description": "{{PAYMENT_OPTIONS_DESCRIPTION}}",
+    "methods": [
+      { "title": "{{PAYMENT_METHOD_1_TITLE}}", "description": "{{PAYMENT_METHOD_1_DESCRIPTION}}" },
+      { "title": "{{PAYMENT_METHOD_2_TITLE}}", "description": "{{PAYMENT_METHOD_2_DESCRIPTION}}" },
+      { "title": "{{PAYMENT_METHOD_3_TITLE}}", "description": "{{PAYMENT_METHOD_3_DESCRIPTION}}" }
+    ]
+  },
+  "testimonials": {
+    "title": "Opiniones de alumnos",
+    "description": "{{TESTIMONIALS_DESCRIPTION}}",
+    "items": [
+      { "quote": "{{TESTIMONIAL_1_QUOTE}}", "author": "{{TESTIMONIAL_1_AUTHOR}}", "role": "{{TESTIMONIAL_1_ROLE}}" },
+      { "quote": "{{TESTIMONIAL_2_QUOTE}}", "author": "{{TESTIMONIAL_2_AUTHOR}}", "role": "{{TESTIMONIAL_2_ROLE}}" },
+      { "quote": "{{TESTIMONIAL_3_QUOTE}}", "author": "{{TESTIMONIAL_3_AUTHOR}}", "role": "{{TESTIMONIAL_3_ROLE}}" }
+    ]
+  },
+  "clients": {
+    "title": "Clientes que confían en nosotros",
+    "description": "{{CLIENTS_DESCRIPTION}}",
+    "items": [
+      { "logo": "{{CLIENT_LOGO_1}}", "alt": "{{CLIENT_LOGO_1_ALT}}", "name": "{{CLIENT_NAME_1}}", "category": "{{CLIENT_CATEGORY_1}}" },
+      { "logo": "{{CLIENT_LOGO_2}}", "alt": "{{CLIENT_LOGO_2_ALT}}", "name": "{{CLIENT_NAME_2}}", "category": "{{CLIENT_CATEGORY_2}}" },
+      { "logo": "{{CLIENT_LOGO_3}}", "alt": "{{CLIENT_LOGO_3_ALT}}", "name": "{{CLIENT_NAME_3}}", "category": "{{CLIENT_CATEGORY_3}}" },
+      { "logo": "{{CLIENT_LOGO_4}}", "alt": "{{CLIENT_LOGO_4_ALT}}", "name": "{{CLIENT_NAME_4}}", "category": "{{CLIENT_CATEGORY_4}}" }
+    ]
+  },
+  "location": {
+    "title": "Ubicación y sede",
+    "description": "{{LOCATION_DESCRIPTION}}",
+    "address": "{{LOCATION_ADDRESS}}",
+    "sede": "{{LOCATION_SEDE}}",
+    "access": "{{LOCATION_ACCESS}}",
+    "hours": "{{LOCATION_HOURS}}",
+    "google_maps_embed_url": "{{GOOGLE_MAPS_EMBED_URL}}",
+    "photos": [
+      { "src": "{{LOCATION_PHOTO_1}}", "alt": "{{LOCATION_PHOTO_1_ALT}}" },
+      { "src": "{{LOCATION_PHOTO_2}}", "alt": "{{LOCATION_PHOTO_2_ALT}}" }
+    ]
+  },
+  "quality_seals": {
+    "title": "Sellos de calidad",
+    "description": "{{QUALITY_SEALS_DESCRIPTION}}",
+    "items": [
+      { "logo": "{{SEAL_IMAGE_1}}", "alt": "{{SEAL_IMAGE_1_ALT}}", "title": "{{SEAL_1_TITLE}}", "description": "{{SEAL_1_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_2}}", "alt": "{{SEAL_IMAGE_2_ALT}}", "title": "{{SEAL_2_TITLE}}", "description": "{{SEAL_2_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_3}}", "alt": "{{SEAL_IMAGE_3_ALT}}", "title": "{{SEAL_3_TITLE}}", "description": "{{SEAL_3_DESCRIPTION}}" },
+      { "logo": "{{SEAL_IMAGE_4}}", "alt": "{{SEAL_IMAGE_4_ALT}}", "title": "{{SEAL_4_TITLE}}", "description": "{{SEAL_4_DESCRIPTION}}" }
+    ]
+  }
+}

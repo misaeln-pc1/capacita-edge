@@ -1,0 +1,86 @@
+<section class="cp-hero" id="inicio" data-block="hero-lead-form" data-landing-key="{{LANDING_KEY}}">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <div class="cp-hero__content">
+    <p class="cp-hero__eyebrow">{{COURSE_MODALITY}} · {{COURSE_LOCATION}}</p>
+    <h1>{{COURSE_TITLE}}</h1>
+    <p class="cp-hero__subtitle">{{COURSE_SUBTITLE}}</p>
+    <p class="cp-hero__description">{{COURSE_DESCRIPTION}}</p>
+
+    <ul class="cp-hero__trust" aria-label="Beneficios principales">
+      <li>Diploma certificado</li>
+      <li>Curso práctico</li>
+      <li>Soporte de coordinación</li>
+    </ul>
+  </div>
+
+  <aside class="cp-hero__form-card" id="registro" aria-label="Formulario de inscripción">
+    <h2>{{START_LABEL}}</h2>
+    <p>{{START_TEXT}}</p>
+
+    <form id="zoho-native-form" action="/api/forms/lead" method="POST" accept-charset="UTF-8" class="cp-lead-form">
+      <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
+      <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
+      <input type="hidden" name="zc_gad" id="zc_gad" value="">
+
+      <div class="cp-hp" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <label for="hp_field">No llenar</label>
+        <input id="hp_field" type="text" name="hp_field" value="" tabindex="-1" autocomplete="off">
+      </div>
+
+      <input type="hidden" name="SingleLine14" id="utm_source" value="">
+      <input type="hidden" name="SingleLine18" id="utm_medium" value="">
+      <input type="hidden" name="SingleLine13" id="utm_campaign" value="">
+      <input type="hidden" name="SingleLine17" id="utm_term" value="">
+      <input type="hidden" name="SingleLine16" id="utm_content" value="">
+      <input type="hidden" name="SingleLine11" id="utm_id" value="">
+      <input type="hidden" name="SingleLine5" id="gclid" value="">
+      <input type="hidden" name="SingleLine6" id="gbraid" value="">
+      <input type="hidden" name="SingleLine12" id="wbraid" value="">
+      <input type="hidden" name="SingleLine8" id="fbclid" value="">
+      <input type="hidden" name="SingleLine7" id="msclkid" value="">
+      <input type="hidden" name="SingleLine9" id="li_fat_id" value="">
+      <input type="hidden" name="SingleLine10" id="ttclid" value="">
+
+      <input type="hidden" name="SingleLine24" id="client_id" value="">
+      <input type="hidden" name="SingleLine25" id="session_id" value="">
+      <input type="hidden" name="SingleLine23" id="lead_event_id" value="">
+      <input type="hidden" name="Website" id="landing_url" value="">
+      <input type="hidden" name="Website1" id="referente" value="">
+      <input type="hidden" name="SingleLine19" id="dispositivo" value="">
+      <input type="hidden" name="SingleLine20" id="user_agent" value="">
+      <input type="hidden" name="SingleLine21" id="page_title" value="">
+      <input type="hidden" name="SingleLine22" id="user_language" value="">
+      <input type="hidden" name="SingleLine26" id="ciudad_user" value="">
+      <input type="hidden" name="SingleLine27" id="pais_user" value="">
+      <input type="hidden" name="SingleLine28" id="timezone" value="">
+      <input type="hidden" name="SingleLine29" id="tiempo_pagina" value="">
+
+      <input type="hidden" name="SingleLine3" id="landing_fuente" value="{{LANDING_KEY}}">
+      <input type="hidden" name="SingleLine2" id="curso_interesado" value="{{COURSE_TITLE}}">
+      <input type="hidden" name="SingleLine1" id="tipo_modalidad" value="{{COURSE_MODALITY}}">
+      <input type="hidden" name="SingleLine15" id="landing_code" value="{{LANDING_CODE}}">
+
+      <input type="hidden" name="DateTime_date" id="capture_date" value="">
+      <input type="hidden" name="DateTime_hours" id="capture_hours" value="">
+      <input type="hidden" name="DateTime_minutes" id="capture_minutes" value="">
+      <input type="hidden" name="DateTime_meridiem" id="capture_meridiem" value="">
+
+      <label for="lead_name">Nombre</label>
+      <input id="lead_name" name="SingleLine" type="text" maxlength="255" required placeholder="Tu nombre">
+
+      <label for="lead_email">Email</label>
+      <input id="lead_email" name="Email" type="email" maxlength="255" required placeholder="tu@correo.cl">
+
+      <label for="lead_phone">WhatsApp</label>
+      <input id="lead_phone" name="PhoneNumber_countrycode" type="tel" maxlength="20" required placeholder="9 1234 5678">
+
+      <label for="lead_notes">Dudas o comentarios</label>
+      <textarea id="lead_notes" name="MultiLine" maxlength="1000" placeholder="Horarios, pagos, empresa, SENCE, etc."></textarea>
+
+      <div class="cf-turnstile" data-sitekey="{{PUBLIC_TURNSTILE_SITEKEY}}" data-theme="light" data-appearance="interaction-only"></div>
+
+      <button type="submit" class="cp-button cp-button--primary">{{SUBMIT_TEXT}}</button>
+    </form>
+  </aside>
+</section>

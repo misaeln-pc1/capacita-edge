@@ -1,0 +1,45 @@
+<section id="beneficios" class="block-benefits-grid" aria-labelledby="benefits-title">
+  <style>
+    .block-benefits-grid { max-width: 1180px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; background: #f8fafc; border-radius: 24px; }
+    .block-benefits-grid h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-benefits-grid p { margin-bottom: 32px; color: #475569; line-height: 1.7; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .benefit-card { background: white; border-radius: 22px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 12px 24px rgba(15, 75, 182, 0.06); }
+    .benefit-card h3 { margin: 0 0 14px; font-size: 1.2rem; color: #0f4bb6; }
+    .benefit-card ul { padding-left: 18px; margin: 0; color: #334155; line-height: 1.75; }
+    .benefit-card li { margin-bottom: 12px; }
+    @media (max-width: 960px) { .benefits-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="benefits-title">{{BENEFITS_TITLE}}</h2>
+    <p>{{BENEFITS_DESCRIPTION}}</p>
+
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <h3>{{BENEFIT_CARD_1_TITLE}}</h3>
+        <ul>
+          <li>{{BENEFIT_CARD_1_ITEM_1}}</li>
+          <li>{{BENEFIT_CARD_1_ITEM_2}}</li>
+          <li>{{BENEFIT_CARD_1_ITEM_3}}</li>
+        </ul>
+      </article>
+      <article class="benefit-card">
+        <h3>{{BENEFIT_CARD_2_TITLE}}</h3>
+        <ul>
+          <li>{{BENEFIT_CARD_2_ITEM_1}}</li>
+          <li>{{BENEFIT_CARD_2_ITEM_2}}</li>
+          <li>{{BENEFIT_CARD_2_ITEM_3}}</li>
+        </ul>
+      </article>
+      <article class="benefit-card">
+        <h3>{{BENEFIT_CARD_3_TITLE}}</h3>
+        <ul>
+          <li>{{BENEFIT_CARD_3_ITEM_1}}</li>
+          <li>{{BENEFIT_CARD_3_ITEM_2}}</li>
+          <li>{{BENEFIT_CARD_3_ITEM_3}}</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

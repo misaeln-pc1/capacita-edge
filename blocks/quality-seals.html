@@ -1,0 +1,41 @@
+<section id="sellos-calidad" class="block-quality-seals" aria-labelledby="quality-seals-title">
+  <style>
+    .block-quality-seals { max-width: 1120px; margin: 80px auto; padding: 40px 20px; font-family: Arial, sans-serif; background: #f8fafc; border-radius: 24px; text-align: center; }
+    .block-quality-seals h2 { margin-bottom: 10px; font-size: 2rem; color: #073763; }
+    .block-quality-seals p { margin-bottom: 32px; color: #475569; line-height: 1.75; }
+    .seals-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: start; }
+    .seal-card { background: white; border-radius: 22px; padding: 24px; border: 1px solid #e2e8f0; min-height: 210px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .seal-card img { max-width: 100px; height: auto; margin-bottom: 18px; }
+    .seal-title { margin: 0 0 10px; font-weight: 700; color: #0f4bb6; }
+    .seal-description { margin: 0; color: #334155; line-height: 1.7; }
+    @media (max-width: 960px) { .seals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) { .seals-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="block-content">
+    <h2 id="quality-seals-title">{{QUALITY_SEALS_TITLE}}</h2>
+    <p>{{QUALITY_SEALS_DESCRIPTION}}</p>
+    <div class="seals-grid">
+      <article class="seal-card">
+        <img src="{{SEAL_IMAGE_1}}" alt="{{SEAL_IMAGE_1_ALT}}">
+        <p class="seal-title">{{SEAL_1_TITLE}}</p>
+        <p class="seal-description">{{SEAL_1_DESCRIPTION}}</p>
+      </article>
+      <article class="seal-card">
+        <img src="{{SEAL_IMAGE_2}}" alt="{{SEAL_IMAGE_2_ALT}}">
+        <p class="seal-title">{{SEAL_2_TITLE}}</p>
+        <p class="seal-description">{{SEAL_2_DESCRIPTION}}</p>
+      </article>
+      <article class="seal-card">
+        <img src="{{SEAL_IMAGE_3}}" alt="{{SEAL_IMAGE_3_ALT}}">
+        <p class="seal-title">{{SEAL_3_TITLE}}</p>
+        <p class="seal-description">{{SEAL_3_DESCRIPTION}}</p>
+      </article>
+      <article class="seal-card">
+        <img src="{{SEAL_IMAGE_4}}" alt="{{SEAL_IMAGE_4_ALT}}">
+        <p class="seal-title">{{SEAL_4_TITLE}}</p>
+        <p class="seal-description">{{SEAL_4_DESCRIPTION}}</p>
+      </article>
+    </div>
+  </div>
+</section>
