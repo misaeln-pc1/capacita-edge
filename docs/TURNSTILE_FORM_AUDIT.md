@@ -10,7 +10,7 @@ Tabla de auditoría de configuración Turnstile y formularios en cada landing.
 | Empresas Excel | landing-empresas-excel.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | ✅ Funcional |
 | Excel Presencial | landing-excel12-presencial.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. | Legacy funcional temporal |
 | Excel E-learning | landing-excel12-elearning.html | Zoho directo | ❌ | ✅ | ❌ | Ausente | ❌ | ✅ | ❌ | Legacy funcional — riesgo aceptado temporalmente | No tocar en esta fase. Migrar solo en hito posterior, cuando las nuevas landings estén estabilizadas. | Legacy funcional temporal |
-| Power BI E-learning | landing-powerbi12-elearning.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | ✅ Funcional |
+| Power BI E-learning | landing-powerbi12-elearning.html | `/api/forms/lead` | ✅ | ❌ | ✅ | Real: `0x4AAAAAACyxbmmxJx_EtyEr` | ✅ hp_field | ✅ | ✅ | 🟢 Bajo | No aplica | Lista para publicación controlada |
 
 ## Detalles por landing
 
@@ -84,6 +84,7 @@ Igual problema que `landing-excel12-presencial.html`.
 - `data-sitekey` usa la sitekey publica funcional
 - Honeypot usa `hp_field`
 - Campos visibles y tracking usan nombres Zoho/SingleLine compatibles
+- Lista para publicación controlada en `/curso-power-bi-basico-intermedio-online-sincronico`; pendiente activar Worker real
 
 **Validacion**: Igual que landings B2B funcionales.
 

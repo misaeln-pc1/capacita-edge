@@ -18,7 +18,7 @@ async function handleRequest(request) {
     '/curso-de-excel-basico-intermedio-online-sincronico',
     '/cursos-para-empresas',
     '/curso-empresa-excel',
-    // '/curso-power-bi-basico-intermedio-online-sincronico',
+    '/curso-power-bi-basico-intermedio-online-sincronico',
     '/sitemap_index.xml',
     '/sitemap-estatico.xml'
   ])
@@ -43,8 +43,8 @@ async function handleRequest(request) {
     '/landing-excel12-presencial': '/curso-de-excel-presencial-en-santiago',
     '/landing-excel12-elearning': '/curso-de-excel-basico-intermedio-online-sincronico',
 
-   // '/landing-powerbi12-elearning': '/curso-power-bi-basico-intermedio-online-sincronico',
-   // '/landing-powerbi12-elearning.html': '/curso-power-bi-basico-intermedio-online-sincronico',
+    '/landing-powerbi12-elearning': '/curso-power-bi-basico-intermedio-online-sincronico',
+    '/landing-powerbi12-elearning.html': '/curso-power-bi-basico-intermedio-online-sincronico',
 
   }
 
@@ -60,7 +60,7 @@ async function handleRequest(request) {
     '/curso-de-excel-basico-intermedio-online-sincronico': `${EDGE_URL}/landing-excel12-elearning`,
     '/cursos-para-empresas': `${EDGE_URL}/landing-empresas`,
     '/curso-empresa-excel': `${EDGE_URL}/landing-empresas-excel.html`,
-   // '/curso-power-bi-basico-intermedio-online-sincronico': `${EDGE_URL}/landing-powerbi12-elearning.html`
+    '/curso-power-bi-basico-intermedio-online-sincronico': `${EDGE_URL}/landing-powerbi12-elearning.html`
   }
 
   // 4) XML / sitemaps

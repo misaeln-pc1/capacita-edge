@@ -2,7 +2,7 @@
 
 Mapeo de URLs de WordPress actual → HTML_ESTATICO, con decisiones de migración y rutas de redirect.
 
-## Rutas conocidas servidas por Worker
+## Rutas conocidas servidas o preparadas para Worker
 
 Estas rutas están interceptadas por `capacita-edge-router` y apuntan a Cloudflare Pages.
 
@@ -10,10 +10,11 @@ Estas rutas están interceptadas por `capacita-edge-router` y apuntan a Cloudfla
 
 | URL actual | Landing | Decision | URL nueva | Redirect | Razón SEO | Prioridad | Estado |
 |-----------|---------|----------|-----------|----------|-----------|-----------|---------|
-| /curso-de-excel-presencial-en-santiago | landing-excel12-presencial.html | Mantener | /curso-de-excel-presencial-en-santiago | no aplica | Ruta final canónica | Alta | ⏳ Pendiente de estandarización de formulario seguro |
-| /curso-de-excel-basico-intermedio-online-sincronico | landing-excel12-elearning.html | Mantener | /curso-de-excel-basico-intermedio-online-sincronico | no aplica | Ruta final canónica | Alta | ⏳ Pendiente de estandarización de formulario seguro |
+| /curso-de-excel-presencial-en-santiago | landing-excel12-presencial.html | Mantener | /curso-de-excel-presencial-en-santiago | no aplica | Ruta final canónica | Alta | Legacy funcional temporal; no tocar en esta fase |
+| /curso-de-excel-basico-intermedio-online-sincronico | landing-excel12-elearning.html | Mantener | /curso-de-excel-basico-intermedio-online-sincronico | no aplica | Ruta final canónica | Alta | Legacy funcional temporal; no tocar en esta fase |
 | /cursos-para-empresas | landing-empresas.html | Mantener | /cursos-para-empresas | no aplica | Ruta final canónica | Media | ✅ Funcional |
 | /curso-empresa-excel | landing-empresas-excel.html | Mantener | /curso-empresa-excel | no aplica | Ruta final canónica | Media | ✅ Funcional |
+| /curso-power-bi-basico-intermedio-online-sincronico | landing-powerbi12-elearning.html | Preparar publicación controlada | /curso-power-bi-basico-intermedio-online-sincronico | no aplica | Ruta final canónica | Alta | Preparado para publicación controlada / pendiente activar Worker real |
 
 ## Rutas pendientes / no publicadas
 
@@ -21,7 +22,7 @@ Estas rutas todavía no están activas en el Worker y no deben contarse como URL
 
 | URL esperada | Landing | Estado | Nota |
 |-------------|---------|--------|------|
-| /curso-power-bi-empresas | landing-powerbi12-elearning.html | Pendiente / no publicada | No activa en Worker; ruta comentada en Worker; landing rota por placeholders; pendiente de definición de URL pública |
+| /curso-power-bi-empresas | landing-powerbi12-elearning.html | No publicar en esta fase | Ruta alternativa descartada para este hito; usar `/curso-power-bi-basico-intermedio-online-sincronico` como ruta canónica preparada |
 
 ## Rutas WordPress antiguas (potencialmente obsoletas)
 
@@ -37,7 +38,7 @@ Estas rutas todavía no están activas en el Worker y no deben contarse como URL
 | Ruta | Estática | Servida por | Cambio requerido | Estado |
 |-----|----------|-----------|---|---|
 | /sitemap_index.xml | ✅ Sí | Worker Pages proxy | Ninguno | ✅ Funcional |
-| /sitemap-estatico.xml | ✅ Sí | Worker Pages proxy | Ninguno | ✅ Funcional |
+| /sitemap-estatico.xml | ✅ Sí | Worker Pages proxy | Agrega Power BI | Preparado para publicación controlada |
 | /sitemap-wordpress.xml | N/A | WordPress directo | Ninguno | N/A |
 
 ## Rutas API (no públicas)
@@ -84,6 +85,11 @@ if (path === '/curso-empresa-excel') {
   return fetch('https://capacita-edge.pages.dev/landing-empresas-excel.html', options);
 }
 
+// Ruta: /curso-power-bi-basico-intermedio-online-sincronico
+if (path === '/curso-power-bi-basico-intermedio-online-sincronico') {
+  return fetch('https://capacita-edge.pages.dev/landing-powerbi12-elearning.html', options);
+}
+
 // Rutas no capturadas → WordPress
 return fetch(origin + request.url);
 ```
@@ -107,7 +113,14 @@ Configurar redirects 301 permanentes para URLs antiguas → nuevas.
 ```
 /landing-excel-presencial → /curso-de-excel-presencial-en-santiago (301)
 /landing-excel-online → /curso-de-excel-basico-intermedio-online-sincronico (301)
+/landing-powerbi12-elearning.html → /curso-power-bi-basico-intermedio-online-sincronico (301)
 ```
+
+## Decisión operativa Power BI
+
+Power BI queda preparado para publicación controlada en `/curso-power-bi-basico-intermedio-online-sincronico`. Este repositorio solo contiene `docs/WORKER_ROUTER_SOURCE.sanitized.js`; falta aplicar el cambio equivalente en el Worker real de Cloudflare en un paso posterior controlado. No hacer deploy manual desde este PR.
+
+Excel presencial y Excel e-learning quedan como legacy funcional temporal y no se tocan en esta fase.
 
 ## Procedimiento de migración de URL
 
@@ -152,7 +165,7 @@ curl -I https://capacita.cl/curso-de-excel-presencial-en-santiago
 ## Estado
 
 - **Rutas activas servidas por Worker**: 4
-- **Power BI**: pendiente / no publicada
-- **Rutas pendientes**: 3+ (futuras landings)
+- **Power BI**: preparado para publicación controlada / pendiente activar Worker real
+- **Rutas pendientes**: 2+ (futuras landings)
 - **Rutas a eliminar**: 5+ (URLs WordPress antiguas)
 - **Prioridad**: Media (después de validar landings actuales)
