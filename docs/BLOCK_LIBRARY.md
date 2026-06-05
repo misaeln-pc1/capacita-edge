@@ -24,6 +24,8 @@
 - Presencia de formularios de Zoho o de proxy a `/api/forms/lead`
 - Estructuras de inputs reutilizables: nombre, email, teléfono, mensaje
 - Campos ocultos de UTM, referrer, landing_url, landing_code, device, user agent, timezone
+- Todo formulario nuevo debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, nombres Zoho/SingleLine compatibles y Turnstile con `data-appearance="interaction-only"` + `data-response-field-name="cf-turnstile-response"`.
+- Turnstile no debe ocultarse con CSS ni hacks visuales; la secret key nunca va en HTML.
 
 ### 5. Sitemap y XML
 - Rutas `/sitemap_index.xml` y `/sitemap-estatico.xml` servidas desde Pages

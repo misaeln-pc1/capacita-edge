@@ -24,3 +24,10 @@ Definir el primer set de bloques estáticos para landings basadas en el rescate 
 - Los valores de texto deben ser reemplazados por variables de datos antes de desplegar.
 - Los estilos no deben contener dependencias de frameworks.
 - No deben agregarse scripts de interacción más allá de la presentación estática.
+
+## Formularios de landing
+- Todo bloque nuevo con formulario debe enviar a `/api/forms/lead`.
+- Debe incluir `hp_field`, `Website`, `Website1` y nombres Zoho/SingleLine compatibles.
+- Debe incluir Turnstile con sitekey publica o placeholder, `data-response-field-name="cf-turnstile-response"` y `data-appearance="interaction-only"`.
+- No ocultar Turnstile con `display:none`, `visibility:hidden`, `opacity:0`, posicionamiento fuera de pantalla ni hacks visuales.
+- La secret key de Turnstile nunca debe estar en HTML; la validación corresponde al servidor en `/api/forms/lead`.

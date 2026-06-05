@@ -20,7 +20,7 @@ Tabla de auditoría de configuración Turnstile y formularios en cada landing.
 ```html
 <form action="/api/forms/lead" method="POST">
   <input type="text" name="hp_field" id="hp_field" tabindex="-1">
-  <div class="cf-turnstile" data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"></div>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr" data-appearance="interaction-only" data-response-field-name="cf-turnstile-response"></div>
   <!-- campos visibles: nombre, email, teléfono, etc. -->
   <!-- campos ocultos: utm_source, landing_code, device, etc. -->
 </form>
@@ -75,6 +75,7 @@ Igual problema que `landing-excel12-presencial.html`.
   <!-- honeypot: hp_field -->
   <div class="cf-turnstile"
        data-sitekey="0x4AAAAAACyxbmmxJx_EtyEr"
+       data-appearance="interaction-only"
        data-response-field-name="cf-turnstile-response"></div>
 </form>
 ```
@@ -82,6 +83,7 @@ Igual problema que `landing-excel12-presencial.html`.
 **Estado**:
 - `action` apunta a `/api/forms/lead`
 - `data-sitekey` usa la sitekey publica funcional
+- `data-appearance="interaction-only"` reduce friccion visual sin ocultar Turnstile
 - Honeypot usa `hp_field`
 - Campos visibles y tracking usan nombres Zoho/SingleLine compatibles
 - Lista para publicación controlada en `/curso-power-bi-basico-intermedio-online-sincronico`; pendiente activar Worker real
@@ -124,6 +126,8 @@ Igual problema que `landing-excel12-presencial.html`.
 
 - [ ] ¿Tiene action="/api/forms/lead"?
 - [ ] ¿Tiene Turnstile con sitekey real (no placeholder)?
+- [ ] Turnstile usa `data-appearance="interaction-only"` y `data-response-field-name="cf-turnstile-response"`.
+- [ ] Turnstile permanece visible sin `display:none`, `visibility:hidden`, `opacity:0` ni hacks visuales.
 - [ ] ¿Tiene honeypot HTML con tabindex="-1"?
 - [ ] ¿Tiene campos de captura (nombre, email, teléfono)?
 - [ ] ¿Tiene campos ocultos de tracking (utm_source, landing_code, etc.)?
