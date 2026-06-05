@@ -110,7 +110,11 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 - `landing-excel12-presencial.html`
 - `landing-excel12-elearning.html`
 
-**Recomendación**: Migrar estas landings a usar `/api/forms/lead`.
+**Decisión**: Mantener como legacy funcional temporal. No tocar en esta fase para evitar riesgo comercial.
+
+## Decisión operativa actual
+
+Excel presencial y Excel e-learning quedan temporalmente como landings legacy funcionales con envío directo a Zoho. No deben modificarse en esta fase para evitar riesgo comercial. Toda landing nueva o corregida desde Power BI en adelante debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile y nombres Zoho/SingleLine compatibles.
 
 ## Diferencias entre landings actuales
 
@@ -130,7 +134,7 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 | Validación server-side | ❌ No | ❌ No |
 | Turnstile | ❌ No | ❌ No |
 | Honeypot | ❌ No | ❌ No |
-| Riesgo | 🔴 Alto | 🔴 Alto |
+| Riesgo | Legacy funcional — riesgo aceptado temporalmente | Legacy funcional — riesgo aceptado temporalmente |
 
 ### Landing Power BI (ESTANDAR)
 | Propiedad | landing-powerbi12-elearning |
@@ -143,7 +147,7 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 
 ## Recomendación
 
-**Estandarizar todas las landings a usar `/api/forms/lead` con Turnstile real y honeypot.**
+**Estandarizar toda landing nueva o corregida desde Power BI en adelante a usar `/api/forms/lead` con Turnstile real y honeypot.**
 
 Ventajas:
 - Validación server-side consistente
