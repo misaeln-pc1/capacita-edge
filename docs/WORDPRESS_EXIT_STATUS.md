@@ -126,6 +126,10 @@ Reducir dependencia funcional de WordPress migrando imagenes usadas por landings
 3. Mantener nuevas landings con imagenes bajo `/assets/img/landings/...`, no desde WordPress.
 4. Mantener formularios nuevos con `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile `interaction-only` y validacion server-side.
 
+## Cierre documental del hito
+
+Ver `docs/HTML_ESTATICO_HANDOFF_2026-06-05.md` para el historial consolidado de PRs #5, #6, #7 y #8, el hotfix `7194f7c7eeb2caa0d0c3016e1bf90bfe919cbfb1`, la regla de carpeta local y la regla manual aplicada en el Worker real para proxyar `/assets/` hacia Cloudflare Pages.
+
 ## Actualización Sprint 2026-06-05
 
 ### GitHub URLs Migradas
