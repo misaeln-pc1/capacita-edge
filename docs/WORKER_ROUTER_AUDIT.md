@@ -70,6 +70,25 @@
 - Crear una rama docs sin push no es obligatoria, excepto si se quiere documentar la lógica antes de cambios grandes.
 - Migrar el Worker al repo como fuente versionada futura es aconsejable.
 
+## Actualizacion manual posterior - 2026-06-05
+
+Se documento como regla critica que el Worker real debe proxyar `/assets/` hacia `https://capacita-edge.pages.dev`.
+
+Motivo: las landings servidas desde `capacita.cl` cargan HTML por Worker, pero las imagenes locales viven en Cloudflare Pages. Sin esta regla, `capacita.cl/assets/...` cae al origen WordPress y las imagenes quedan rotas.
+
+Bloque minimo esperado:
+
+```js
+  // Proxy de assets estaticos servidos desde Cloudflare Pages
+  if (path.startsWith('/assets/')) {
+    const assetUrl = `${EDGE_URL}${url.pathname}${url.search}`
+    return fetch(assetUrl, {
+      method: 'GET',
+      redirect: 'follow'
+    })
+  }
+```
+
 ## Validación final
 
 - Solo se usaron métodos `GET`.

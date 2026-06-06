@@ -121,6 +121,15 @@ async function handleRequest(request) {
     return fetch(proxyRequest)
   }
 
-  // 10) Todo lo demás sigue yendo al origen (WordPress)
+  // 10) Proxy de assets estaticos servidos desde Cloudflare Pages
+  if (path.startsWith('/assets/')) {
+    const assetUrl = `${EDGE_URL}${url.pathname}${url.search}`
+    return fetch(assetUrl, {
+      method: 'GET',
+      redirect: 'follow'
+    })
+  }
+
+  // 11) Todo lo demás sigue yendo al origen (WordPress)
   return fetch(request)
 }
