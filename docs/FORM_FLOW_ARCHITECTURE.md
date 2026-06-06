@@ -53,6 +53,8 @@ Redirect final: landing_url?lead=ok#registro
 | 403 | turnstile_failed | Verificación Turnstile rechazada |
 | 502 | zoho_submit_failed | Zoho rechazó el formulario |
 
+Nota operativa: `turnstile_failed` con detalle `timeout-or-duplicate` suele indicar token vencido, duplicado o ya usado. Para probar, abrir la landing desde cero o en incógnito y enviar una sola vez.
+
 ## Variables de entorno requeridas
 
 ### TURNSTILE_SECRET
@@ -98,7 +100,7 @@ Redirect final: landing_url?lead=ok#registro
 
 ## Flujo alternativo NO RECOMENDADO: Envío directo a Zoho
 
-Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin pasar por `/api/forms/lead`.
+Algunas landings pueden enviar directamente a `https://forms.zohopublic.com/...` sin pasar por `/api/forms/lead`.
 
 ### Riesgos de envío directo a Zoho
 - ❌ No valida Turnstile server-side
@@ -110,13 +112,12 @@ Algunas landings envían directamente a `https://forms.zohopublic.com/...` sin p
 
 ### Landings con envío directo a Zoho
 - `landing-excel12-presencial.html`
-- `landing-excel12-elearning.html`
 
-**Decisión**: Mantener como legacy funcional temporal. No tocar en esta fase para evitar riesgo comercial.
+**Decisión**: mantener Excel presencial como legacy funcional temporal. No migrarlo sin un hito separado y prueba controlada.
 
 ## Decisión operativa actual
 
-Excel presencial y Excel e-learning quedan temporalmente como landings legacy funcionales con envío directo a Zoho. No deben modificarse en esta fase para evitar riesgo comercial. Toda landing nueva o corregida desde Power BI en adelante debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile con `data-appearance="interaction-only"` y `data-response-field-name="cf-turnstile-response"`, y nombres Zoho/SingleLine compatibles.
+Excel presencial queda temporalmente como landing legacy funcional con envío directo a Zoho. No debe modificarse en esta fase para evitar riesgo comercial. Toda landing nueva o corregida desde Power BI en adelante debe usar `/api/forms/lead`, `hp_field`, `Website`/`Website1`, Turnstile con `data-appearance="interaction-only"` y `data-response-field-name="cf-turnstile-response"`, y nombres Zoho/SingleLine compatibles.
 
 ## Diferencias entre landings actuales
 
@@ -129,14 +130,14 @@ Excel presencial y Excel e-learning quedan temporalmente como landings legacy fu
 | Honeypot | ✅ Sí | ✅ Sí |
 | Riesgo | 🟢 Bajo | 🟢 Bajo |
 
-### Landings de Excel (NO ESTÁNDAR)
+### Landings Excel
 | Propiedad | landing-excel12-presencial | landing-excel12-elearning |
 |-----------|---------------------------|-------------------------|
-| Action | Zoho directo | Zoho directo |
-| Validación server-side | ❌ No | ❌ No |
-| Turnstile | ❌ No | ❌ No |
-| Honeypot | ❌ No | ❌ No |
-| Riesgo | Legacy funcional — riesgo aceptado temporalmente | Legacy funcional — riesgo aceptado temporalmente |
+| Action | Zoho directo | `/api/forms/lead` |
+| Validación server-side | ❌ No | ✅ Sí |
+| Turnstile | ❌ No | ✅ Real |
+| Honeypot | ❌ No | ✅ hp_field |
+| Riesgo | Legacy funcional — riesgo aceptado temporalmente | 🟢 Bajo tras sprint WordPress exit |
 
 ### Landing Power BI (ESTANDAR)
 | Propiedad | landing-powerbi12-elearning |
