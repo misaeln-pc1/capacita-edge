@@ -173,7 +173,9 @@ Rutas relevantes:
 
 Regla SEO vigente:
 
-- Canonical publico sin slash final para rutas capturadas.
+- Para cada ruta publicada, canonical HTML, sitemap y Worker deben coincidir.
+- Power BI ya fue alineada sin slash final.
+- Algunas landings legacy pueden conservar canonical con slash final; corregirlas solo en un hito SEO controlado y no dentro de PRs documentales.
 - Mantener sitemap y Worker alineados cuando se publique una nueva ruta.
 
 ## Worker real Cloudflare
