@@ -1,0 +1,28 @@
+Safe diff summary for audit/seo-worker-baseline-before-new-landings
+
+Expected modified paths:
+
+- docs/SEO_WORKER_BASELINE_AUDIT_2026-06-05.md
+- docs/HTML_ESTATICO_AUDIT_DIFF.md
+- docs/HTML_ESTATICO_REVIEW_REQUEST.md
+- docs/HTML_ESTATICO_GIT_STATUS.txt
+- docs/HTML_ESTATICO_SAFE_DIFF.txt
+
+Forbidden paths touched:
+
+- landing-*.html: NO
+- functions/**: NO
+- assets/**: NO
+- sitemap*.xml: NO
+- Worker real Cloudflare: NO
+- DNS: NO
+- Cloudflare configuration: NO
+- .env: NO
+
+Read-only findings only:
+
+- Excel e-learning has 3 missing local testimonial assets under `/assets/img/landings/excel-elearning/`.
+- Excel presencial and Excel e-learning canonical URLs have trailing slash while sitemap and Worker use no trailing slash.
+- Empresas and Empresas Excel do not explicitly set `data-response-field-name="cf-turnstile-response"`.
+- GitHub repo visibility is PUBLIC.
+- Cloudflare Pages is not verifiable from repo.
