@@ -1,0 +1,29 @@
+Audit branch: audit/seo-worker-baseline-before-new-landings
+
+Pre-change verification:
+
+Get-Location
+C:\Users\TECH\Documents\Proyectos\HTML Estatico\capacita-edge
+
+git rev-parse --show-toplevel
+C:/Users/TECH/Documents/Proyectos/HTML Estatico/capacita-edge
+
+git status --short --branch
+## main...origin/main
+
+git remote -v
+origin  https://github.com/misaeln-pc1/capacita-edge.git (fetch)
+origin  https://github.com/misaeln-pc1/capacita-edge.git (push)
+
+git pull --ff-only origin main
+Already up to date.
+
+Base SHA used to create audit branch:
+bb97b73ea6891c9f0d2e6e0b9c4873d9cd57da6a
+
+GitHub visibility:
+PUBLIC
+
+Notes:
+- Working tree was clean before creating the audit branch.
+- No productive files were modified for this audit.
